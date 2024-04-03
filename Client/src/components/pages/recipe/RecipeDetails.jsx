@@ -41,7 +41,12 @@ const RecipeDetails = () => {
           <p><span className="font-bold">Type:</span> {recipe.type}</p>
           <p><span className="font-bold">Cuisine:</span> {recipe.cuisine}</p>
           <p><span className="font-bold">Difficulty:</span> {recipe.difficulty}</p>
-          <p><span className="font-bold"><IoIosTime /></span> {recipe.cookingTime}</p>
+
+          <div className='flex item-center '>
+          <IoIosTime /><span className='ml-2'>{recipe.cookingTime}</span>
+          {/* <p><IoIosTime /><span className="font-bold"></span> {recipe.cookingTime}</p> */}
+          </div>
+
           <p><span className="font-bold">Serving Size:</span> {recipe.servingSize}</p>
         </div>
         <div>

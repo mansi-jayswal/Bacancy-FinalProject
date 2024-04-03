@@ -15,7 +15,7 @@ function Index() {
             <Route path='/' exact element={<Home />}></Route>
             <Route path='/login' exact element={<LoginPage /> }></Route>
             <Route path='/signup' exact element={<SignupPage />}></Route>
-            <Route path='/recipesByUs' exact element={<RecipeListing />}></Route>
+            <Route path='/recipes' exact element={<RecipeListing />}></Route>
             <Route path="/recipes/:id" element={<RecipeDetails />} /> {/* Dynamic route with recipe ID */}
 
         </Routes>
