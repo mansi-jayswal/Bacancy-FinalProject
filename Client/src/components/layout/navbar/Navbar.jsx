@@ -126,8 +126,10 @@ const Navbar = () => {
               {/* Conditionally show additional links when logged in */}
               {isLoggedIn && (
                 <li className="relative group">
-                  <div className="flex items-center cursor-pointer bg-slate-200 h-12 w-12 size-4">
+                  <div className="justify-between">
+                  <div className="flex items-center cursor-pointer justify-between bg-slate-200 h-12">
                   <FaUserCircle />
+                  </div>
                   </div>
                   {/* Dropdown links */}
                   <ul className="absolute hidden w-40 bg-white rounded-md shadow-lg top-10 right-0 z-10 group-hover:block">
