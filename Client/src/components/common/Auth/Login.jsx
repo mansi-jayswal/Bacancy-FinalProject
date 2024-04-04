@@ -4,7 +4,7 @@ import Input from './Input';
 import FormExtra from './FromExtra';
 import FormAction from './formActions';
 import { loginFields } from "../constants/formFields";
-import { loginUser } from '../../../redux/actions/actions';
+// import { loginUser } from '../../../redux/actions/actions';
 import { useNavigate } from 'react-router-dom';
 
 const fields=loginFields;
@@ -23,7 +23,7 @@ export default function Login(){
         e.preventDefault();
         // authenticateUser();
         console.log(loginState)
-        dispatch(loginUser(loginState));
+        // dispatch(loginUser(loginState));
         navigate('/');
     }
 

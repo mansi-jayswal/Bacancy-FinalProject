@@ -3,17 +3,28 @@ import { FaUserCircle } from "react-icons/fa";
 import { MdBookmarks } from "react-icons/md";
 import { BiDish } from "react-icons/bi";
 import { IoIosLogOut } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../../assets/logo.png";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { removeRole } from "../../../redux/actions/actions";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const isLoggedIn = useSelector(state=>state.auth.isLoggedIn);
+  const dispatch=useDispatch();
+  const navigate= useNavigate();
+  const isAuth = useSelector((state)=>state.role.isAuth);
+  console.log(isAuth)
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
+
+  const handleLogout=()=>{
+      dispatch(removeRole());
+      alert('logout succesfully');
+      navigate('/')
+      
+  }
 
   return (
     <>
@@ -53,6 +64,9 @@ const Navbar = () => {
                   />
                 </svg>
               </span>
+            </button>
+            <button onClick={handleLogout}>
+              Logout
             </button>
           </div>
 
@@ -119,12 +133,12 @@ const Navbar = () => {
                   data-twe-nav-link-ref
                 >
                   {
-                    isLoggedIn ? "Hello Chef! " : "Login/register"
+                    isAuth ? "Hello Chef! " : "Login/register"
                   }
                 </Link>
               </li>
               {/* Conditionally show additional links when logged in */}
-              {isLoggedIn && (
+              {isAuth && (
                 <li className="relative group">
                   <div className="justify-between">
                   <div className="flex items-center cursor-pointer justify-between bg-slate-200 h-12">

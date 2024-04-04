@@ -3,6 +3,8 @@ import { signupFields } from "../constants/formFields";
 import FormAction from './formActions';
 import Input from './Input';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setRole } from '../../../redux/actions/actions';
 
 const fields = signupFields;
 let fieldsState = {};
@@ -11,6 +13,7 @@ fields.forEach(field => fieldsState[field.id] = '');
 
 export default function Signup() {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const [signupState, setSignupState] = useState(fieldsState);
 
     const handleChange = (e) => setSignupState({ ...signupState, [e.target.id]: e.target.value });
@@ -23,7 +26,8 @@ export default function Signup() {
     }
 
     const createAccount = () => {
-
+        dispatch(setRole('user', signupState))
+        console.log(signupState)
     }
 
     return (

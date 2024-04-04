@@ -21,4 +21,22 @@ export const API = axios.create({
       };
     }
   };
+
+
+  export const RegisterUser = async (userData) => {
+    try {
+      const res = await API.post("users", userData);
+      return {
+        success: true,
+        data: res.data,
+        error: null,
+      };
+    } catch (error) {
+      return {
+        success: false,
+        data: null,
+        error: error.message,
+      };
+    }
+  };
   
