@@ -25,17 +25,17 @@ const signupFields=[
     {
         labelText:"Username",
         labelFor:"username",
-        id:"username",
-        name:"username",
+        id:"name",
+        name:"name",
         type:"text",
-        autoComplete:"username",
+        autoComplete:"name",
         isRequired:true,
         placeholder:"Username"   
     },
     {
         labelText:"Email address",
         labelFor:"email_address",
-        id:"email_address",
+        id:"email",
         name:"email",
         type:"email",
         autoComplete:"email",
@@ -65,8 +65,8 @@ const signupFields=[
     {
         labelText:"Preferred Cuisine",
         labelFor:"preferred_cuisine",
-        id:"preferred_cuisine",
-        name:"preferred_cuisine",
+        id:"preference",
+        name:"preference",
         type:"dropdown",
         isRequired:true,
         options: ["Italian", "Mexican", "Indian", "Chinese", "Thai"] // Add your preferred cuisines here

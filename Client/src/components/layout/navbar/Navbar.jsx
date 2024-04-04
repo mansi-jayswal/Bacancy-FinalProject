@@ -74,11 +74,12 @@ const Navbar = () => {
           <div
             className={`!visible mt-2 ${
               mobileMenuOpen ? "flex" : "hidden"
-            } flex-grow basis-[100%] items-center lg:mt-0 lg:!flex lg:basis-auto`}
+            } flex-grow basis-[100%] items-center justify-between lg:mt-0 lg:!flex lg:basis-auto`}
             id="navbarSupportedContent11"
             data-twe-collapse-item
           >
             {/* Left links */}
+            <div className="">
             <ul
               className="list-style-none me-auto flex flex-col ps-0 lg:mt-1 lg:flex-row"
               data-twe-navbar-nav-ref
@@ -138,7 +139,12 @@ const Navbar = () => {
                 </Link>
               </li>
               {/* Conditionally show additional links when logged in */}
-              {isAuth && (
+             
+            </ul>
+           
+            </div>
+            <div>
+            {isAuth && (
                 <li className="relative group">
                   <div className="justify-between">
                   <div className="flex items-center cursor-pointer justify-between bg-slate-200 h-12">
@@ -146,8 +152,8 @@ const Navbar = () => {
                   </div>
                   </div>
                   {/* Dropdown links */}
-                  <ul className="absolute hidden w-40 bg-white rounded-md shadow-lg top-10 right-0 z-10 group-hover:block">
-                    <li>
+                  <ul className="absolute hidden w-40 bg-white rounded-md shadow-lg top-10 right-0 z-10 group-hover:block list-none">
+                    <li className="">
                       <Link
                         to="/saved-recipes"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
@@ -180,12 +186,13 @@ const Navbar = () => {
                       </Link>
                     </li>
                   </ul>
+                  
                 </li>
               )}
-            </ul>
+              </div> 
+
           </div>
           {/* search bar */}
-
           <div className="relative">
             <form className="relative w-max">
               <input
