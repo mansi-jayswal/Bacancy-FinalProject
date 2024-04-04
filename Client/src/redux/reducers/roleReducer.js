@@ -4,7 +4,7 @@ const initialState = {
   isAuth: false,
   admin: null,
   user: null,
-  seller: null,
+  sub_admin: null,
 };
 
 const roleReducer = (state = initialState, action) => {
@@ -19,7 +19,7 @@ const roleReducer = (state = initialState, action) => {
         isAuth: false,
         admin: null,
         user: null,
-        seller: null,
+        sub_admin: null,
       };
     }
     default: {

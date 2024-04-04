@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { signupFields } from "../constants/formFields";
 import FormAction from './formActions';
 import Input from './Input';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setRole } from '../../../redux/actions/actions';
-import { RegisterUser } from '../../../utils/axios';
+import { API, RegisterUser } from '../../../utils/axios';
 
 const fields = signupFields;
 let fieldsState = {};
@@ -16,6 +16,13 @@ export default function Signup() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [signupState, setSignupState] = useState(fieldsState);
+    const [users, setUsers]= useState();
+
+    useEffect(()=>{
+        API.get('/users')
+        .then(res=> setUsers(res.data))
+        .catch(err=> console.log(err));
+    })
 
     const handleChange = (e) => setSignupState({ ...signupState, [e.target.id]: e.target.value });
 
@@ -28,7 +35,10 @@ export default function Signup() {
 
     const createAccount = () => {
         const newUser = {
-            id:'12345',
+            id:
+            users.length !== 0
+              ? (parseInt(users[users.length - 1].id) + 1).toString()
+              : "1",
             name: signupState.name,
             email: signupState.email,
             password: signupState.password,

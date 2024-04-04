@@ -5,6 +5,7 @@ import LoginPage from '../components/pages/auth/LoginPage'
 import SignupPage from '../components/pages/auth/SignupPage'
 import RecipeListing from '../components/pages/recipe/RecipeListing'
 import RecipeDetails from '../components/pages/recipe/RecipeDetails'
+import SavedRecipes from '../components/pages/user/SavedRecipes'
 
 function Index() {
   return (
@@ -16,6 +17,7 @@ function Index() {
             <Route path='/login' exact element={<LoginPage /> }></Route>
             <Route path='/signup' exact element={<SignupPage />}></Route>
             <Route path='/recipes' exact element={<RecipeListing />}></Route>
+            <Route path='/saved-recipes' exact element={<SavedRecipes />}></Route>
             <Route path="/recipes/:id" element={<RecipeDetails />} /> {/* Dynamic route with recipe ID */}
 
         </Routes>

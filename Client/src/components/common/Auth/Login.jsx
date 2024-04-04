@@ -1,11 +1,12 @@
-import { useState  } from 'react';
+import { useEffect, useState  } from 'react';
 import { useDispatch } from 'react-redux'
 import Input from './Input';
 import FormExtra from './FromExtra';
 import FormAction from './formActions';
 import { loginFields } from "../constants/formFields";
-// import { loginUser } from '../../../redux/actions/actions';
 import { useNavigate } from 'react-router-dom';
+import { getUsers } from '../../../utils/axios';
+import { setRole } from '../../../redux/actions/actions';
 
 const fields=loginFields;
 let fieldsState = {};
@@ -13,22 +14,35 @@ fields.forEach(field=>fieldsState[field.id]='');
 
 export default function Login(){
     const [loginState,setLoginState]=useState(fieldsState);
+    const [users, setUsers]=useState([])
     const dispatch = useDispatch();
     const navigate=useNavigate();
+
+    useEffect(()=>{
+        getUsers()
+        .then(res=> setUsers(res.data))
+        .catch(err=> console.log(err));
+    },[])
+
+
     const handleChange=(e)=>{
         setLoginState({...loginState,[e.target.id]:e.target.value})
     }
 
     const handleSubmit=(e)=>{
         e.preventDefault();
-        // authenticateUser();
+        authenticateUser(loginState);
         console.log(loginState)
-        // dispatch(loginUser(loginState));
         navigate('/');
     }
 
-    const authenticateUser = () =>{
-        
+    const authenticateUser = (loginState) =>{
+        const { email , password} = loginState;
+        const user = users.find((user) => user.email === email);
+        if (user && user.password === password) {
+          dispatch(setRole('user', user)); 
+        }
+
     }
 
     return(
@@ -56,5 +70,7 @@ export default function Login(){
         <FormAction handleSubmit={handleSubmit} text="Login"/>
 
       </form>
-    )
+    );
+        
+
 }

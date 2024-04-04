@@ -105,7 +105,7 @@ function Home() {
       <img src={banner} alt="banner" className="w-full h-auto mr-4 " />
 
       {/* category round images */}
-      <Section />
+      {/* <Section /> */}
       {/* recommended for you */}
       <Heading text="Recommended for you" />
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 m-2 w-[90%] mx-auto">

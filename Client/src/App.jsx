@@ -4,6 +4,8 @@ import Footer from './components/layout/footer/Footer'
 import Navbar from './components/layout/navbar/Navbar'
 import Loader from './components/common/Loader';
 import Index from './routes/Index';
+import {Bounce , ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [loading , setLoading]=useState(true);
@@ -16,6 +18,8 @@ function App() {
   return (
 
     <>
+    <ToastContainer  autoClose={2000} closeOnClick pauseOnFocusLoss={false} pauseOnHover transition={Bounce} />
+
     {
       loading ? <Loader /> :
        <>

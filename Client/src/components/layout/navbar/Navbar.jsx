@@ -152,7 +152,7 @@ const Navbar = () => {
                   </div>
                   </div>
                   {/* Dropdown links */}
-                  <ul className="absolute hidden w-40 bg-white rounded-md shadow-lg top-10 right-0 z-10 group-hover:block list-none">
+                  <ul className="absolute hidden w-40 bg-white rounded-md shadow-lg top-10 right-0 z-10 group-hover:block">
                     <li className="">
                       <Link
                         to="/saved-recipes"
