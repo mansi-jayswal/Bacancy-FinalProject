@@ -84,11 +84,11 @@ const RecipeDetails = () => {
         } catch (error) {
           console.log(error);
         }
-        toast.success("Added to whishlist!", {
+        toast.success("Added to SavedRecipe!", {
           position: "top-right",
         });
       } else {
-        toast.success("Already in whishlist!", {
+        toast.info("Already Saved!", {
           position: "top-right",
         });
       }

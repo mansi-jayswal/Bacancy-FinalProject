@@ -88,9 +88,9 @@ function Home() {
   }, [recipes, user]);
 
   const filterRecipes = (recipes) => {
-    if (user && user.preferred_cuisine) {
+    if (user && user.preference) {
       const filtered = recipes.filter(
-        (recipe) => recipe.cuisine.toLowerCase() === user.preferred_cuisine.toLowerCase()
+        (recipe) => recipe.cuisine.toLowerCase() === user.preference.toLowerCase()
       );
       setFilteredRecipes(filtered);
     }

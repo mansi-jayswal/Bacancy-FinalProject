@@ -13,6 +13,7 @@ const Navbar = () => {
   const dispatch=useDispatch();
   const navigate= useNavigate();
   const isAuth = useSelector((state)=>state.role.isAuth);
+  const user = useSelector((state)=>state.role.user);
   console.log(isAuth)
 
   const toggleMobileMenu = () => {
@@ -65,9 +66,9 @@ const Navbar = () => {
                 </svg>
               </span>
             </button>
-            <button onClick={handleLogout}>
+            {/* <button onClick={handleLogout}>
               Logout
-            </button>
+            </button> */}
           </div>
 
           {/* small screen navbar menu */}
@@ -134,7 +135,7 @@ const Navbar = () => {
                   data-twe-nav-link-ref
                 >
                   {
-                    isAuth ? "Hello Chef! " : "Login/register"
+                    isAuth ? `Hello ${user.name.toUpperCase()}` : "Login/register"
                   }
                 </Link>
               </li>
@@ -178,12 +179,15 @@ const Navbar = () => {
                       </Link>
                     </li>
                     <li>
-                      <Link
-                        to="/logout"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      <Link className="">
+                      <button
+                        onClick={handleLogout}
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100  "
                       >
                         Logout <IoIosLogOut />
+                      </button>
                       </Link>
+
                     </li>
                   </ul>
                   
