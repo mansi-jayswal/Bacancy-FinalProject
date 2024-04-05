@@ -117,11 +117,13 @@ const Navbar = () => {
                 data-twe-nav-item-ref
               >
                 <Link
-                  to="/blogs"
+                  to={
+                    isAuth ? '/new-recipe' : '/login'
+                  }
                   className="p-0 text-black/60 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 active:text-black/80 motion-reduce:transition-none lg:px-2"
                   data-twe-nav-link-ref
                 >
-                  Blogs
+                  Submit your Recipe
                 </Link>
               </li>
               {/* About link */}

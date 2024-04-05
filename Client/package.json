@@ -19,7 +19,8 @@
     "react-spinners": "^0.13.8",
     "react-toastify": "^10.0.5",
     "redux": "^5.0.1",
-    "redux-persist": "^6.0.0"
+    "redux-persist": "^6.0.0",
+    "swal": "^0.1.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

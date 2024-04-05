@@ -57,3 +57,20 @@ export const API = axios.create({
     }
   };
   
+  export const placeNewRecipe = async (recipe) => {
+    try {
+      const res = await API.post("recipes", recipe);
+      return {
+        success: true,
+        data: res.data,
+        error: null,
+      };
+    } catch (error) {
+      return {
+        success: false,
+        data: null,
+        error: error.message,
+      };
+    }
+  };
+  
