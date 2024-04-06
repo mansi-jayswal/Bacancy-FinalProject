@@ -1,8 +1,11 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import Button from '../../common/Button'
+import { useNavigate } from 'react-router-dom'
 
 function ProfilePage() {
     const user = useSelector(state=>state.role.user)
+    const navigate=useNavigate();
   return (
     <div>
        <div className="h-screen  dark:bg-gray-800 flex flex-wrap items-center justify-center">
@@ -41,15 +44,16 @@ function ProfilePage() {
           <hr className="mt-6" />
           <div className="flex bg-gray-50">
             <div className="text-center w-1/2 p-4 hover:bg-gray-100 cursor-pointer">
-              <p>
+              <button onClick={()=>navigate('/saved-recipes')}>
                 <span className="font-semibold">{user.saved_recipes.length}</span> Saved recipes
-              </p>
+              </button>
             </div>
             <div className="border"></div>
             <div className="text-center w-1/2 p-4 hover:bg-gray-100 cursor-pointer">
-              <p>
+              <button onClick={()=> navigate('/my-creations')}>
                 <span className="font-semibold">{user.created_recipes.length}</span> Created recipes
-              </p>
+              </button>
+              {/* <Button children={user.created_recipes.length} handleClick={()=>navigate('/my-creations')} /> */}
             </div>
           </div>
         </div>
