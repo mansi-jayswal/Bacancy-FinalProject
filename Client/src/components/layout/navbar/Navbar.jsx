@@ -3,17 +3,29 @@ import { FaUserCircle } from "react-icons/fa";
 import { MdBookmarks } from "react-icons/md";
 import { BiDish } from "react-icons/bi";
 import { IoIosLogOut } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../../assets/logo.png";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { removeRole } from "../../../redux/actions/actions";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const isLoggedIn = useSelector(state=>state.auth.isLoggedIn);
+  const dispatch=useDispatch();
+  const navigate= useNavigate();
+  const isAuth = useSelector((state)=>state.role.isAuth);
+  const user = useSelector((state)=>state.role.user);
+  console.log(isAuth)
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
+
+  const handleLogout=()=>{
+      dispatch(removeRole());
+      alert('logout succesfully');
+      navigate('/')
+      
+  }
 
   return (
     <>
@@ -54,17 +66,21 @@ const Navbar = () => {
                 </svg>
               </span>
             </button>
+            {/* <button onClick={handleLogout}>
+              Logout
+            </button> */}
           </div>
 
           {/* small screen navbar menu */}
           <div
             className={`!visible mt-2 ${
               mobileMenuOpen ? "flex" : "hidden"
-            } flex-grow basis-[100%] items-center lg:mt-0 lg:!flex lg:basis-auto`}
+            } flex-grow basis-[100%] items-center justify-between lg:mt-0 lg:!flex lg:basis-auto`}
             id="navbarSupportedContent11"
             data-twe-collapse-item
           >
             {/* Left links */}
+            <div className="">
             <ul
               className="list-style-none me-auto flex flex-col ps-0 lg:mt-1 lg:flex-row"
               data-twe-navbar-nav-ref
@@ -88,7 +104,7 @@ const Navbar = () => {
                 data-twe-nav-item-ref
               >
                 <Link
-                  to="/recipesByUs"
+                  to="/recipes"
                   className="p-0 text-black/60 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 active:text-black/80 motion-reduce:transition-none lg:px-2"
                   data-twe-nav-link-ref
                 >
@@ -101,11 +117,13 @@ const Navbar = () => {
                 data-twe-nav-item-ref
               >
                 <Link
-                  to="/blogs"
+                  to={
+                    isAuth ? '/new-recipe' : '/login'
+                  }
                   className="p-0 text-black/60 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 active:text-black/80 motion-reduce:transition-none lg:px-2"
                   data-twe-nav-link-ref
                 >
-                  Blogs
+                  Submit your Recipe
                 </Link>
               </li>
               {/* About link */}
@@ -119,12 +137,17 @@ const Navbar = () => {
                   data-twe-nav-link-ref
                 >
                   {
-                    isLoggedIn ? "Hello Chef! " : "Login/register"
+                    isAuth ? `Hello ${user.name.toUpperCase()}` : "Login/register"
                   }
                 </Link>
               </li>
               {/* Conditionally show additional links when logged in */}
-              {isLoggedIn && (
+             
+            </ul>
+           
+            </div>
+            <div>
+            {isAuth && (
                 <li className="relative group">
                   <div className="justify-between">
                   <div className="flex items-center cursor-pointer justify-between bg-slate-200 h-12">
@@ -133,7 +156,7 @@ const Navbar = () => {
                   </div>
                   {/* Dropdown links */}
                   <ul className="absolute hidden w-40 bg-white rounded-md shadow-lg top-10 right-0 z-10 group-hover:block">
-                    <li>
+                    <li className="">
                       <Link
                         to="/saved-recipes"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
@@ -158,20 +181,24 @@ const Navbar = () => {
                       </Link>
                     </li>
                     <li>
-                      <Link
-                        to="/logout"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      <Link className="">
+                      <button
+                        onClick={handleLogout}
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100  "
                       >
                         Logout <IoIosLogOut />
+                      </button>
                       </Link>
+
                     </li>
                   </ul>
+                  
                 </li>
               )}
-            </ul>
+              </div> 
+
           </div>
           {/* search bar */}
-
           <div className="relative">
             <form className="relative w-max">
               <input
