@@ -1,14 +1,15 @@
-import { useState , useEffect } from 'react'
-import './App.css'
-import Footer from './components/layout/footer/Footer'
-import Navbar from './components/layout/navbar/Navbar'
-import Loader from './components/common/Loader';
-import Index from './routes/Index';
-import {Bounce , ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { RouterProvider } from "react-router-dom";
+import { useState, useEffect } from "react";
+import "./App.css";
+import Loader from "./components/common/Loader";
+import { Bounce, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import IndexRoute from "./routes/IndexRoute";
 
 function App() {
-  const [loading , setLoading]=useState(true);
+  const [loading, setLoading] = useState(true);
+  const router = IndexRoute();
+
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
@@ -16,23 +17,24 @@ function App() {
   }, []);
 
   return (
-
     <>
-    <ToastContainer  autoClose={2000} closeOnClick pauseOnFocusLoss={false} pauseOnHover transition={Bounce} />
+      <ToastContainer
+        autoClose={2000}
+        closeOnClick
+        pauseOnFocusLoss={false}
+        pauseOnHover
+        transition={Bounce}
+      />
 
-    {
-      loading ? <Loader /> :
-       <>
-       <div className='min-h-screen'>
-      <Navbar />
-        <Index />
-      <Footer />
-      </div>
-      </>
-    }
-    
+      {loading ? (
+        <Loader />
+      ) : (
+        <>
+          <RouterProvider router={router} />
+        </>
+      )}
     </>
-  )
+  );
 }
 
-export default App
+export default App;

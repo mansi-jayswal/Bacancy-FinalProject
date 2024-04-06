@@ -62,7 +62,7 @@ const UpdateRecipe = () => {
       title: recipe.title ,
       ingredients: recipe.ingredients.split(',').map(ingredient => ingredient.trim()).filter(Boolean),
       method : recipe.method ,
-      type: recipe.type ,
+      type: recipe.type,
       cuisine : recipe.cuisine ,
       tags: recipe.tags.split(',').map(tag => tag.trim()).filter(Boolean),
       difficulty : recipe.difficulty ,
