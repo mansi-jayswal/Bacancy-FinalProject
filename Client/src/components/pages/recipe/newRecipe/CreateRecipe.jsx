@@ -9,11 +9,11 @@ import { toast } from 'react-toastify';
 const CreateRecipe = () => {
   const [recipe, setRecipe] = useState({
     title: '',
-    ingredients: '',
+    ingredients: [],
     method: '',
     type: '',
     cuisine: '',
-    tags: '',
+    tags: [],
     difficulty: '',
     cookingTime: '',
     servingSize: '',
@@ -59,18 +59,18 @@ const CreateRecipe = () => {
         ? (parseInt(recipes[recipes.length - 1].id) + 1).toString()
         : "1",
         title: recipe.title ,
-        ingredients: recipe.ingredients.split(','),
+        ingredients: recipe.ingredients.split(',').map(ingredient => ingredient.trim()),
         method : recipe.method ,
         type: recipe.type ,
         cuisine : recipe.cuisine ,
-        tags: recipe.tags.split(',') ,
+        tags: recipe.tags.split(',').map(tag => tag.trim()),
         difficulty : recipe.difficulty ,
         cookingTime: recipe.cookingTime , 
         servingSize : recipe.servingSize ,
         img: recipe.image ,
         reviews:[] ,
-        likesCount: 200 ,
-        authorID: user.id ,
+        likesCount: 51 ,
+        authorId: user.id ,
         authorName: user.name
     }
     console.log(newRecipe);

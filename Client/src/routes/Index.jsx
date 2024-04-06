@@ -8,6 +8,7 @@ import RecipeDetails from '../components/pages/recipe/RecipeDetails'
 import SavedRecipes from '../components/pages/user/SavedRecipes'
 import CreateRecipe from '../components/pages/recipe/newRecipe/CreateRecipe'
 import CreatedRecipes from '../components/pages/user/CreatedRecipes'
+import UpdateRecipe from '../components/pages/recipe/newRecipe/UpdateRecipe'
 
 function Index() {
   return (
@@ -22,6 +23,7 @@ function Index() {
             <Route path='/saved-recipes' exact element={<SavedRecipes />}></Route>
             <Route path='/new-recipe' exact element={<CreateRecipe />}></Route>
             <Route path='/my-creations' exact element={<CreatedRecipes />}></Route>
+            <Route path='/update-recipe/:id' exact element={<UpdateRecipe />}></Route>
             <Route path="/recipes/:id" element={<RecipeDetails />} /> {/* Dynamic route with recipe ID */}
 
         </Routes>

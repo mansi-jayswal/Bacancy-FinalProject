@@ -3,9 +3,8 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import Loader from "../../common/Loader";
 import { IoIosTime } from "react-icons/io";
-import { FaHeart, FaUser  } from "react-icons/fa";
+import { FaEdit, FaHeart, FaUser } from "react-icons/fa";
 import { MdBookmarks } from "react-icons/md";
-
 import Review from "../../common/Review";
 import { useDispatch, useSelector } from "react-redux";
 import { API } from "../../../utils/axios";
@@ -17,11 +16,12 @@ const RecipeDetails = () => {
   const [recipe, setRecipe] = useState(null);
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
-  const navigate= useNavigate();
-  const dispatch= useDispatch();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const isAuth = useSelector((state)=>state.role.isAuth);
-  const user = useSelector((state)=>state.role.user);
+  const isAuth = useSelector((state) => state.role.isAuth);
+  const user = useSelector((state) => state.role.user);
+
 
   useEffect(() => {
     const fetchRecipe = async () => {
@@ -54,28 +54,25 @@ const RecipeDetails = () => {
     fetchReviews();
   }, [id]);
 
-  const handleSave = async () =>{
-    if(!isAuth) {
-      toast.warn('please first login');
-      navigate('/login');
-    }
-    // else {
-    //   console.log('you clicked saved button');
-    //   user.saved_recipes.push(recipe);
-    //   try {
-    //     const data = await API.patch(`/users/${user.id}`, user);
-    //     dispatch(setRole("user", user));
-    //   } catch (error) {
-    //     console.log(error);
-    //   }
-    //   console.log(user);
-  
-    // }
-    else{
+  console.log(recipe)
+
+  let isEditAllowed = false;
+  if (recipe && user && recipe.authorId === user.id) { 
+    isEditAllowed = true;
+  }
+
+  console.log(isEditAllowed)
+
+
+  const handleSave = async () => {
+    if (!isAuth) {
+      toast.warn("please first login");
+      navigate("/login");
+    } else {
       const alreaydLiked = user.saved_recipes.filter(
         (recipes) => recipes.id === recipe.id
       );
-  
+
       if (alreaydLiked.length === 0) {
         user.saved_recipes.push(recipe);
         try {
@@ -93,6 +90,11 @@ const RecipeDetails = () => {
         });
       }
     }
+  };
+
+  const handleEdit = () =>{
+    console.log('you clicked edit button');
+    navigate(`/update-recipe/${id}`);
   }
 
   if (loading) {
@@ -107,12 +109,23 @@ const RecipeDetails = () => {
     <div className="max-w-4xl mx-auto mt-8">
       <div className="flex justify-between ">
         <div>
-      <h2 className="text-3xl font-bold mb-4 text-customRed">{recipe.title}</h2>
+          <h2 className="text-3xl font-bold mb-4 text-customRed">
+            {recipe.title}
+          </h2>
         </div>
-        <div className="mb-4 " >
-          <button onClick={handleSave} title="Save this recipe">
-        <MdBookmarks size={20} />
-          </button>
+        <div className="mb-4 flex">
+          <div className="m-2">
+            <button onClick={handleSave} title="Save this recipe">
+              <MdBookmarks size={25} />
+            </button>
+          </div>
+          <div className="m-2">
+            {isEditAllowed ? (
+              <button onClick={handleEdit} title="Edit this recipe">
+                <FaEdit size={25} />
+              </button>
+            ) : null}
+          </div>
         </div>
       </div>
       <div className="flex justify-between text-gray-600 mb-4">
@@ -179,8 +192,7 @@ const RecipeDetails = () => {
       </div>
 
       {/* review section */}
-      {/* <Review reviews={reviews} /> */}
-
+      <Review reviews={reviews} />
     </div>
   );
 };

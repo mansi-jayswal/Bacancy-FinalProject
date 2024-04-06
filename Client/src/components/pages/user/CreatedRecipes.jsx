@@ -1,14 +1,34 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import RecipeCard from '../recipe/RecipeCard';
 import { FaEdit } from "react-icons/fa";
 import Button from '../../common/Button';
 import { MdDelete } from 'react-icons/md';
+import { API } from '../../../utils/axios';
+import { toast } from 'react-toastify';
+import { setRole } from '../../../redux/actions/actions';
 
 
 function CreatedRecipes() {
     const user = useSelector((state)=> state.role.user);
     const recipes= user.created_recipes;
+    const dispatch = useDispatch();
+    
+    const handleDelete = async (idOfTheRecipeToDelete) =>{
+      console.log('button clicked');
+      try {
+        const updatedCreatedRecipes = user.created_recipes.filter(
+          (recipe) => recipe.id != idOfTheRecipeToDelete
+        );
+        const updatedUser = { ...user, created_recipes: updatedCreatedRecipes };
+        await API.delete(`recipes/${idOfTheRecipeToDelete}`)
+        await API.patch(`/users/${user.id}`, updatedUser);
+        dispatch(setRole("user", updatedUser));
+      } catch (err) {
+        console.log(err);
+      }
+      toast.error('Recipe Deleted :(');
+    }
   return (
     <div>
       <div className='text-center'>
@@ -23,11 +43,7 @@ function CreatedRecipes() {
             <Button 
             children={<MdDelete />}
             title='delete recipe'
-            handleClick={()=> handleRemoveFromSave(recipe.id)} />
-            <Button 
-            children={<FaEdit />}
-            title='edit recipe'
-            handleClick={()=> handleRemoveFromSave(recipe.id)} />
+            handleClick={()=> handleDelete(recipe.id)} />
             </div>
         </div>
       ))}

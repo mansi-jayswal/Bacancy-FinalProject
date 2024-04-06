@@ -73,4 +73,21 @@ export const API = axios.create({
       };
     }
   };
+
+  export const updateRecipe = async (id, recipe) => {
+    try {
+        const res = await API.patch(`/recipes/${id}`, recipe);
+        return {
+            success: true,
+            data: res.data,
+            error: null,
+        };
+    } catch (error) {
+        return {
+            success: false,
+            data: [],
+            error: error.message,
+        };
+    }
+  };
   
