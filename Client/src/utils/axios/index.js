@@ -4,23 +4,7 @@ export const API = axios.create({
     baseURL: "http://localhost:3000",
     timeout: 5000,
   });
-
-  export const getRecipes = async () => {
-    try {
-      const res = await API.get("recipes");
-      return {
-        success: true,
-        data: res.data,
-        error: null,
-      };
-    } catch (error) {
-      return {
-        sucess: false,
-        data: [],
-        error: error.message,
-      };
-    }
-  };
+// *******************************API calls on user Schema***********************************
 
   export const getUsers = async () => {
     try {
@@ -32,7 +16,24 @@ export const API = axios.create({
       };
     } catch (error) {
       return {
-        sucess: false,
+        success: false,
+        data: [],
+        error: error.message,
+      };
+    }
+  };
+
+  export const getUserById = async (userId) => {
+    try {
+      const res = await API.get("users/userId");
+      return {
+        success: true,
+        data: res.data,
+        error: null,
+      };
+    } catch (error) {
+      return {
+        success: false,
         data: [],
         error: error.message,
       };
@@ -52,6 +53,59 @@ export const API = axios.create({
       return {
         success: false,
         data: null,
+        error: error.message,
+      };
+    }
+  };
+
+  export const updateUser = async (userId , userData ) => {
+    try {
+      const res = await API.patch(`users/${userId}`, userData);
+      return {
+        success: true,
+        data: res.data,
+        error: null,
+      };
+    } catch (error) {
+      return {
+        success: false,
+        data: null,
+        error: error.message,
+      };
+    }
+  };
+
+// *******************************API calls on Recipe Schema***********************************
+ 
+  export const getRecipes = async () => {
+    try {
+      const res = await API.get("recipes");
+      return {
+        success: true,
+        data: res.data,
+        error: null,
+      };
+    } catch (error) {
+      return {
+        success: false,
+        data: [],
+        error: error.message,
+      };
+    }
+  };
+
+  export const getRecipeById = async (recipeId) => {
+    try {
+      const res = await API.get(`recipes/${recipeId}`);
+      return {
+        success: true,
+        data: res.data,
+        error: null,
+      };
+    } catch (error) {
+      return {
+        success: false,
+        data: [],
         error: error.message,
       };
     }
@@ -90,4 +144,40 @@ export const API = axios.create({
         };
     }
   };
-  
+
+  export const deleteRecipe = async (id) => {
+    try {
+        const res = await API.delete(`/recipes/${id}`);
+        return {
+            success: true,
+            data: res.data,
+            error: null,
+        };
+    } catch (error) {
+        return {
+            success: false,
+            data: [],
+            error: error.message,
+        };
+    }
+  };
+
+
+ //******************************API calls on reviews****************************/
+
+ export const getReviewsOnRecipe = async (recipeId) => {
+  try {
+    const res = await API.get(`reviews?postId=${recipeId}`);
+    return {
+      success: true,
+      data: res.data,
+      error: null,
+    };
+  } catch (error) {
+    return {
+      success: false,
+      data: [],
+      error: error.message,
+    };
+  }
+};

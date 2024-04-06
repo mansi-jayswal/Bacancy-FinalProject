@@ -3,10 +3,21 @@ import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 
 function Review({ reviews }) {
 
+  const handleReview = () =>{
+    console.log('you clicked add review button!')
+  }
+
   return (
     <div>
       <div>
+        <div className="flex justify-between">
+          <div>
         <h3 className="text-xl font-bold mb-2 mt-2">Reviews</h3>
+          </div>
+          <div>
+        <button className="text-xl font-bold mb-2 mt-2" onClick={handleReview}> + Add your Review..</button>
+          </div>
+        </div>
 
         {reviews.length === 0 ? (
           <p>No reviews yet.</p>

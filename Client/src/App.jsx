@@ -1,5 +1,5 @@
 import { RouterProvider } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import "./App.css";
 import Loader from "./components/common/Loader";
 import { Bounce, ToastContainer } from "react-toastify";
@@ -18,21 +18,16 @@ function App() {
 
   return (
     <>
-      <ToastContainer
-        autoClose={2000}
-        closeOnClick
-        pauseOnFocusLoss={false}
-        pauseOnHover
-        transition={Bounce}
-      />
-
-      {loading ? (
-        <Loader />
-      ) : (
-        <>
-          <RouterProvider router={router} />
-        </>
-      )}
+      <Suspense fallback={<Loader />}>
+        <ToastContainer
+          autoClose={2000}
+          closeOnClick
+          pauseOnFocusLoss={false}
+          pauseOnHover
+          transition={Bounce}
+        />
+        <RouterProvider router={router} />
+      </Suspense>
     </>
   );
 }

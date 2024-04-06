@@ -1,20 +1,22 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import Layout from '../components/layout/Layout';
-import PrivateRoutesUser from './privateRoutes/privateRoutesUser/PrivateRoutesUser';
-import PrivateRoutesAdmin from './privateRoutes/privateRoutesAdmin/PrivateRoutesAdmin';
-import PrivateRoutesSubAdmin from './privateRoutes/privateRoutesSubAdmin/PrivateRoutesSubAdmin';
-import Home from '../components/pages/home/Home';
-import LoginPage from '../components/pages/auth/LoginPage';
-import SignupPage from '../components/pages/auth/SignupPage';
-import RecipeListing from '../components/pages/recipe/RecipeListing'
-import RecipeDetails from '../components/pages/recipe/RecipeDetails'
-import SavedRecipes from '../components/pages/user/SavedRecipes'
-import CreatedRecipes from '../components/pages/user/CreatedRecipes'
-import CreateRecipe from '../components/pages/recipe/newRecipe/CreateRecipe'
-import UpdateRecipe from '../components/pages/recipe/newRecipe/UpdateRecipe'
-import ErrorPage from '../components/pages/error/ErrorPage';
+
+// Lazy-loaded components
+const Layout = React.lazy(() => import('../components/layout/Layout'));
+const PrivateRoutesUser = React.lazy(() => import('./privateRoutes/privateRoutesUser/PrivateRoutesUser'));
+const PrivateRoutesAdmin = React.lazy(() => import('./privateRoutes/privateRoutesAdmin/PrivateRoutesAdmin'));
+const PrivateRoutesSubAdmin = React.lazy(() => import('./privateRoutes/privateRoutesSubAdmin/PrivateRoutesSubAdmin'));
+const Home = React.lazy(() => import('../components/pages/home/Home'));
+const LoginPage = React.lazy(() => import('../components/pages/auth/LoginPage'));
+const SignupPage = React.lazy(() => import('../components/pages/auth/SignupPage'));
+const RecipeListing = React.lazy(() => import('../components/pages/recipe/RecipeListing'));
+const RecipeDetails = React.lazy(() => import('../components/pages/recipe/RecipeDetails'));
+const SavedRecipes = React.lazy(() => import('../components/pages/user/SavedRecipes'));
+const CreatedRecipes = React.lazy(() => import('../components/pages/user/CreatedRecipes'));
+const CreateRecipe = React.lazy(() => import('../components/pages/recipe/newRecipe/CreateRecipe'));
+const UpdateRecipe = React.lazy(() => import('../components/pages/recipe/newRecipe/UpdateRecipe'));
+const ErrorPage = React.lazy(() => import('../components/pages/error/ErrorPage'));
 
 
 function IndexRoute() {

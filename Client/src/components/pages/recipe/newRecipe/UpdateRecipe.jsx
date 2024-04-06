@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Button from "../../../common/Button";
-import { API, getRecipes, updateRecipe } from "../../../../utils/axios";
+import { API, getRecipes, updateRecipe, updateUser } from "../../../../utils/axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setRole } from "../../../../redux/actions/actions";
@@ -79,24 +79,30 @@ const UpdateRecipe = () => {
       await updateRecipe(id, newRecipe);
       toast.success("Recipe updated successfully!");
 
-      // Find the index of the updated recipe in the user's created_recipes array
       const index = user.created_recipes.findIndex((r) => r.id === id);
 
-      // If the recipe is found, update it with the new recipe data
-      if (index !== -1) {
+      if (index !== -1) 
+      {
         const updatedUser = { ...user };
         updatedUser.created_recipes[index] = { ...newRecipe, id };
-
-        // Make an API call to update the user schema with the modified created_recipes field
-        await API.patch(`/users/${user.id}`, updatedUser);
-
-        // Update the user in Redux state
-        dispatch(setRole("user", updatedUser));
+        try 
+        {
+          const res = await updateUser(user.id, updatedUser);
+          if (res.success) {
+            setLoading(false);
+            dispatch(setRole("user", user));
+          } else {
+            console.log("error in updating the user from saveRecipe");
+          }
+        } 
+        catch (error) {
+          console.log('error in updating the recipe by making api call', error);
+        }
+        navigate("/my-creations");
       }
 
-      // Navigate to the my-creations page
-      navigate("/my-creations");
-    } catch (error) {
+    } catch (error) 
+    {
       console.log("Error updating recipe: ", error);
       toast.error("Failed to update recipe. Please try again.");
     }

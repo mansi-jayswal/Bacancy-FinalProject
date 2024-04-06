@@ -7,7 +7,7 @@ import { FaEdit, FaHeart, FaUser } from "react-icons/fa";
 import { MdBookmarks } from "react-icons/md";
 import Review from "../../common/Review";
 import { useDispatch, useSelector } from "react-redux";
-import { API } from "../../../utils/axios";
+import { API, getRecipeById, getReviewsOnRecipe, updateUser } from "../../../utils/axios";
 import { toast } from "react-toastify";
 import { setRole } from "../../../redux/actions/actions";
 
@@ -27,11 +27,15 @@ const RecipeDetails = () => {
     const fetchRecipe = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`http://localhost:3000/recipes/${id}`);
-        setRecipe(response.data);
-        setLoading(false);
+        const res = await getRecipeById(id);
+        if (res.success) {
+          setRecipe(res.data); 
+        } else {
+          console.error('Error fetching the recipe:', res.error);
+        }
       } catch (error) {
-        console.error("Error fetching recipe:", error);
+        console.error('Error fetching recipe:', error);
+      } finally {
         setLoading(false);
       }
     };
@@ -39,14 +43,17 @@ const RecipeDetails = () => {
     const fetchReviews = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(
-          `http://localhost:3000/reviews?postId=${id}`
-        );
-        setReviews(response.data);
-        setLoading(false);
+        const res = await getReviewsOnRecipe(id);
+        if (res.success) {
+          setReviews(res.data);
+        } else {
+          console.error('Error fetching the reviews:', res.error);
+        }
       } catch (error) {
-        console.error("Error fetching reviews:", error);
+        console.error('Error fetching reviews:', error);
+      } finally {
         setLoading(false);
+        console.log('reviews', reviews)
       }
     };
 
@@ -61,7 +68,7 @@ const RecipeDetails = () => {
     isEditAllowed = true;
   }
 
-  console.log(isEditAllowed)
+  console.log("is edit allowed : ---------> " +isEditAllowed)
 
 
   const handleSave = async () => {
@@ -76,9 +83,16 @@ const RecipeDetails = () => {
       if (alreaydLiked.length === 0) {
         user.saved_recipes.push(recipe);
         try {
-          const data = await API.patch(`/users/${user.id}`, user);
-          dispatch(setRole("user", user));
-        } catch (error) {
+          const res = await updateUser(user.id , user)
+          if(res.success){
+            setLoading(false);
+            dispatch(setRole("user", user));
+          }
+          else{
+            console.log('error in updating the user from saveRecipe')
+          }
+        }
+         catch (error) {
           console.log(error);
         }
         toast.success("Added to SavedRecipe!", {
@@ -106,7 +120,7 @@ const RecipeDetails = () => {
   }
 
   return (
-    <div className="max-w-4xl mx-auto mt-8">
+    <div className="max-w-4xl ml-4 mr-4 lg:mx-auto mt-8">
       <div className="flex justify-between ">
         <div>
           <h2 className="text-3xl font-bold mb-4 text-customRed">
