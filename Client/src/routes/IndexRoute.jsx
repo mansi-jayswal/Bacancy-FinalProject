@@ -1,6 +1,7 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import ProfilePage from '../components/pages/user/ProfilePage';
 
 // Lazy-loaded components
 const Layout = React.lazy(() => import('../components/layout/Layout'));
@@ -17,7 +18,7 @@ const CreatedRecipes = React.lazy(() => import('../components/pages/user/Created
 const CreateRecipe = React.lazy(() => import('../components/pages/recipe/newRecipe/CreateRecipe'));
 const UpdateRecipe = React.lazy(() => import('../components/pages/recipe/newRecipe/UpdateRecipe'));
 const ErrorPage = React.lazy(() => import('../components/pages/error/ErrorPage'));
-
+const AddReview = React.lazy(()=>import('../components/pages/review/AddReview'));
 
 function IndexRoute() {
   const { isAuth, user, sub_admin, admin } = useSelector((state) => state.role);
@@ -72,6 +73,14 @@ function IndexRoute() {
             {
                 path:'update-recipe/:id',
                 element: <UpdateRecipe />
+            },
+            {
+                path:'add-review/:id',
+                element: <AddReview />
+            },
+            {
+                path:'/profile',
+                element: <ProfilePage />
             }
           ],
         },

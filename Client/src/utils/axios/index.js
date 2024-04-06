@@ -25,7 +25,7 @@ export const API = axios.create({
 
   export const getUserById = async (userId) => {
     try {
-      const res = await API.get("users/userId");
+      const res = await API.get(`users/${userId}`);
       return {
         success: true,
         data: res.data,
@@ -177,6 +177,41 @@ export const API = axios.create({
     return {
       success: false,
       data: [],
+      error: error.message,
+    };
+  }
+};
+
+
+ export const getAllReviews = async () => {
+  try {
+    const res = await API.get('reviews');
+    return {
+      success: true,
+      data: res.data,
+      error: null,
+    };
+  } catch (error) {
+    return {
+      success: false,
+      data: [],
+      error: error.message,
+    };
+  }
+};
+
+export const placeNewReview = async (review) => {
+  try {
+    const res = await API.post("reviews", review);
+    return {
+      success: true,
+      data: res.data,
+      error: null,
+    };
+  } catch (error) {
+    return {
+      success: false,
+      data: null,
       error: error.message,
     };
   }
