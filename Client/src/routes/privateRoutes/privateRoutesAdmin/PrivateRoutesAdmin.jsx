@@ -1,7 +1,7 @@
 import { Navigate, Outlet } from 'react-router-dom';
 import PropTypes from 'prop-types'
 
-function PrivateRoutesAdmin({ isAdminAuth = false }) {
+function PrivateRoutesAdmin({ isAdminAuth  }) {
   return isAdminAuth ? <Outlet /> : <Navigate to="/login" />;
 }
 

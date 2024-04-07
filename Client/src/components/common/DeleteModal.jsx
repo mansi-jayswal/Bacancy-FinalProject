@@ -16,7 +16,7 @@ const DeleteModal = ({ Id, handleDelete, setShowConfirmationModal, setDataIdToBe
 				<h2 className="text-2xl font-medium">Delete Confirmation</h2>
 				<hr className="h-2 mt-3" />
 				<p className="mt-4 text-base bg-red-200 text-red-900 font-medium p-5  rounded-md">
-					Are you sure you want to delete {itemType} 
+					Are you sure you want to delete {itemType} with id: {Id}
 				</p>
 				<div className="flex w-full mx-auto justify-end gap-5">
 					<Button

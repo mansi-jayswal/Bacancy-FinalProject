@@ -75,6 +75,24 @@ export const API = axios.create({
     }
   };
 
+  export const deleteUser = async (userId) => {
+    try {
+      const res = await API.delete(`users/${userId}`);
+      return {
+        success: true,
+        data: res.data,
+        error: null,
+      };
+    } catch (error) {
+      return {
+        success: false,
+        data: [],
+        error: error.message,
+      };
+    }
+  };
+
+
 // *******************************API calls on Recipe Schema***********************************
  
   export const getRecipes = async () => {
