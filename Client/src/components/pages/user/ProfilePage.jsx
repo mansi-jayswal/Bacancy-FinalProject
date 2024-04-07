@@ -1,6 +1,5 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import Button from '../../common/Button'
 import { useNavigate } from 'react-router-dom'
 
 function ProfilePage() {
@@ -8,7 +7,7 @@ function ProfilePage() {
     const navigate=useNavigate();
   return (
     <div>
-       <div className="h-screen  dark:bg-gray-800 flex flex-wrap items-center justify-center">
+       <div className="h-auto mt-6  dark:bg-gray-800 flex flex-wrap items-center justify-center ml-4 mr-4 lg:m-0 lg:mb-auto">
       <div className="container lg:w-2/6 xl:w-2/7 sm:w-full md:w-2/3 bg-customLightBeige shadow-lg transform duration-200 easy-in-out">
         <div className="h-32 overflow-hidden">
           <img
@@ -53,7 +52,6 @@ function ProfilePage() {
               <button onClick={()=> navigate('/my-creations')}>
                 <span className="font-semibold">{user.created_recipes.length}</span> Created recipes
               </button>
-              {/* <Button children={user.created_recipes.length} handleClick={()=>navigate('/my-creations')} /> */}
             </div>
           </div>
         </div>

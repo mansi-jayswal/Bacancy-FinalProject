@@ -90,7 +90,62 @@
       "name": "Bob Brown",
       "email": "bob@example.com",
       "password": "bobspassword",
-      "saved_recipes": [],
+      "saved_recipes": [
+        {
+          "id": "8",
+          "title": "Sushi Rolls",
+          "ingredients": [
+            "Sushi Rice",
+            "Nori Seaweed",
+            "Fish (Salmon, Tuna, etc.)",
+            "Avocado",
+            "Cucumber"
+          ],
+          "method": "Prepare sushi rice according to package instructions. Lay out nori seaweed, spread rice, and add fish, avocado, and cucumber. Roll tightly and slice. Serve with soy sauce and pickled ginger.",
+          "type": "nonveg",
+          "cuisine": "Japanese",
+          "tags": [
+            "Sushi",
+            "Japanese",
+            "Raw"
+          ],
+          "difficulty": "Advanced",
+          "cookingTime": "40 minutes",
+          "authorId": 1111,
+          "authorName": "flavourRealm",
+          "likesCount": 143,
+          "reviews": [],
+          "servingSize": "2",
+          "img": "https://www.yummyhealthyeasy.com/wp-content/uploads/2018/04/california-sushi-rolls-square.jpg"
+        },
+        {
+          "id": "3",
+          "title": "Margherita Pizza",
+          "ingredients": [
+            "Pizza Dough",
+            "Tomatoes",
+            "Fresh Mozzarella Cheese",
+            "Fresh Basil",
+            "Olive Oil"
+          ],
+          "method": "Preheat oven to highest temperature. Roll out pizza dough and top with sliced tomatoes, fresh mozzarella cheese, and torn basil leaves. Drizzle with olive oil. Bake until crust is golden and cheese is bubbly, about 10-12 minutes.",
+          "type": "veg",
+          "cuisine": "Italian",
+          "tags": [
+            "Pizza",
+            "Italian",
+            "Vegetarian"
+          ],
+          "difficulty": "Easy",
+          "cookingTime": "15 minutes",
+          "authorId": 1111,
+          "authorName": "flavourRealm",
+          "likesCount": 175,
+          "reviews": [],
+          "servingSize": "2",
+          "img": "https://img.freepik.com/free-photo/pizza-tasty-cheese-top-view-grey-surface_140725-14194.jpg?t=st=1712125070~exp=1712128670~hmac=47cc308b886809c73f667db6d55fe7600f70653b11219f763a2d5f1135fb6efe&w=740"
+        }
+      ],
       "created_recipes": [],
       "reviews": [],
       "preference": "Chinese"
@@ -200,89 +255,137 @@
       "password": "harsh",
       "saved_recipes": [
         {
-          "id": "3",
-          "title": "Margherita Pizza",
+          "title": "Manchurian",
           "ingredients": [
-            "Pizza Dough",
-            "Tomatoes",
-            "Fresh Mozzarella Cheese",
-            "Fresh Basil",
-            "Olive Oil"
-          ],
-          "method": "Preheat oven to highest temperature. Roll out pizza dough and top with sliced tomatoes, fresh mozzarella cheese, and torn basil leaves. Drizzle with olive oil. Bake until crust is golden and cheese is bubbly, about 10-12 minutes.",
-          "type": "veg",
-          "cuisine": "Italian",
-          "tags": [
-            "Pizza",
-            "Italian",
-            "Vegetarian"
-          ],
-          "difficulty": "Easy",
-          "cookingTime": "15 minutes",
-          "authorId": 1111,
-          "authorName": "flavourRealm",
-          "likesCount": 175,
-          "reviews": [],
-          "servingSize": "2",
-          "img": "https://img.freepik.com/free-photo/pizza-tasty-cheese-top-view-grey-surface_140725-14194.jpg?t=st=1712125070~exp=1712128670~hmac=47cc308b886809c73f667db6d55fe7600f70653b11219f763a2d5f1135fb6efe&w=740"
-        },
-        {
-          "id": "3",
-          "title": "Margherita Pizza",
-          "ingredients": [
-            "Pizza Dough",
-            "Tomatoes",
-            "Fresh Mozzarella Cheese",
-            "Fresh Basil",
-            "Olive Oil"
-          ],
-          "method": "Preheat oven to highest temperature. Roll out pizza dough and top with sliced tomatoes, fresh mozzarella cheese, and torn basil leaves. Drizzle with olive oil. Bake until crust is golden and cheese is bubbly, about 10-12 minutes.",
-          "type": "veg",
-          "cuisine": "Italian",
-          "tags": [
-            "Pizza",
-            "Italian",
-            "Vegetarian"
-          ],
-          "difficulty": "Easy",
-          "cookingTime": "15 minutes",
-          "authorId": 1111,
-          "authorName": "flavourRealm",
-          "likesCount": 175,
-          "reviews": [],
-          "servingSize": "2",
-          "img": "https://img.freepik.com/free-photo/pizza-tasty-cheese-top-view-grey-surface_140725-14194.jpg?t=st=1712125070~exp=1712128670~hmac=47cc308b886809c73f667db6d55fe7600f70653b11219f763a2d5f1135fb6efe&w=740"
-        },
-        {
-          "id": "4",
-          "title": "Tacos al Pastor",
-          "ingredients": [
-            "Pork Shoulder",
-            "Pineapple",
-            "Corn Tortillas",
+            "Cabbage",
+            "Carrot",
+            "Capsicum",
             "Onion",
-            "Cilantro",
-            "Spices"
+            "Ginger-garlic paste",
+            "Corn flour",
+            "Sauces",
+            "ajionomoto(optional)",
+            "green chilly"
           ],
-          "method": "Marinate thinly sliced pork shoulder in spices and pineapple juice. Grill until caramelized. Serve on warm corn tortillas with diced pineapple, onions, and cilantro.",
-          "type": "nonveg",
-          "cuisine": "Mexican",
+          "method": "In the same pan used for frying the vegetable balls, heat 2 tablespoons of vegetable oil over medium heat.\nAdd the chopped garlic, chopped ginger, and slit green chilies. Sauté for a minute until aromatic.\nAdd the finely chopped onion and diced bell pepper. Stir-fry for 2-3 minutes until the vegetables are slightly softened but still crisp.\nStir in soy sauce, chili sauce or Sriracha sauce, tomato ketchup, vinegar, sugar, and salt. Mix well.\nPour in water and bring the mixture to a simmer.\nIn a small bowl, mix cornflour with water to form a smooth slurry. Gradually pour the cornflour slurry into the simmering sauce while stirring continuously.\nCook the sauce for another 2-3 minutes or until it thickens to your desired consistency.\nAdd the fried vegetable balls to the sauce and gently toss until they are well coated.\nCook for an additional minute, allowing the vegetable balls to absorb the flavors of the sauce.\nGarnish with chopped spring onions or cilantro if desired.\nServe hot as an appetizer or with steamed rice or noodles as a main course",
+          "type": "veg",
+          "cuisine": "Chinese",
           "tags": [
-            "Tacos",
-            "Mexican",
-            "Street Food"
+            "Snacks",
+            "Spicy",
+            "Delicious",
+            "chinese",
+            "streetfood",
+            "quick and easy"
           ],
           "difficulty": "Intermediate",
-          "cookingTime": "30 minutes",
+          "cookingTime": "45 mins",
+          "servingSize": "4",
+          "img": "https://t3.ftcdn.net/jpg/04/47/95/48/360_F_447954890_nYoJ3Lm6OElMe0LogDry2KfHF4tXsfMw.jpg",
+          "reviews": [],
+          "likesCount": 51,
+          "authorId": "12",
+          "authorName": "harsh",
+          "id": "24"
+        },
+        {
+          "id": "9",
+          "title": "Gulab Jamun",
+          "ingredients": [
+            "Milk Powder",
+            "Flour",
+            "Sugar",
+            "Ghee",
+            "Cardamom"
+          ],
+          "method": "Mix milk powder and flour with a little water to make a soft dough. Roll into balls and deep fry until golden brown. Make a sugar syrup with water, sugar, and cardamom. Soak fried balls in syrup. Serve warm.",
+          "type": "veg",
+          "cuisine": "Indian",
+          "tags": [
+            "Dessert",
+            "Indian",
+            "Fried"
+          ],
+          "difficulty": "Intermediate",
+          "cookingTime": "40 minutes",
           "authorId": 1111,
           "authorName": "flavourRealm",
-          "likesCount": 154,
+          "likesCount": 207,
           "reviews": [],
-          "servingSize": "4",
-          "img": "https://d1yfn1dfres2va.cloudfront.net/009/f7/80/f780d992de9014f09c19d2963c5c3928_250x250.jpg"
+          "servingSize": "6",
+          "img": "https://t4.ftcdn.net/jpg/06/21/54/41/360_F_621544128_inBjLYomzXLGFiNVri9ebirH1MMJ7ige.jpg"
         }
       ],
-      "created_recipes": [],
+      "created_recipes": [
+        {
+          "title": "Yummm Manchurian ",
+          "ingredients": [
+            "Cabbage",
+            "Carrot",
+            "Capsicum",
+            "Onion",
+            "Ginger-garlic paste",
+            "Corn flour",
+            "Sauces",
+            "ajionomoto(optional)",
+            "green chilly",
+            "spring onions"
+          ],
+          "method": "In the same pan used for frying the vegetable balls, heat 2 tablespoons of vegetable oil over medium heat.\nAdd the chopped garlic, chopped ginger, and slit green chilies. Sauté for a minute until aromatic.\nAdd the finely chopped onion and diced bell pepper. Stir-fry for 2-3 minutes until the vegetables are slightly softened but still crisp.\nStir in soy sauce, chili sauce or Sriracha sauce, tomato ketchup, vinegar, sugar, and salt. Mix well.\nPour in water and bring the mixture to a simmer.\nIn a small bowl, mix cornflour with water to form a smooth slurry. Gradually pour the cornflour slurry into the simmering sauce while stirring continuously.\nCook the sauce for another 2-3 minutes or until it thickens to your desired consistency.\nAdd the fried vegetable balls to the sauce and gently toss until they are well coated.\nCook for an additional minute, allowing the vegetable balls to absorb the flavors of the sauce.\nGarnish with chopped spring onions or cilantro if desired.\nServe hot as an appetizer or with steamed rice or noodles as a main course",
+          "type": "veg",
+          "cuisine": "Chinese",
+          "tags": [
+            "Snacks",
+            "Spicy",
+            "Delicious",
+            "chinese",
+            "streetfood",
+            "quick and easy",
+            "yummy"
+          ],
+          "difficulty": "Intermediate",
+          "cookingTime": "45 mins",
+          "servingSize": "4",
+          "img": "https://media.istockphoto.com/id/1284771657/photo/veg-manchurian-gravy-balls-in-black-bowl-in-dark-slate-table-top-vegetarian-manchurian-is.jpg?s=612x612&w=0&k=20&c=M0w1rsKN_wkXJpX1Gr14giH8mEvCalM6gSZD2qgfnCU=",
+          "reviews": [],
+          "likesCount": 51,
+          "authorId": "12",
+          "authorName": "harsh",
+          "id": "24"
+        },
+        {
+          "title": "Chilly garlic Noodles",
+          "ingredients": [
+            "noodles",
+            "onion",
+            "capcicum",
+            "ginger",
+            "garlic",
+            "sauces",
+            "green chillies",
+            "spring onions"
+          ],
+          "method": "Cook noodles according to package instructions, then drain and set aside.\nIn a pan, heat oil, add chopped garlic, ginger, and sliced green chilies.\nStir in cooked noodles, soy sauce, chili sauce, and any desired vegetables or protein, tossing until well combined. Serve hot.",
+          "type": "veg",
+          "cuisine": "Chinese",
+          "tags": [
+            "breakfast",
+            "quick and easy",
+            "snacks",
+            "spicy",
+            "streetfood"
+          ],
+          "difficulty": "Easy",
+          "cookingTime": " 20mins",
+          "servingSize": "2",
+          "img": "https://images.unsplash.com/photo-1585032226651-759b368d7246?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bm9vZGxlc3xlbnwwfHwwfHx8MA%3D%3D",
+          "reviews": [],
+          "likesCount": 51,
+          "authorId": "12",
+          "authorName": "harsh",
+          "id": "25"
+        }
+      ],
       "reviews": [],
       "preference": "Chinese"
     },
@@ -293,89 +396,91 @@
       "password": "ridham",
       "saved_recipes": [
         {
-          "id": "3",
-          "title": "Margherita Pizza",
+          "id": "9",
+          "title": "Gulab Jamun",
           "ingredients": [
-            "Pizza Dough",
-            "Tomatoes",
-            "Fresh Mozzarella Cheese",
-            "Fresh Basil",
-            "Olive Oil"
+            "Milk Powder",
+            "Flour",
+            "Sugar",
+            "Ghee",
+            "Cardamom"
           ],
-          "method": "Preheat oven to highest temperature. Roll out pizza dough and top with sliced tomatoes, fresh mozzarella cheese, and torn basil leaves. Drizzle with olive oil. Bake until crust is golden and cheese is bubbly, about 10-12 minutes.",
-          "type": "veg",
-          "cuisine": "Italian",
-          "tags": [
-            "Pizza",
-            "Italian",
-            "Vegetarian"
-          ],
-          "difficulty": "Easy",
-          "cookingTime": "15 minutes",
-          "authorId": 1111,
-          "authorName": "flavourRealm",
-          "likesCount": 175,
-          "reviews": [],
-          "servingSize": "2",
-          "img": "https://img.freepik.com/free-photo/pizza-tasty-cheese-top-view-grey-surface_140725-14194.jpg?t=st=1712125070~exp=1712128670~hmac=47cc308b886809c73f667db6d55fe7600f70653b11219f763a2d5f1135fb6efe&w=740"
-        },
-        {
-          "id": "1",
-          "title": "Spaghetti Carbonara",
-          "ingredients": [
-            "Spaghetti",
-            "Eggs",
-            "Pancetta",
-            "Parmesan Cheese",
-            "Black Pepper"
-          ],
-          "method": "Cook spaghetti according to package instructions. In a separate pan, cook pancetta until crispy. In a bowl, whisk eggs and Parmesan cheese. Once spaghetti is cooked, drain and toss with pancetta. Add egg mixture and stir quickly to combine. Serve immediately with freshly cracked black pepper.",
-          "type": "nonveg",
-          "cuisine": "Italian",
-          "tags": [
-            "Pasta",
-            "Italian",
-            "Quick and Easy"
-          ],
-          "difficulty": "Intermediate",
-          "cookingTime": "20 minutes",
-          "authorId": 1111,
-          "authorName": "flavourRealm",
-          "likesCount": 125,
-          "reviews": [],
-          "servingSize": "4",
-          "img": "https://img.freepik.com/free-photo/front-view-cooked-italian-pasta-with-cutlery-white-background_140725-94889.jpg?t=st=1712124967~exp=1712128567~hmac=db8a00f6c7d5a15de2b1b83d59ec3b5e7d96d492981443bb4f0e8fd9ac3d68af&w=740"
-        },
-        {
-          "id": "5",
-          "title": "Paneer Butter Masala",
-          "ingredients": [
-            "Paneer",
-            "Tomatoes",
-            "Cream",
-            "Onion",
-            "Cashews",
-            "Spices"
-          ],
-          "method": "Sauté onions, tomatoes, and cashews until soft. Blend into a smooth paste. In a pan, heat butter and add the paste. Cook until oil separates. Add cream and paneer cubes. Simmer until heated through. Serve hot.",
+          "method": "Mix milk powder and flour with a little water to make a soft dough. Roll into balls and deep fry until golden brown. Make a sugar syrup with water, sugar, and cardamom. Soak fried balls in syrup. Serve warm.",
           "type": "veg",
           "cuisine": "Indian",
           "tags": [
-            "Curry",
+            "Dessert",
             "Indian",
-            "Vegetarian"
+            "Fried"
           ],
-          "difficulty": "Easy",
-          "cookingTime": "35 minutes",
+          "difficulty": "Intermediate",
+          "cookingTime": "40 minutes",
           "authorId": 1111,
           "authorName": "flavourRealm",
-          "likesCount": 198,
+          "likesCount": 207,
           "reviews": [],
-          "servingSize": "4",
-          "img": "https://d1yfn1dfres2va.cloudfront.net/009/e4/ee/e4eecb65bb7c04dcd81b1ebc0f12d1e6_500x500.jpg"
+          "servingSize": "6",
+          "img": "https://t4.ftcdn.net/jpg/06/21/54/41/360_F_621544128_inBjLYomzXLGFiNVri9ebirH1MMJ7ige.jpg"
+        },
+        {
+          "id": "22",
+          "title": "Gajar halwa",
+          "ingredients": [
+            "carrots ",
+            " Ghee ",
+            " cashews ",
+            " cardamom powder ",
+            "  milk ",
+            " sugar"
+          ],
+          "method": "Step 1: Grate the Carrots\n\nPeel and grate fresh carrots using a grater.\nHeat a pan and add a tablespoon of ghee (clarified butter).\nAdd the grated carrots to the pan and sauté them until they turn soft and release their juices. This might take around 10-15 minutes on medium heat.\nStep 2: Cook the Carrots\n\nOnce the carrots are soft, add milk to the pan. The quantity of milk depends on the amount of carrots you have, but a good rule of thumb is to add enough milk to just cover the carrots.\nLet the mixture simmer on low heat, stirring occasionally. Allow the carrots to cook in the milk until the milk reduces and thickens. This process could take around 30-40 minutes.\nStep 3: Sweeten and Flavor\n\nOnce the milk has reduced significantly and the carrots are cooked through, add sugar according to your taste preference. You can start with half a cup of sugar and adjust according to your sweetness preference.\nAdd cardamom powder and chopped nuts like almonds and pistachios for flavor and texture.\nStir well and continue cooking for another 10-15 minutes until the mixture thickens further and attains a halwa-like consistency.\nYour Gajar ka Halwa is now ready to be served hot or cold, garnished with more chopped nuts if desired.\nEnjoy your delicious homemade Gajar ka Halwa!",
+          "type": "veg",
+          "cuisine": "Indian",
+          "tags": [
+            "Sweet ",
+            " snacks ",
+            " indian "
+          ],
+          "difficulty": "Easy",
+          "cookingTime": "1hr 30 mins",
+          "servingSize": "5",
+          "img": "https://t3.ftcdn.net/jpg/03/27/17/30/360_F_327173095_araZyvlYmOO17gNxsK6jsXxbVuEAQJ9q.jpg",
+          "reviews": [],
+          "likesCount": 200,
+          "authorID": "13",
+          "authorName": "ridham"
         }
       ],
-      "created_recipes": [],
+      "created_recipes": [
+        {
+          "id": "22",
+          "title": "Gajar halwa",
+          "ingredients": [
+            "carrots ",
+            " Ghee ",
+            " cashews ",
+            " cardamom powder ",
+            "  milk ",
+            " sugar"
+          ],
+          "method": "Step 1: Grate the Carrots\n\nPeel and grate fresh carrots using a grater.\nHeat a pan and add a tablespoon of ghee (clarified butter).\nAdd the grated carrots to the pan and sauté them until they turn soft and release their juices. This might take around 10-15 minutes on medium heat.\nStep 2: Cook the Carrots\n\nOnce the carrots are soft, add milk to the pan. The quantity of milk depends on the amount of carrots you have, but a good rule of thumb is to add enough milk to just cover the carrots.\nLet the mixture simmer on low heat, stirring occasionally. Allow the carrots to cook in the milk until the milk reduces and thickens. This process could take around 30-40 minutes.\nStep 3: Sweeten and Flavor\n\nOnce the milk has reduced significantly and the carrots are cooked through, add sugar according to your taste preference. You can start with half a cup of sugar and adjust according to your sweetness preference.\nAdd cardamom powder and chopped nuts like almonds and pistachios for flavor and texture.\nStir well and continue cooking for another 10-15 minutes until the mixture thickens further and attains a halwa-like consistency.\nYour Gajar ka Halwa is now ready to be served hot or cold, garnished with more chopped nuts if desired.\nEnjoy your delicious homemade Gajar ka Halwa!",
+          "type": "veg",
+          "cuisine": "Indian",
+          "tags": [
+            "Sweet ",
+            " snacks ",
+            " indian "
+          ],
+          "difficulty": "Easy",
+          "cookingTime": "1hr 30 mins",
+          "servingSize": "5",
+          "img": "https://t3.ftcdn.net/jpg/03/27/17/30/360_F_327173095_araZyvlYmOO17gNxsK6jsXxbVuEAQJ9q.jpg",
+          "reviews": [],
+          "likesCount": 200,
+          "authorID": "13",
+          "authorName": "ridham"
+        }
+      ],
       "reviews": [],
       "preference": "Italian"
     }
@@ -490,7 +595,7 @@
       "likesCount": 154,
       "reviews": [],
       "servingSize": "4",
-      "img": "https://d1yfn1dfres2va.cloudfront.net/009/f7/80/f780d992de9014f09c19d2963c5c3928_250x250.jpg"
+      "img": "https://www.thespruceeats.com/thmb/wQd2RvxH1Lh9536W5LY1T_VSyT8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/tacos-al-pastor-recipe-4172074-hero-01-7fb1a4455397486b8485ac8ec2ca3c5a.jpg"
     },
     {
       "id": "5",
@@ -518,7 +623,7 @@
       "likesCount": 198,
       "reviews": [],
       "servingSize": "4",
-      "img": "https://d1yfn1dfres2va.cloudfront.net/009/e4/ee/e4eecb65bb7c04dcd81b1ebc0f12d1e6_500x500.jpg"
+      "img": "https://t4.ftcdn.net/jpg/05/82/28/65/360_F_582286506_Kji3X5NrZBHMTFSqwG9gADXWMsjrtEjL.jpg"
     },
     {
       "id": "6",
@@ -547,7 +652,7 @@
       "likesCount": 167,
       "reviews": [],
       "servingSize": "2",
-      "img": "https://d1yfn1dfres2va.cloudfront.net/009/93/25/932538206415e443c5b4e7e661b677c4_250x250.jpg"
+      "img": "https://i.pinimg.com/originals/e2/ef/8c/e2ef8c7a796494d0342820589752b646.jpg"
     },
     {
       "id": "7",
@@ -657,7 +762,7 @@
       "likesCount": 165,
       "reviews": [],
       "servingSize": "4",
-      "img": "https://d1yfn1dfres2va.cloudfront.net/009/21/ea/21eaa1f0d08bf26419ee6698b74c82f4_250x250.jpg"
+      "img": "https://t4.ftcdn.net/jpg/00/89/81/29/360_F_89812966_tFKNZ1u84JDlEY4wXQ186q31VQKaMBO6.jpg"
     },
     {
       "id": "11",
@@ -684,7 +789,7 @@
       "likesCount": 198,
       "reviews": [],
       "servingSize": "2",
-      "img": "https://d1yfn1dfres2va.cloudfront.net/009/70/4c/704cdffe9afe9f42749a26051a628663_250x250.jpg"
+      "img": "https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2019/07/Caprese-Salad-main-1.jpg"
     },
     {
       "id": "12",
@@ -713,7 +818,7 @@
       "likesCount": 185,
       "reviews": [],
       "servingSize": "4",
-      "img": "https://d1yfn1dfres2va.cloudfront.net/009/bd/92/bd924a19afaf95df5ec6fe880cbf51dd_250x250.jpg"
+      "img": "https://t4.ftcdn.net/jpg/06/46/09/17/360_F_646091793_ZGkTH6nwTLeGA9jPp20vnFpnKLrZwCYy.jpg"
     },
     {
       "id": "13",
@@ -741,7 +846,7 @@
       "likesCount": 210,
       "reviews": [],
       "servingSize": "8",
-      "img": "https://d1yfn1dfres2va.cloudfront.net/009/8f/9b/8f9b24ce73327e6a3403248e6b50e5c0_250x250.jpg"
+      "img": "https://us.123rf.com/450wm/olindana/olindana2303/olindana230300018/201276129-scrumptious-delicious-tiramisu-on-a-plate-dusted-with-cocoa-powder-decorated-with-fresh-mint-italian.jpg"
     },
     {
       "id": "14",
@@ -769,7 +874,7 @@
       "likesCount": 158,
       "reviews": [],
       "servingSize": "3",
-      "img": "vegetable_stir_fry.jpg"
+      "img": "https://recipe30.com/wp-content/uploads/2021/08/Asian-stirfried-vegetables.jpg"
     },
     {
       "id": "15",
@@ -798,7 +903,7 @@
       "likesCount": 175,
       "reviews": [],
       "servingSize": "2",
-      "img": "tom_yum_soup.jpg"
+      "img": "https://i2.wp.com/seonkyounglongest.com/wp-content/uploads/2021/03/Tom-Yum-07-mini.jpg?fit=1000%2C667&ssl=1"
     },
     {
       "id": "16",
@@ -825,7 +930,7 @@
       "likesCount": 132,
       "reviews": [],
       "servingSize": "4",
-      "img": "peking_duck.jpg"
+      "img": "https://i0.wp.com/www.womensweeklyfood.com.au/wp-content/uploads/sites/4/2014/11/28/AustralianWomensWeeklyBR116332/cheat-s-peking-duck.jpg?resize=980%2C980&ssl=1"
     },
     {
       "id": "17",
@@ -852,7 +957,7 @@
       "likesCount": 187,
       "reviews": [],
       "servingSize": "3",
-      "img": "pasta_primavera.jpg"
+      "img": "https://media.istockphoto.com/id/1353794176/photo/healthy-pasta-salad-plate-on-black-background.jpg?s=612x612&w=0&k=20&c=eRC0UsQKv1HTIsJYrGb2sSIvNZ4ipr_jJXfy1gLtiWI="
     },
     {
       "id": "18",
@@ -880,7 +985,7 @@
       "likesCount": 203,
       "reviews": [],
       "servingSize": "4",
-      "img": "guacamole.jpg"
+      "img": "https://t3.ftcdn.net/jpg/00/99/07/42/360_F_99074252_aCglAEpkfqyR8Jrn1Z1teDnuvn0pYKBz.jpg"
     },
     {
       "id": "19",
@@ -907,7 +1012,7 @@
       "likesCount": 169,
       "reviews": [],
       "servingSize": "4",
-      "img": "green_curry.jpg"
+      "img": "https://media.istockphoto.com/id/1267610826/photo/famous-internationally-renowned-thai-green-coconut-curry-gaeng-keow-wan-gai-with-chicken-in-a.jpg?s=612x612&w=0&k=20&c=jXhnFi2TPqQKpvuLAPinL5HeuwnINKyS0hIqom46aV4="
     },
     {
       "id": "20",
@@ -935,100 +1040,259 @@
       "likesCount": 195,
       "reviews": [],
       "servingSize": "6",
-      "img": "cannoli.jpg"
+      "img": "https://t4.ftcdn.net/jpg/01/23/94/39/360_F_123943990_KMymS2hOxbpPognbDrKo38cSTx5ZxfI7.jpg"
+    },
+    {
+      "id": "21",
+      "title": "paneer tikka",
+      "ingredients": [
+        "paneer",
+        " onion ",
+        " capsicum ",
+        " gram flour  ",
+        " curd"
+      ],
+      "method": "marinate the paneer w required spices , curd and gram flour . roast the paneer in tandoor .",
+      "type": "veg",
+      "cuisine": "Indian",
+      "tags": [
+        "Paneer ",
+        " breakfast ",
+        " Snacks "
+      ],
+      "difficulty": "Intermediate",
+      "cookingTime": "30mins",
+      "servingSize": "4",
+      "img": "https://www.indianveggiedelight.com/wp-content/uploads/2021/08/air-fryer-paneer-tikka-featured.jpg",
+      "reviews": [],
+      "likesCount": 1,
+      "authorId": 9999,
+      "authorName": "End user"
+    },
+    {
+      "id": "22",
+      "title": "Gajar ka Halwa",
+      "ingredients": "carrots , Ghee , cashews , cardamom powder ,  milk , sugar , raisans , almonds",
+      "method": "Step 1: Grate the Carrots\n\nPeel and grate fresh carrots using a grater.\nHeat a pan and add a tablespoon of ghee (clarified butter).\nAdd the grated carrots to the pan and sauté them until they turn soft and release their juices. This might take around 10-15 minutes on medium heat.\nStep 2: Cook the Carrots\n\nOnce the carrots are soft, add milk to the pan. The quantity of milk depends on the amount of carrots you have, but a good rule of thumb is to add enough milk to just cover the carrots.\nLet the mixture simmer on low heat, stirring occasionally. Allow the carrots to cook in the milk until the milk reduces and thickens. This process could take around 30-40 minutes.\nStep 3: Sweeten and Flavor\n\nOnce the milk has reduced significantly and the carrots are cooked through, add sugar according to your taste preference. You can start with half a cup of sugar and adjust according to your sweetness preference.\nAdd cardamom powder and chopped nuts like almonds and pistachios for flavor and texture.\nStir well and continue cooking for another 10-15 minutes until the mixture thickens further and attains a halwa-like consistency.\nYour Gajar ka Halwa is now ready to be served hot or cold, garnished with more chopped nuts if desired.\nEnjoy your delicious homemade Gajar ka Halwa!",
+      "type": "veg",
+      "cuisine": "Indian",
+      "tags": [
+        "Sweet ",
+        " snacks ",
+        " indian "
+      ],
+      "difficulty": "Easy",
+      "cookingTime": "1hr 30 mins",
+      "servingSize": "4",
+      "img": "https://t3.ftcdn.net/jpg/03/27/17/30/360_F_327173095_araZyvlYmOO17gNxsK6jsXxbVuEAQJ9q.jpg",
+      "reviews": [],
+      "likesCount": 200,
+      "authorId": "13",
+      "authorName": "ridham",
+      "image": "https://t3.ftcdn.net/jpg/03/27/17/30/360_F_327173095_araZyvlYmOO17gNxsK6jsXxbVuEAQJ9q.jpg"
+    },
+    {
+      "id": "24",
+      "title": "Yummm Manchurian ",
+      "ingredients": [
+        "Cabbage",
+        "Carrot",
+        "Capsicum",
+        "Onion",
+        "Ginger-garlic paste",
+        "Corn flour",
+        "Sauces",
+        "ajionomoto(optional)",
+        "green chilly",
+        "spring onions"
+      ],
+      "method": "In the same pan used for frying the vegetable balls, heat 2 tablespoons of vegetable oil over medium heat.\nAdd the chopped garlic, chopped ginger, and slit green chilies. Sauté for a minute until aromatic.\nAdd the finely chopped onion and diced bell pepper. Stir-fry for 2-3 minutes until the vegetables are slightly softened but still crisp.\nStir in soy sauce, chili sauce or Sriracha sauce, tomato ketchup, vinegar, sugar, and salt. Mix well.\nPour in water and bring the mixture to a simmer.\nIn a small bowl, mix cornflour with water to form a smooth slurry. Gradually pour the cornflour slurry into the simmering sauce while stirring continuously.\nCook the sauce for another 2-3 minutes or until it thickens to your desired consistency.\nAdd the fried vegetable balls to the sauce and gently toss until they are well coated.\nCook for an additional minute, allowing the vegetable balls to absorb the flavors of the sauce.\nGarnish with chopped spring onions or cilantro if desired.\nServe hot as an appetizer or with steamed rice or noodles as a main course",
+      "type": "veg",
+      "cuisine": "Chinese",
+      "tags": [
+        "Snacks",
+        "Spicy",
+        "Delicious",
+        "chinese",
+        "streetfood",
+        "quick and easy",
+        "yummy"
+      ],
+      "difficulty": "Intermediate",
+      "cookingTime": "45 mins",
+      "servingSize": "4",
+      "img": "https://media.istockphoto.com/id/1284771657/photo/veg-manchurian-gravy-balls-in-black-bowl-in-dark-slate-table-top-vegetarian-manchurian-is.jpg?s=612x612&w=0&k=20&c=M0w1rsKN_wkXJpX1Gr14giH8mEvCalM6gSZD2qgfnCU=",
+      "reviews": [],
+      "likesCount": 51,
+      "authorId": "12",
+      "authorName": "harsh"
+    },
+    {
+      "id": "25",
+      "title": "Chilly garlic Noodles",
+      "ingredients": [
+        "noodles",
+        "onion",
+        "capcicum",
+        "ginger",
+        "garlic",
+        "sauces",
+        "green chillies",
+        "spring onions"
+      ],
+      "method": "Cook noodles according to package instructions, then drain and set aside.\nIn a pan, heat oil, add chopped garlic, ginger, and sliced green chilies.\nStir in cooked noodles, soy sauce, chili sauce, and any desired vegetables or protein, tossing until well combined. Serve hot.",
+      "type": "veg",
+      "cuisine": "Chinese",
+      "tags": [
+        "breakfast",
+        "quick and easy",
+        "snacks",
+        "spicy",
+        "streetfood"
+      ],
+      "difficulty": "Easy",
+      "cookingTime": " 20mins",
+      "servingSize": "2",
+      "img": "https://images.unsplash.com/photo-1585032226651-759b368d7246?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bm9vZGxlc3xlbnwwfHwwfHx8MA%3D%3D",
+      "reviews": [],
+      "likesCount": 51,
+      "authorId": "12",
+      "authorName": "harsh"
     }
   ],
   "reviews": [
     {
-      "id": 1,
+      "id": "1",
       "userId": 1,
       "postId": 8,
       "rating": 4,
       "comment": "Great recipe! Really enjoyed making it."
     },
     {
-      "id": 2,
+      "id": "2",
       "userId": 2,
       "postId": 14,
       "rating": 5,
       "comment": "Absolutely delicious. Will definitely make again."
     },
     {
-      "id": 3,
+      "id": "3",
       "userId": 3,
       "postId": 3,
       "rating": 3,
       "comment": "Good recipe, but could use some adjustments."
     },
     {
-      "id": 4,
+      "id": "4",
       "userId": 4,
       "postId": 18,
       "rating": 2,
       "comment": "Didn't quite like it. Needs improvement."
     },
     {
-      "id": 5,
+      "id": "5",
       "userId": 5,
       "postId": 11,
       "rating": 5,
       "comment": "Amazing! This recipe is a keeper."
     },
     {
-      "id": 6,
+      "id": "6",
       "userId": 6,
       "postId": 6,
       "rating": 1,
       "comment": "Terrible recipe. Waste of time."
     },
     {
-      "id": 7,
+      "id": "7",
       "userId": 7,
       "postId": 10,
       "rating": 4,
       "comment": "Really enjoyed making this recipe. Will make it again."
     },
     {
-      "id": 8,
+      "id": "8",
       "userId": 8,
       "postId": 20,
       "rating": 3,
       "comment": "Good recipe, but could be improved."
     },
     {
-      "id": 9,
+      "id": "9",
       "userId": 9,
       "postId": 2,
       "rating": 5,
       "comment": "Fantastic recipe! Loved every bite."
     },
     {
-      "id": 10,
+      "id": "10",
       "userId": 10,
       "postId": 16,
       "rating": 2,
       "comment": "Not what I expected. Disappointing."
     },
     {
-      "id": 11,
+      "id": "11",
       "userId": 2,
       "postId": 2,
       "rating": 4,
       "comment": "amazing recipe , very delicious it is."
     },
     {
-      "id": 12,
+      "id": "12",
       "userId": 6,
       "postId": 2,
       "rating": 1,
       "comment": "Did not like it at all."
     },
     {
-      "id": 13,
+      "id": "13",
       "userId": 5,
       "postId": 1,
       "rating": 5,
       "comment": "one of the best dish i have found , so delicious yet easy to make"
+    },
+    {
+      "id": "14",
+      "userId": "12",
+      "postId": "5",
+      "rating": "5",
+      "comment": "very delicious recipe it is , everyone loved that and feeling proud that i can also cook well :)"
+    },
+    {
+      "id": "15",
+      "userId": "12",
+      "postId": "9",
+      "rating": "4",
+      "comment": "OMGGGGG! so yummy , never thought it would be that easy to make gulab jamun"
+    },
+    {
+      "id": "16",
+      "userId": "12",
+      "postId": "1",
+      "rating": "2",
+      "comment": "Good , but did not match the expectations! :("
+    },
+    {
+      "id": "17",
+      "userId": "12",
+      "postId": "21",
+      "rating": "4",
+      "comment": "loved the smoky flavour we got after roasting it into the tandoor!"
+    },
+    {
+      "id": "18",
+      "userId": "6",
+      "postId": "7",
+      "rating": "5",
+      "comment": "i'm living away from home and believe me this is very handy recipe to cook in minutes when you want to eat something tasty "
+    },
+    {
+      "id": "19",
+      "userId": "6",
+      "postId": "7",
+      "rating": "5",
+      "comment": "it is so good that i've added multiple reviews XD"
     }
   ],
   "sub-admins": [],
