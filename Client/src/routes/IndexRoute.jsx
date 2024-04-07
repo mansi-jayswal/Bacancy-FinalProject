@@ -99,7 +99,7 @@ function IndexRoute() {
             },
             {
               path:'/admin-users',
-              element: <AdminUsersListing />
+              element: <AdminDashboard />
             },
             {
               path:'/admin-subadmins',
