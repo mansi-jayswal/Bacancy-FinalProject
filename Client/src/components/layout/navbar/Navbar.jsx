@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import logo from "../../../assets/logo.png";
 import { useDispatch, useSelector } from "react-redux";
 import { removeRole } from "../../../redux/actions/actions";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -22,9 +23,8 @@ const Navbar = () => {
 
   const handleLogout=()=>{
       dispatch(removeRole());
-      alert('logout succesfully');
+      toast.success('Logout Successfully!');
       navigate('/')
-      
   }
 
   return (

@@ -7,7 +7,7 @@ import { FaEdit, FaHeart, FaUser } from "react-icons/fa";
 import { MdBookmarks } from "react-icons/md";
 import Review from "../../common/Review";
 import { useDispatch, useSelector } from "react-redux";
-import { API, getRecipeById, getReviewsOnRecipe, updateUser } from "../../../utils/axios";
+import { getRecipeById, getReviewsOnRecipe, updateUser } from "../../../utils/axios";
 import { toast } from "react-toastify";
 import { setRole } from "../../../redux/actions/actions";
 
@@ -206,7 +206,7 @@ const RecipeDetails = () => {
       </div>
 
       {/* review section */}
-      <Review reviews={reviews} />
+      <Review reviews={reviews} recipeId={id} />
     </div>
   );
 };
