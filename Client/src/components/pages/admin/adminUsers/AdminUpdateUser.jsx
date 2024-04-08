@@ -40,7 +40,7 @@ export default function AdminUpdateUser() {
       // Updating the user data
       await updateUser(id , signupState)
       toast.success("User updated Successfully!");
-      navigate("/admin");
+      navigate("/admin-users");
     } catch (error) {
       console.error("Error updating user:", error);
       toast.error("Failed to update user");

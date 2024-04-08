@@ -16,9 +16,9 @@ const publicLinks = [
   
   const adminLinks = [
     // ...publicLinks,
-    { name: "Home", path: "/admin" },
-    { name: "Users", path: "/admin-users" },
-    { name: "Sub-admins", path: "/admin-subadmins" }
+    { name: "Sub-admins", path: "/admin" },
+    // { name: "Users", path: "/admin-users" },
+    { name: "Users", path: "/admin-users" }
   ];
   
   const subAdminLinks = [

@@ -49,7 +49,7 @@ function AdminDashboard() {
   const confirmDelete = () => {
     deleteUser(dataIdToBeDeleted)
         .then(() => {
-            // Refresh the user list after deletion
+            // to fetch the updated users again calling getUSers function
             toast.success('User Deleted successfully!');
             getUsers()
                 .then(res => setUsers(res.data))

@@ -9,6 +9,8 @@ import AdminAddUser from '../components/pages/admin/adminUsers/AdminAddUser';
 import AdminUpdateUser from '../components/pages/admin/adminUsers/AdminUpdateUser';
 import SignupComp from '../components/common/Auth/SignupComp';
 import SubAdminDashboard from '../components/pages/subadmin/SubAdminDashboard';
+import AdminAddSubadmin from '../components/pages/admin/adminSubadmin/AdminAddSubadmin';
+import AdminUpdateSubadmin from '../components/pages/admin/adminSubadmin/AdminUpdateSubadmin';
 
 // Lazy-loaded components
 const Layout = React.lazy(() => import('../components/layout/Layout'));
@@ -98,16 +100,17 @@ function IndexRoute() {
             // Admin-specific routes 
             {
               path:'/admin',
-              element: <AdminDashboard />
+              // element: <AdminDashboard />
+              element: <AdminSubadminsListing />
             },
             {
               path:'/admin-users',
               element: <AdminDashboard />
             },
-            {
-              path:'/admin-subadmins',
-              element: <AdminSubadminsListing />
-            },
+            // {
+            //   path:'/admin-subadmins',
+            //   element: <AdminSubadminsListing />
+            // },
             {
               path:'/admin-createUser',
               element: <AdminAddUser />
@@ -115,7 +118,15 @@ function IndexRoute() {
             {
               path:'admin-updateUser/:id',
               element: <AdminUpdateUser />
-            }
+            },
+            {
+              path:'/admin-createSubAdmin',
+              element: <AdminAddSubadmin />
+            },
+            {
+              path:'admin-updateSubAdmin/:id',
+              element: <AdminUpdateSubadmin />
+            },
           ],
         },
         {
