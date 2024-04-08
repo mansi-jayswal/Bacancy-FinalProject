@@ -5,7 +5,7 @@ import FormExtra from "./FromExtra";
 import FormAction from "./formActions";
 import { loginFields } from "../constants/formFields";
 import { useNavigate } from "react-router-dom";
-import { getUsers } from "../../../utils/axios";
+import { getSubAdmins, getUsers } from "../../../utils/axios";
 import { setRole } from "../../../redux/actions/actions";
 
 const fields = loginFields;
@@ -15,6 +15,7 @@ fields.forEach((field) => (fieldsState[field.id] = ""));
 export default function Login() {
   const [loginState, setLoginState] = useState(fieldsState);
   const [users, setUsers] = useState([]);
+  const [subAdmins, setSubAdmins] = useState([]);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -22,6 +23,10 @@ export default function Login() {
     getUsers()
       .then((res) => setUsers(res.data))
       .catch((err) => console.log(err));
+
+    getSubAdmins()
+    .then(res=> setSubAdmins(res.data))
+    .catch(err=> console.log('errror in fetching sub admins', err));
   }, []);
 
   const handleChange = (e) => {
@@ -43,13 +48,18 @@ export default function Login() {
         navigate('/admin');
     } 
     else {
-      const user = users.find((user) => user.email === email);
-      if (user && user.password === password) {
-        dispatch(setRole("user", user));
-        navigate("/");
-
+      const subAdmin = subAdmins.find((subAdmin) => subAdmin.email === email);
+      if (subAdmin && subAdmin.password === password) {
+          dispatch(setRole("sub_admin", subAdmin));
+          navigate('/subadmin');
+      } else {
+          const user = users.find((user) => user.email === email);
+          if (user && user.password === password) {
+              dispatch(setRole("user", user));
+              navigate("/");
+          }
       }
-    }
+  }
   };
 
   return (

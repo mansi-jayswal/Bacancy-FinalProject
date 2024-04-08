@@ -23,6 +23,7 @@
     "redux": "^5.0.1",
     "redux-persist": "^6.0.0",
     "swal": "^0.1.0",
+    "yup": "^1.4.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {

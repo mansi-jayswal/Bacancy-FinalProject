@@ -7,6 +7,8 @@ import AdminUsersListing from '../components/pages/admin/AdminUsersListing';
 import AdminSubadminsListing from '../components/pages/admin/AdminSubadminsListing';
 import AdminAddUser from '../components/pages/admin/adminUsers/AdminAddUser';
 import AdminUpdateUser from '../components/pages/admin/adminUsers/AdminUpdateUser';
+import SignupComp from '../components/common/Auth/SignupComp';
+import SubAdminDashboard from '../components/pages/subadmin/SubAdminDashboard';
 
 // Lazy-loaded components
 const Layout = React.lazy(() => import('../components/layout/Layout'));
@@ -29,7 +31,7 @@ function IndexRoute() {
   const { isAuth, user, sub_admin, admin } = useSelector((state) => state.role);
   const isUserAuth = isAuth ;
   const isAdminAuth = isAuth && admin ;
-  const isSubAdminAuth = isAuth ;
+  const isSubAdminAuth = isAuth && sub_admin ;
 
   console.log('from indexauth:    ' + isAuth, user, sub_admin ,admin);
   console.log("is user auth:    "+ isUserAuth);
@@ -51,7 +53,8 @@ function IndexRoute() {
         {
             path: 'signup',
             element: <SignupPage />
-        } ,
+            // element: <SignupComp />
+        },
         {
             path: 'recipes',
             element: <RecipeListing />
@@ -119,6 +122,10 @@ function IndexRoute() {
           element: <PrivateRoutesSubAdmin isSubAdminAuth={isSubAdminAuth} />,
           children: [
             // sub-admin-specific routes 
+            {
+              path:'/subadmin',
+              element: <SubAdminDashboard />
+            },
           ],
         },
       ],

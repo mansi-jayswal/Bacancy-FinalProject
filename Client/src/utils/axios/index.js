@@ -234,3 +234,23 @@ export const placeNewReview = async (review) => {
     };
   }
 };
+
+
+//******************************API calls on Subadmin schema *****************/
+
+export const getSubAdmins = async () => {
+  try {
+    const res = await API.get("sub-admins");
+    return {
+      success: true,
+      data: res.data,
+      error: null,
+    };
+  } catch (error) {
+    return {
+      success: false,
+      data: [],
+      error: error.message,
+    };
+  }
+};
