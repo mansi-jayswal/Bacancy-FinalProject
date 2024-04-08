@@ -2,7 +2,7 @@
   "users": [
     {
       "id": "1",
-      "name": "John Doe",
+      "name": "John Willam",
       "email": "john@example.com",
       "password": "password123",
       "saved_recipes": [
@@ -314,6 +314,33 @@
           "reviews": [],
           "servingSize": "6",
           "img": "https://t4.ftcdn.net/jpg/06/21/54/41/360_F_621544128_inBjLYomzXLGFiNVri9ebirH1MMJ7ige.jpg"
+        },
+        {
+          "id": "3",
+          "title": "Margherita Pizza",
+          "ingredients": [
+            "Pizza Dough",
+            "Tomatoes",
+            "Fresh Mozzarella Cheese",
+            "Fresh Basil",
+            "Olive Oil"
+          ],
+          "method": "Preheat oven to highest temperature. Roll out pizza dough and top with sliced tomatoes, fresh mozzarella cheese, and torn basil leaves. Drizzle with olive oil. Bake until crust is golden and cheese is bubbly, about 10-12 minutes.",
+          "type": "veg",
+          "cuisine": "Italian",
+          "tags": [
+            "Pizza",
+            "Italian",
+            "Vegetarian"
+          ],
+          "difficulty": "Easy",
+          "cookingTime": "15 minutes",
+          "authorId": 1111,
+          "authorName": "flavourRealm",
+          "likesCount": 175,
+          "reviews": [],
+          "servingSize": "2",
+          "img": "https://img.freepik.com/free-photo/pizza-tasty-cheese-top-view-grey-surface_140725-14194.jpg?t=st=1712125070~exp=1712128670~hmac=47cc308b886809c73f667db6d55fe7600f70653b11219f763a2d5f1135fb6efe&w=740"
         }
       ],
       "created_recipes": [
@@ -386,7 +413,15 @@
           "id": "25"
         }
       ],
-      "reviews": [],
+      "reviews": [
+        {
+          "id": "20",
+          "userId": "12",
+          "postId": "25",
+          "rating": "4",
+          "comment": "nice recipe"
+        }
+      ],
       "preference": "Chinese"
     },
     {
@@ -483,6 +518,16 @@
       ],
       "reviews": [],
       "preference": "Italian"
+    },
+    {
+      "id": "14",
+      "name": "rushi",
+      "email": "rushi@gmail.com",
+      "password": "Rushi@123",
+      "saved_recipes": [],
+      "created_recipes": [],
+      "reviews": [],
+      "preference": "Indian"
     }
   ],
   "recipes": [
@@ -593,7 +638,15 @@
       "authorId": 1111,
       "authorName": "flavourRealm",
       "likesCount": 154,
-      "reviews": [],
+      "reviews": [
+        {
+          "id": "22",
+          "userId": "14",
+          "postId": "4",
+          "rating": "5",
+          "comment": "Looks delicious"
+        }
+      ],
       "servingSize": "4",
       "img": "https://www.thespruceeats.com/thmb/wQd2RvxH1Lh9536W5LY1T_VSyT8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/tacos-al-pastor-recipe-4172074-hero-01-7fb1a4455397486b8485ac8ec2ca3c5a.jpg"
     },
@@ -678,7 +731,15 @@
       "authorId": 1111,
       "authorName": "flavourRealm",
       "likesCount": 189,
-      "reviews": [],
+      "reviews": [
+        {
+          "id": "24",
+          "userId": "14",
+          "postId": "7",
+          "rating": "3",
+          "comment": "biryani is not biryaning the way it should biryaning XD"
+        }
+      ],
       "servingSize": "4",
       "img": "https://img.freepik.com/free-photo/gourmet-chicken-biryani-with-steamed-basmati-rice-generated-by-ai_188544-13480.jpg"
     },
@@ -732,7 +793,22 @@
       "authorId": 1111,
       "authorName": "flavourRealm",
       "likesCount": 207,
-      "reviews": [],
+      "reviews": [
+        {
+          "id": "23",
+          "userId": "14",
+          "postId": "9",
+          "rating": "3",
+          "comment": "Looks amazinggg!!"
+        },
+        {
+          "id": "25",
+          "userId": "14",
+          "postId": "9",
+          "rating": "4",
+          "comment": "quiet happy with the recipe :)"
+        }
+      ],
       "servingSize": "6",
       "img": "https://t4.ftcdn.net/jpg/06/21/54/41/360_F_621544128_inBjLYomzXLGFiNVri9ebirH1MMJ7ige.jpg"
     },
@@ -1293,8 +1369,79 @@
       "postId": "7",
       "rating": "5",
       "comment": "it is so good that i've added multiple reviews XD"
+    },
+    {
+      "id": "20",
+      "userId": "12",
+      "postId": "25",
+      "rating": "4",
+      "comment": "nice recipe"
+    },
+    {
+      "id": "21",
+      "userId": "14",
+      "postId": "1",
+      "rating": "4",
+      "comment": "Great recipe"
+    },
+    {
+      "id": "22",
+      "userId": "14",
+      "postId": "4",
+      "rating": "5",
+      "comment": "Looks delicious"
+    },
+    {
+      "id": "23",
+      "userId": "14",
+      "postId": "9",
+      "rating": "3",
+      "comment": "Looks amazinggg!!"
+    },
+    {
+      "id": "24",
+      "userId": "14",
+      "postId": "7",
+      "rating": "3",
+      "comment": "biryani is not biryaning the way it should biryaning XD"
+    },
+    {
+      "id": "25",
+      "userId": "14",
+      "postId": "9",
+      "rating": "4",
+      "comment": "quiet happy with the recipe :)"
     }
   ],
-  "sub-admins": [],
+  "sub-admins": [
+    {
+      "id": "1",
+      "name": "subadmin1Main",
+      "email": "subadmin1@gmail.com",
+      "password": "Subadmin1@123",
+      "assignedCategory": "Indian",
+      "tags": [
+        "Maharastrian",
+        "Rajasthani",
+        "Gujarati"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "subAdmin2",
+      "email": "subadmin2@gmail.com",
+      "password": "SubAdmin@123",
+      "assignedCategory": "Gujarati",
+      "tags": []
+    },
+    {
+      "id": "3",
+      "name": "dummysubadmin",
+      "email": "dummy@gmail.com",
+      "password": "Dummy@123",
+      "assignedCategory": "Dummycategory",
+      "tags": []
+    }
+  ],
   "category": []
 }

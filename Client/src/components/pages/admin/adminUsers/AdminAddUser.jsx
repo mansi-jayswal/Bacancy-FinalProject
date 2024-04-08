@@ -32,7 +32,7 @@ export default function AdminAddUser() {
     try {
         await createAccount();
         toast.success('User created Successfully!');
-        navigate("/admin");
+        navigate("/admin-users");
       } catch (error) {
         console.error("Error creating user:", error);
         toast.error('Failed to create user');
@@ -57,7 +57,6 @@ export default function AdminAddUser() {
     RegisterUser(newUser)
       .then((res) => console.log("user created successfully by admin! " + res.data))
       .catch((err) => console.log(err));
-
     console.log(newUser);
   };
 

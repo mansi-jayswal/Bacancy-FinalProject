@@ -254,3 +254,71 @@ export const getSubAdmins = async () => {
     };
   }
 };
+
+export const RegisterSubAdmin = async (userData) => {
+  try {
+    const res = await API.post("sub-admins", userData);
+    return {
+      success: true,
+      data: res.data,
+      error: null,
+    };
+  } catch (error) {
+    return {
+      success: false,
+      data: null,
+      error: error.message,
+    };
+  }
+};
+
+export const updateSubAdmin = async (subAdminId , subAdminData ) => {
+  try {
+    const res = await API.patch(`sub-admins/${subAdminId}`, subAdminData);
+    return {
+      success: true,
+      data: res.data,
+      error: null,
+    };
+  } catch (error) {
+    return {
+      success: false,
+      data: null,
+      error: error.message,
+    };
+  }
+};
+
+export const getSubAdminById = async (subAdminId) => {
+  try {
+    const res = await API.get(`sub-admins/${subAdminId}`);
+    return {
+      success: true,
+      data: res.data,
+      error: null,
+    };
+  } catch (error) {
+    return {
+      success: false,
+      data: [],
+      error: error.message,
+    };
+  }
+};
+
+export const deleteSubAdmin = async (subAdminId) => {
+  try {
+    const res = await API.delete(`sub-admins/${subAdminId}`);
+    return {
+      success: true,
+      data: res.data,
+      error: null,
+    };
+  } catch (error) {
+    return {
+      success: false,
+      data: [],
+      error: error.message,
+    };
+  }
+};

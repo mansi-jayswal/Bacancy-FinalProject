@@ -1,4 +1,4 @@
-// InputField.js
+
 import React from 'react';
 
 const InputField = ({ label, type, register, error , id  , name}) => {
