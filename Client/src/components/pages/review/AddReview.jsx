@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Button from '../../common/Button'; 
-import { getAllReviews, getRecipeById, placeNewReview } from '../../../utils/axios';
+import { getAllReviews, getRecipeById, placeNewReview, updateRecipe } from '../../../utils/axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -26,7 +26,7 @@ function AddReview() {
         getRecipeById(id)
         .then(res=> setRecipe(res.data))
         .catch(err=> console.log('err in fetching particular recipe', err));
-  },[])
+  },[recipe])
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -38,35 +38,39 @@ function AddReview() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const newReview={
-        id: allReviews.length !== 0
-        ? (parseInt(allReviews[allReviews.length - 1].id) + 1).toString()
-        : "1",
-        userId: user.id ,
-        postId : id ,
-        rating : reviewData.rating,
+    const newReview = {
+        id: allReviews.length !== 0 ? (parseInt(allReviews[allReviews.length - 1].id) + 1).toString() : "1",
+        userId: user.id,
+        postId: id,
+        rating: reviewData.rating,
         comment: reviewData.review
-    }
+    };
+
     console.log('Review data:', newReview);
-    user.reviews.push(newReview);
-    // recipe.reviews.push(newReview);
+
     try {
-        const res = await placeNewReview(newReview)
-        if(res.success){
+        const res = await placeNewReview(newReview);
+        if (res.success) {
             toast.success('Review added Successfully!');
             dispatch(setRole("user", user));
-            navigate(`/recipes/${id}`);
+            // Update recipe's reviews array with the new review
+            const updatedRecipe = { ...recipe };
+            updatedRecipe.reviews.push(newReview);
+            // Update the recipe on the server
+            updateRecipe(id , updatedRecipe);
+            // navigate(`/recipes/${id}`);
         }
-        
     } catch (error) {
-        console.log('error in adding the revies', error)
-        toast.error('there is some error in adding the review, please try again');
+        console.log('error in adding the review', error);
+        toast.error('There is some error in adding the review, please try again');
     }
+    finally{
+      console.log('Navigating to:', `/recipes/${id}`);
+      navigate(`/recipes/${id}`);
 
+    }
+};
 
-
-
-  };
 
   return (
     <div className="max-w-lg mt-8 mb-8 p-6 bg-white rounded-lg shadow-md ml-4 mr-4 lg:mx-auto">

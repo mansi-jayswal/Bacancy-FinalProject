@@ -2,6 +2,13 @@ import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfilePage from '../components/pages/user/ProfilePage';
+import AdminDashboard from '../components/pages/admin/AdminDashboard';
+import AdminUsersListing from '../components/pages/admin/AdminUsersListing';
+import AdminSubadminsListing from '../components/pages/admin/AdminSubadminsListing';
+import AdminAddUser from '../components/pages/admin/adminUsers/AdminAddUser';
+import AdminUpdateUser from '../components/pages/admin/adminUsers/AdminUpdateUser';
+import SignupComp from '../components/common/Auth/SignupComp';
+import SubAdminDashboard from '../components/pages/subadmin/SubAdminDashboard';
 
 // Lazy-loaded components
 const Layout = React.lazy(() => import('../components/layout/Layout'));
@@ -23,10 +30,10 @@ const AddReview = React.lazy(()=>import('../components/pages/review/AddReview'))
 function IndexRoute() {
   const { isAuth, user, sub_admin, admin } = useSelector((state) => state.role);
   const isUserAuth = isAuth ;
-  const isAdminAuth = isAuth ;
-  const isSubAdminAuth = isAuth ;
+  const isAdminAuth = isAuth && admin ;
+  const isSubAdminAuth = isAuth && sub_admin ;
 
-  console.log('from indexauth:    ' + isAuth, user , sub_admin , admin);
+  console.log('from indexauth:    ' + isAuth, user, sub_admin ,admin);
   console.log("is user auth:    "+ isUserAuth);
   
   return createBrowserRouter([
@@ -46,7 +53,8 @@ function IndexRoute() {
         {
             path: 'signup',
             element: <SignupPage />
-        } ,
+            // element: <SignupComp />
+        },
         {
             path: 'recipes',
             element: <RecipeListing />
@@ -88,12 +96,36 @@ function IndexRoute() {
           element: <PrivateRoutesAdmin isAdminAuth={isAdminAuth} />,
           children: [
             // Admin-specific routes 
+            {
+              path:'/admin',
+              element: <AdminDashboard />
+            },
+            {
+              path:'/admin-users',
+              element: <AdminDashboard />
+            },
+            {
+              path:'/admin-subadmins',
+              element: <AdminSubadminsListing />
+            },
+            {
+              path:'/admin-createUser',
+              element: <AdminAddUser />
+            },
+            {
+              path:'admin-updateUser/:id',
+              element: <AdminUpdateUser />
+            }
           ],
         },
         {
           element: <PrivateRoutesSubAdmin isSubAdminAuth={isSubAdminAuth} />,
           children: [
             // sub-admin-specific routes 
+            {
+              path:'/subadmin',
+              element: <SubAdminDashboard />
+            },
           ],
         },
       ],

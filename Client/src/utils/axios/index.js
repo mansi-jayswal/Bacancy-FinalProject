@@ -75,6 +75,24 @@ export const API = axios.create({
     }
   };
 
+  export const deleteUser = async (userId) => {
+    try {
+      const res = await API.delete(`users/${userId}`);
+      return {
+        success: true,
+        data: res.data,
+        error: null,
+      };
+    } catch (error) {
+      return {
+        success: false,
+        data: [],
+        error: error.message,
+      };
+    }
+  };
+
+
 // *******************************API calls on Recipe Schema***********************************
  
   export const getRecipes = async () => {
@@ -212,6 +230,26 @@ export const placeNewReview = async (review) => {
     return {
       success: false,
       data: null,
+      error: error.message,
+    };
+  }
+};
+
+
+//******************************API calls on Subadmin schema *****************/
+
+export const getSubAdmins = async () => {
+  try {
+    const res = await API.get("sub-admins");
+    return {
+      success: true,
+      data: res.data,
+      error: null,
+    };
+  } catch (error) {
+    return {
+      success: false,
+      data: [],
       error: error.message,
     };
   }

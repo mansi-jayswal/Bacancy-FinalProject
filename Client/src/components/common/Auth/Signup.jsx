@@ -46,7 +46,6 @@ export default function Signup() {
             created_recipes:[],
             reviews:[],
             preference:signupState.preference
-            // Add other fields as needed (e.g., preference)
         };
         dispatch(setRole('user', newUser))
 
@@ -99,3 +98,4 @@ export default function Signup() {
         </form>
     )
 }
+
