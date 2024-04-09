@@ -23,8 +23,8 @@ const publicLinks = [
   
   const subAdminLinks = [
     // ...publicLinks,
-    { name: "Cuisines", path: "/cuisines" },
-    { name: "Recipes of Me", path: "/recipes-of-me" }
+    { name: "Cuisines", path: "/subadmin" },
+    { name: "Reviews Section", path: "/subadmin-reviews" }
   ];
   
   export { publicLinks, userLinks, adminLinks, subAdminLinks };

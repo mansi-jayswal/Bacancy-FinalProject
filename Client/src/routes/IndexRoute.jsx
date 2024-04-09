@@ -11,6 +11,7 @@ import SignupComp from '../components/common/Auth/SignupComp';
 import SubAdminDashboard from '../components/pages/subadmin/SubAdminDashboard';
 import AdminAddSubadmin from '../components/pages/admin/adminSubadmin/AdminAddSubadmin';
 import AdminUpdateSubadmin from '../components/pages/admin/adminSubadmin/AdminUpdateSubadmin';
+import SubAdminReviewSection from '../components/pages/subadmin/SubAdminReviewSection';
 
 // Lazy-loaded components
 const Layout = React.lazy(() => import('../components/layout/Layout'));
@@ -136,6 +137,10 @@ function IndexRoute() {
             {
               path:'/subadmin',
               element: <SubAdminDashboard />
+            },
+            {
+              path:'/subadmin-reviews',
+              element: <SubAdminReviewSection />
             },
           ],
         },

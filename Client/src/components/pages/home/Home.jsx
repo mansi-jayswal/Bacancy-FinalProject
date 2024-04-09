@@ -5,13 +5,13 @@ import Heading from '../../common/Heading';
 import { getRecipes } from '../../../utils/axios';
 import RecipeCard from '../recipe/RecipeCard';
 import { useSelector } from 'react-redux';
-// import Button from '../../common/Button';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../common/Button';
 
 function Home() {
   const [recipes, setRecipes] = useState([]);
   const [filteredRecipes, setFilteredRecipes] = useState([]);
+  const [trendingReicpes, setTrendingReicpes] = useState([]);
   const user = useSelector((state) => state.role.user);
   const navigate = useNavigate();
 
@@ -20,13 +20,20 @@ function Home() {
       .then((res) => {
         setRecipes(res.data);
         filterRecipes(res.data);
+        findTrendingRecipes(res.data)
       })
       .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
     filterRecipes(recipes);
+    findTrendingRecipes(recipes)
   }, [recipes, user]);
+
+  const findTrendingRecipes =(recipes) =>{
+    const trendingRecipes = recipes.filter(recipe => recipe.isTrending === true);
+    setTrendingReicpes(trendingRecipes);
+  }
 
   const filterRecipes = (recipes) => {
     if (user && user.preference) {
@@ -47,13 +54,27 @@ function Home() {
 
       {/* category round images */}
       <Section />
+    {/* Top picks of the month */}
+    <Heading text="Top Picks of the Month" />
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 m-2 w-[90%] mx-auto">
+        {trendingReicpes.length > 0 ? (
+          trendingReicpes.map((recipe) => <RecipeCard key={recipe.id} recipe={recipe} />)
+        ) : (
+          <div className='text-center'>
+            <h1>Please login to see recomanded recipes for you!</h1>
+          </div>
+        )}
+      </div>
+
       {/* recommended for you */}
       <Heading text="Recommended for you" />
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 m-2 w-[90%] mx-auto">
         {filteredRecipes.length > 0 ? (
           filteredRecipes.map((recipe) => <RecipeCard key={recipe.id} recipe={recipe} />)
         ) : (
-          <p>Please login to see recomanded recipes for you!</p>
+          <div className='text-center'>
+            <h1>Please login to see recomanded recipes for you!</h1>
+          </div>
         )}
       </div>
 

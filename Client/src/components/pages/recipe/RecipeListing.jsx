@@ -16,7 +16,8 @@ function RecipeListing() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 m-2 w-[90%] mx-auto">
       {recipes.map(recipe => (
-        <RecipeCard key={recipe.id} recipe={recipe} />
+        <RecipeCard key={recipe.id} recipe={recipe} >
+          </RecipeCard>
       ))}
     </div>
   );
