@@ -21,12 +21,21 @@ function Section() {
     <div className='flex w-full  m-2 p-4 rounded justify-center'>
       {cuisines.map((cuisine, index) => (
         <div key={index} className="flex items-center flex-col mr-8">
-          <img src={cuisine.image} alt={cuisine.name} className="w-20 h-20 rounded-full mb-2 object-cover" />
-          <p className="text-black text-sm">{cuisine.name}</p>
+                <div className="relative w-20 h-20 rounded-full overflow-hidden mb-2 cursor-pointer transition-transform transform hover:scale-110">
+          <img 
+            src={cuisine.image} 
+            alt={cuisine.name} 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black opacity-50 transition-opacity duration-300 ease-in-out  hover:opacity-50"></div>
+          <p className="absolute bottom-7 left-0 right-0 text-center text-white font-bold z-10">{cuisine.name}</p>
+        </div>
         </div>
       ))}
     </div>
     </>
+
+
   );
 }
 

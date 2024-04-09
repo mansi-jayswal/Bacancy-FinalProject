@@ -22,6 +22,7 @@ const RecipeDetails = () => {
   const isAuth = useSelector((state) => state.role.isAuth);
   const user = useSelector((state) => state.role.user);
   const sub_admin = useSelector((state) => state.role.sub_admin);
+  const admin = useSelector((state) => state.role.admin);
 
 
   useEffect(() => {
@@ -130,9 +131,11 @@ const RecipeDetails = () => {
         </div>
         <div className="mb-4 flex">
           <div className="m-2">
-            <button onClick={handleSave} title="Save this recipe">
+            {
+              (!sub_admin && !admin) ?  <button onClick={handleSave} title="Save this recipe">
               <MdBookmarks size={25} />
-            </button>
+            </button> : null
+            }
           </div>
           <div className="m-2">
             {isEditAllowed ? (
@@ -207,7 +210,9 @@ const RecipeDetails = () => {
       </div>
 
       {/* review section */}
-      <Review reviews={reviews} recipeId={id} />
+      {
+        (!sub_admin && !admin) ? <Review reviews={reviews} recipeId={id} /> : null
+      }
     </div>
   );
 };

@@ -25,6 +25,7 @@ const CreateRecipe = () => {
   });
 
   const user = useSelector((state) => state.role.user);
+  const sub_admin = useSelector((state) => state.role.sub_admin);
 
   const [recipes, setRecipes] = useState([]);
   const navigate = useNavigate();
@@ -48,7 +49,10 @@ const CreateRecipe = () => {
     console.log(recipe);
     toast.success("recipe created successfully!");
 
-    navigate("/");
+    if(user) navigate('/recipes');
+    else if(sub_admin) navigate('/subadmin');
+
+    // navigate("/");
     createNewRecipe();
   };
 
@@ -72,8 +76,8 @@ const CreateRecipe = () => {
       img: recipe.image,
       reviews: [],
       likesCount: 51,
-      authorId: user.id,
-      authorName: user.name,
+      authorId: user ? user.id : '1111',
+      authorName: user ? user.name : 'FlavourRealm',
     };
     console.log(newRecipe);
     user.created_recipes.push(newRecipe);
@@ -182,14 +186,39 @@ const CreateRecipe = () => {
             >
               Cuisine
             </label>
-            <input
+            {/* <input
               type="text"
               id="cuisine"
               name="cuisine"
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
               value={recipe.cuisine}
               onChange={handleChange}
-            />
+            /> */}
+             {user && (
+             <select
+             id="cuisine"
+             name="cuisine"
+             className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+             value={recipe.cuisine}
+             onChange={handleChange}
+           >
+             <option value="">Select cuisine</option>
+             {Array.from(new Set(recipes.map(recipe => recipe.cuisine))).map((cuisine) => (
+               <option key={cuisine} value={cuisine}>
+                 {cuisine}
+               </option>
+             ))}
+           </select>
+            )}
+            {sub_admin && (
+              <input
+                type="text"
+                id="cuisine"
+                name="cuisine"
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+                value={sub_admin.assignedCategory}
+                disabled
+              /> )}
           </div>
           {/* Tags */}
           <div className="mb-4">

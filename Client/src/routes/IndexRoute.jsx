@@ -33,8 +33,8 @@ const AddReview = React.lazy(()=>import('../components/pages/review/AddReview'))
 function IndexRoute() {
   const { isAuth, user, sub_admin, admin } = useSelector((state) => state.role);
   const isUserAuth = isAuth ;
-  const isAdminAuth = isAuth && admin ;
-  const isSubAdminAuth = isAuth && sub_admin ;
+  const isAdminAuth = isAuth && !!admin ;
+  const isSubAdminAuth = isAuth && !!sub_admin ;
 
   console.log('from indexauth:    ' + isAuth, user, sub_admin ,admin);
   console.log("is user auth:    "+ isUserAuth);

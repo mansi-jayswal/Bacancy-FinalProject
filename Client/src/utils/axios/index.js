@@ -235,6 +235,22 @@ export const placeNewReview = async (review) => {
   }
 };
 
+export const deleteReview = async (reviewId) => {
+  try {
+    const res = await API.delete(`reviews/${reviewId}`);
+    return {
+      success: true,
+      data: res.data,
+      error: null,
+    };
+  } catch (error) {
+    return {
+      success: false,
+      data: [],
+      error: error.message,
+    };
+  }
+};
 
 //******************************API calls on Subadmin schema *****************/
 

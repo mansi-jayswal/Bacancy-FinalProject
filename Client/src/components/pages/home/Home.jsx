@@ -49,8 +49,8 @@ function Home() {
   };
 
   return (
-    <div className="relative">
-      <img src={banner} alt="banner" className="w-full h-auto mr-4 " />
+    <div className="relative overflow-x-hidden">
+      <img src={banner} alt="banner" className="max-w-full h-auto " />
 
       {/* category round images */}
       <Section />
