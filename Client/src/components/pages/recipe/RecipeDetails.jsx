@@ -21,6 +21,7 @@ const RecipeDetails = () => {
 
   const isAuth = useSelector((state) => state.role.isAuth);
   const user = useSelector((state) => state.role.user);
+  const sub_admin = useSelector((state) => state.role.sub_admin);
 
 
   useEffect(() => {
@@ -64,7 +65,7 @@ const RecipeDetails = () => {
   console.log(recipe)
 
   let isEditAllowed = false;
-  if (recipe && user && recipe.authorId === user.id) { 
+  if ((recipe && user && recipe.authorId === user.id) || (recipe && sub_admin && recipe.cuisine === sub_admin.assignedCategory)) { 
     isEditAllowed = true;
   }
 

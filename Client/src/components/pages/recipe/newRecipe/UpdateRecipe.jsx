@@ -31,12 +31,12 @@ const UpdateRecipe = () => {
     getRecipes()
       .then((res) => {
         setRecipes(res.data);
-        // Find the recipe with the provided id
+        //  recipe with the provided id
         const existingRecipe = res.data.find((recipe) => recipe.id === id);
         if (existingRecipe) {
           setRecipe(existingRecipe);
         } else {
-          // Handle case when recipe with provided id is not found
+          // when individual recipe is not found!
           console.log("Recipe not found");
         }
       })
@@ -54,7 +54,6 @@ const UpdateRecipe = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     console.log(recipe);
 
     const newRecipe={
@@ -74,13 +73,14 @@ const UpdateRecipe = () => {
       authorId: user.id ,
       authorName: user.name
   }
+    console.log('newRecipe',newRecipe)
     try {
       console.log(newRecipe);
       await updateRecipe(id, newRecipe);
       toast.success("Recipe updated successfully!");
 
+      if(user){
       const index = user.created_recipes.findIndex((r) => r.id === id);
-
       if (index !== -1) 
       {
         const updatedUser = { ...user };
@@ -92,7 +92,7 @@ const UpdateRecipe = () => {
             setLoading(false);
             dispatch(setRole("user", user));
           } else {
-            console.log("error in updating the user from saveRecipe");
+            console.log("error in updating the user from update recipe");
           }
         } 
         catch (error) {
@@ -100,7 +100,11 @@ const UpdateRecipe = () => {
         }
         navigate("/my-creations");
       }
-
+      }
+    else{
+      toast.success('Recipe updated sucessfully!')
+      navigate('/subadmin');
+    }
     } catch (error) 
     {
       console.log("Error updating recipe: ", error);
