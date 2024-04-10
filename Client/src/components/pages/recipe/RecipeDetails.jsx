@@ -70,7 +70,7 @@ const RecipeDetails = () => {
     isEditAllowed = true;
   }
 
-  console.log("is edit allowed : ---------> " +isEditAllowed)
+  console.log("is edit allowed : ---> " +isEditAllowed)
 
 
   const handleSave = async () => {

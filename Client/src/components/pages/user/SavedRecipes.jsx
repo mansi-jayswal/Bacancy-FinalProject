@@ -6,10 +6,12 @@ import { MdDelete } from "react-icons/md";
 import { toast } from "react-toastify";
 import { API, updateUser } from "../../../utils/axios";
 import { setRole } from "../../../redux/actions/actions";
+import SearchBar from "../../common/SearchBar";
 
 function SavedRecipes() {
   const user = useSelector((state) => state.role.user);
   const recipes = user.saved_recipes;
+  const [searchQuery, setSearchQuery] = useState("");
   const dispatch = useDispatch();
 
   const handleRemoveFromSave = async (idOfTheRecipeToRemove) => {
@@ -34,16 +36,46 @@ function SavedRecipes() {
     }
     toast.error("Recipe removed from save!");
   };
+
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+  };
+
+  const filteredRecipes = recipes.filter((recipe) =>
+  recipe.title.toLowerCase().includes(searchQuery.toLowerCase())
+);
+
+
+
   return (
-    <div>
-      <div>
+    <div className="container mx-auto px-4 py-4">
+      {/* title */}
+      <div className="text-center mb-4">
         <h2 className="text-center">
           {" "}
           {user.name.toUpperCase()} 's Saved Recipes
         </h2>
       </div>
+
+      {/* search bar */}
+      <div className="mb-4 flex justify-center">
+        <SearchBar
+          placeholder="Search your Recipes..."
+          onSearch={handleSearch}
+          value={searchQuery}
+        />
+      </div>
+
+      {
+        filteredRecipes.length==0 ?
+        <div className="text-center">
+          <h1 className="text-xl font-semibold text-customRed">
+            No recipes found!
+          </h1>
+        </div>
+        :
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 m-2 w-[90%] mx-auto">
-        {recipes.map((recipe) => (
+        {filteredRecipes.map((recipe) => (
           <div key={recipe.id}>
             <RecipeCard key={recipe.id} recipe={recipe} />
             <div className="text-center">
@@ -55,6 +87,7 @@ function SavedRecipes() {
           </div>
         ))}
       </div>
+          }
     </div>
   );
 }

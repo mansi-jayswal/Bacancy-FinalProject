@@ -1,17 +1,18 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import ProfilePage from '../components/pages/user/ProfilePage';
-import AdminDashboard from '../components/pages/admin/AdminDashboard';
-import AdminUsersListing from '../components/pages/admin/AdminUsersListing';
-import AdminSubadminsListing from '../components/pages/admin/AdminSubadminsListing';
-import AdminAddUser from '../components/pages/admin/adminUsers/AdminAddUser';
-import AdminUpdateUser from '../components/pages/admin/adminUsers/AdminUpdateUser';
-import SignupComp from '../components/common/Auth/SignupComp';
-import SubAdminDashboard from '../components/pages/subadmin/SubAdminDashboard';
-import AdminAddSubadmin from '../components/pages/admin/adminSubadmin/AdminAddSubadmin';
-import AdminUpdateSubadmin from '../components/pages/admin/adminSubadmin/AdminUpdateSubadmin';
-import SubAdminReviewSection from '../components/pages/subadmin/SubAdminReviewSection';
+const ProfilePage = React.lazy(() => import('../components/pages/user/ProfilePage'));
+const AdminDashboard = React.lazy(() => import('../components/pages/admin/AdminDashboard'));
+const AdminUsersListing = React.lazy(() => import('../components/pages/admin/AdminUsersListing'));
+const AdminSubadminsListing = React.lazy(() => import('../components/pages/admin/AdminSubadminsListing'));
+const AdminAddUser = React.lazy(() => import('../components/pages/admin/adminUsers/AdminAddUser'));
+const AdminUpdateUser = React.lazy(() => import('../components/pages/admin/adminUsers/AdminUpdateUser'));
+const SignupComp = React.lazy(() => import('../components/common/Auth/SignupComp'));
+const SubAdminDashboard = React.lazy(() => import('../components/pages/subadmin/SubAdminDashboard'));
+const AdminAddSubadmin = React.lazy(() => import('../components/pages/admin/adminSubadmin/AdminAddSubadmin'));
+const AdminUpdateSubadmin = React.lazy(() => import('../components/pages/admin/adminSubadmin/AdminUpdateSubadmin'));
+const SubAdminReviewSection = React.lazy(() => import('../components/pages/subadmin/SubAdminReviewSection'));
+
 
 // Lazy-loaded components
 const Layout = React.lazy(() => import('../components/layout/Layout'));
