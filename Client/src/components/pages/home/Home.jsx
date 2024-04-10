@@ -54,14 +54,14 @@ function Home() {
 
   return (
     <>
-      <div className="text-center bg-customRed">
+      {/* <div className="text-center bg-customRed">
         <p className="text-white text-xs lg:text-xl py-4 md:py-2 flex justify-center items-center font-dancing">
           <TbToolsKitchen3 size={20} className="text-yellow-400 mr-2" />
           <strong className="ml-1">
             From Kitchen Creations to Culinary Connections!
           </strong>
         </p>
-      </div>
+      </div> */}
 
       <div className="relative overflow-x-hidden">
         <img src={banner} alt="banner" className="max-w-full h-auto " />
@@ -76,7 +76,7 @@ function Home() {
             ))
           ) : (
             <div className="text-center">
-              <h1>Please login to see recomanded recipes for you!</h1>
+              <h1 >Please login to see recomanded recipes for you!</h1>
             </div>
           )}
         </div>

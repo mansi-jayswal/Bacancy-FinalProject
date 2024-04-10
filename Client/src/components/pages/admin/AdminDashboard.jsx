@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import DeleteModal from "../../common/DeleteModal";
 import { toast } from "react-toastify";
 import SearchBar from "../../common/SearchBar";
+import Pagination from "../../common/Pagination";
 
 function AdminDashboard() {
   const [users, setUsers] = useState([]);
@@ -15,20 +16,14 @@ function AdminDashboard() {
   const [sortOrder, setSortOrder] = useState("");
   const [sortedField, setSortedField] = useState("");
   const navigate = useNavigate();
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 5;
 
   useEffect(() => {
     getUsers()
       .then((res) => setUsers(res.data))
       .catch((err) => console.log("error in fetching users at admin", err));
   }, []);
-
-  const usersArray = [
-    { key: "id", label: "User ID" },
-    { key: "name", label: "Name" },
-    { key: "email", label: "Email" },
-    { key: "password", label: "Password" },
-    { key: "preference", label: "Preference" },
-  ];
 
   const handleUpdate = (id) => {
     const url = `/admin-updateUser/${id}`;
@@ -91,6 +86,18 @@ function AdminDashboard() {
     }
   });
 
+  const indexOfLastUser = currentPage * itemsPerPage;
+  const indexOfFirstUser = indexOfLastUser - itemsPerPage;
+  const currentUsers = sortedUsers.slice(indexOfFirstUser, indexOfLastUser);
+
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="container mx-auto p-4 px-6 md:p-10">
       <div className="text-center">
@@ -116,8 +123,14 @@ function AdminDashboard() {
       ) : (
         <div className="overflow-x-auto">
           <Table
-            data={filteredUsers}
-            headers={usersArray}
+            data={currentUsers}
+            headers={[
+              { key: "id", label: "User ID" },
+              { key: "name", label: "Name" },
+              { key: "email", label: "Email" },
+              { key: "password", label: "Password" },
+              { key: "preference", label: "Preference" },
+            ]}
             className="w-full whitespace-nowrap"
             handleDelete={handleDelete}
             handleUpdate={handleUpdate}
@@ -125,7 +138,14 @@ function AdminDashboard() {
           />
         </div>
       )}
-
+      <div className="m-4">
+        <Pagination
+          currentPage={currentPage}
+          totalPages={Math.ceil(sortedUsers.length / itemsPerPage)}
+          onPageChange={paginate}
+          itemsPerPage={itemsPerPage}
+        />
+      </div>
       {showConfirmationModal && (
         <DeleteModal
           Id={dataIdToBeDeleted}
@@ -140,3 +160,4 @@ function AdminDashboard() {
 }
 
 export default AdminDashboard;
+

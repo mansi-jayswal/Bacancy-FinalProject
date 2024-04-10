@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import Button from "../../common/Button";
 import { deleteSubAdmin, getSubAdmins } from "../../../utils/axios";
 import Table from "../../common/Table";
-import DeleteModal from "../../common/DeleteModal"; // Import the DeleteModal component
+import DeleteModal from "../../common/DeleteModal"; 
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import SearchBar from "../../common/SearchBar";
+import Pagination from "../../common/Pagination"; 
 
 function AdminSubadminListing() {
   const [subAdmins, setSubAdmins] = useState([]);
@@ -14,6 +15,8 @@ function AdminSubadminListing() {
   const [searchQuery, setSearchQuery] = useState("");
   const [sortOrder, setSortOrder] = useState("");
   const [sortedField, setSortedField] = useState("");
+  const [currentPage, setCurrentPage] = useState(1); 
+  const itemsPerPage = 3;
 
   const navigate = useNavigate();
 
@@ -94,6 +97,21 @@ function AdminSubadminListing() {
     }
   });
 
+  const indexOfLastSubAdmin = currentPage * itemsPerPage;
+  const indexOfFirstSubAdmin = indexOfLastSubAdmin - itemsPerPage;
+  const currentSubAdmins = sortedSubAdmins.slice(
+    indexOfFirstSubAdmin,
+    indexOfLastSubAdmin
+  );
+
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="container mx-auto p-4 px-6 md:p-10 my-2">
       <div className="text-center">
@@ -120,15 +138,25 @@ function AdminSubadminListing() {
       ) : (
         <div className="overflow-x-auto">
           <Table
-            data={filteredSubAdmins}
+            data={currentSubAdmins}
             headers={subAdminsArray}
             className="w-full whitespace-nowrap"
             handleDelete={handleDelete}
             handleUpdate={handleUpdate}
-            handleSort={handleSort} // Pass the handleSort function
+            handleSort={handleSort} 
           />
         </div>
       )}
+
+      {/* Pagination */}
+      <div className="m-4">
+        <Pagination
+          currentPage={currentPage}
+          totalPages={Math.ceil(sortedSubAdmins.length / itemsPerPage)}
+          onPageChange={paginate}
+          itemsPerPage={itemsPerPage}
+        />
+      </div>
 
       {showConfirmationModal && (
         <DeleteModal
@@ -144,3 +172,4 @@ function AdminSubadminListing() {
 }
 
 export default AdminSubadminListing;
+

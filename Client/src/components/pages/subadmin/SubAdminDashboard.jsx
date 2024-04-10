@@ -4,33 +4,31 @@ import { getRecipeById, getRecipes, updateRecipe } from "../../../utils/axios";
 import RecipeCard from "../recipe/RecipeCard";
 import Loader from "../../common/Loader";
 import { HiTrendingUp } from "react-icons/hi";
-import { TiTick } from "react-icons/ti";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import Pagination from "../../common/Pagination";
 
 function SubAdminDashboard() {
   const { sub_admin } = useSelector((state) => state.role);
   const [recipes, setRecipes] = useState([]);
-  const [trendingRecipe , setTrendingRecipe] = useState([]);
   const [filteredRecipes, setFilteredRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
-  const navigate= useNavigate();
-  // const [trendEmogi , setTrendEmogi] = useState( <HiTrendingUp size={20}  />)
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6; 
+  const navigate = useNavigate();
 
   useEffect(() => {
     getRecipes()
       .then((res) => {
         setRecipes(res.data);
-        setLoading(false); 
-        filterRecipes(recipes);
+        setLoading(false);
+        filterRecipes(res.data); 
       })
-      .catch((err)  => {
+      .catch((err) => {
         console.log("err in fetching recipes at subadmin", err);
-        setLoading(false); 
+        setLoading(false);
       });
-  }, [recipes, trendingRecipe]);
-
-
+  }, []);
 
   const filterRecipes = (recipes) => {
     if (sub_admin && sub_admin.assignedCategory) {
@@ -42,49 +40,40 @@ function SubAdminDashboard() {
       setFilteredRecipes(filtered);
     }
   };
-  // const handleTrending = async (id) =>{
-  //   console.log('trending button clicked! from recipe id ', id);
-  //    getRecipeById(id)
-  //    .then(res=> setTrendingRecipe(res.data))
-  //    .catch(err=>console.log('error in trending recipe!', err))
-  //    console.log(trendingRecipe);
-  //    if(trendingRecipe.isTrending){
-  //     toast.warn('Recipe already in trend!');
-  //     trendingRecipe([]);
-  //     return;
-  //    }
-  //    else {
-  //      const addRecipeToTrend= {...trendingRecipe , isTrending:true}
-  //      await updateRecipe(id ,addRecipeToTrend)
-  //             .then(res=>console.log('recipe updated',res))
-  //             .catch(err=> console.log('error in updating trending state',err))
-  //     toast.success('recipe added to trend!')
-  //    }
-
-  //   // setTrendEmogi(<TiTick size={20} />)
-  // }
 
   const handleTrending = async (id) => {
-    console.log('Trending button clicked for recipe ID:', id);
+    console.log("Trending button clicked for recipe ID:", id);
     try {
       const res = await getRecipeById(id);
       const trendingRecipeData = res.data;
-      
-      // Check if trendingRecipeData is already trending
+
       if (trendingRecipeData.isTrending) {
-        toast.warn('Recipe already in trend!');
+        toast.warn("Recipe already in trend!");
       } else {
-        // Update recipe's isTrending property to true
         const updatedRecipe = { ...trendingRecipeData, isTrending: true };
         await updateRecipe(id, updatedRecipe);
-        toast.success('Recipe added to trend!');
+        toast.success("Recipe added to trend!");
       }
     } catch (error) {
-      console.log('Error handling trending:', error);
-      toast.error('Error handling trending!');
+      console.log("Error handling trending:", error);
+      toast.error("Error handling trending!");
     }
   };
-  
+
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  const indexOfLastRecipe = currentPage * itemsPerPage;
+  const indexOfFirstRecipe = indexOfLastRecipe - itemsPerPage;
+  const currentRecipes = filteredRecipes.slice(
+    indexOfFirstRecipe,
+    indexOfLastRecipe
+  );
 
   return (
     <>
@@ -95,32 +84,47 @@ function SubAdminDashboard() {
         <h4 className="text-customRed font-semibold ml-auto mr-96">
           My Category : {sub_admin.assignedCategory} Cuisine
         </h4>
-        <button onClick={()=>navigate('/new-recipe')} className="text-customRed font-semibold mr-8 ">
+        <button
+          onClick={() => navigate("/new-recipe")}
+          className="text-customRed font-semibold mr-8"
+        >
           +Add new Recipe
         </button>
       </div>
 
-      {loading ? ( 
-        <Loader /> 
+      {loading ? (
+        <Loader />
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 m-2 w-[90%] mx-auto">
-          {filteredRecipes.length > 0 ? (
-            filteredRecipes.map((recipe) => (
-              <RecipeCard key={recipe.id} recipe={recipe} onClick={()=>handleTrending(recipe.id)} >
-                  <HiTrendingUp size={20}  />
-                  {/* {trendEmogi} */}
+        <>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 m-2 w-[90%] mx-auto">
+            {currentRecipes.length > 0 ? (
+              currentRecipes.map((recipe) => (
+                <RecipeCard
+                  key={recipe.id}
+                  recipe={recipe}
+                  onClick={() => handleTrending(recipe.id)}
+                >
+                  <HiTrendingUp size={20} />
                 </RecipeCard>
-            ))
-          ) : (
-            <div className="text-center">
-              <h1 className="ml-5">No recipes found from {sub_admin.assignedCategory} cuisine</h1>
-            </div>
-          )}
-        </div>
+              ))
+            ) : (
+              <div className="text-center">
+                <h1 className="ml-5">
+                  No recipes found from {sub_admin.assignedCategory} cuisine
+                </h1>
+              </div>
+            )}
+          </div>
+          <Pagination
+            currentPage={currentPage}
+            totalPages={Math.ceil(filteredRecipes.length / itemsPerPage)}
+            onPageChange={paginate}
+            itemsPerPage={itemsPerPage}
+          />
+        </>
       )}
     </>
   );
 }
 
 export default SubAdminDashboard;
-

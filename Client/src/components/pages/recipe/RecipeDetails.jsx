@@ -3,13 +3,15 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import Loader from "../../common/Loader";
 import { IoIosTime } from "react-icons/io";
-import { FaEdit, FaHeart, FaUser } from "react-icons/fa";
+import { FaEdit, FaHeart, FaStar, FaUser } from "react-icons/fa";
 import { MdBookmarks } from "react-icons/md";
 import Review from "../../common/Review";
 import { useDispatch, useSelector } from "react-redux";
 import { getRecipeById, getReviewsOnRecipe, updateUser } from "../../../utils/axios";
 import { toast } from "react-toastify";
 import { setRole } from "../../../redux/actions/actions";
+import ReactStars from "react-rating-stars-component";
+
 
 const RecipeDetails = () => {
   const { id } = useParams();
@@ -108,6 +110,15 @@ const RecipeDetails = () => {
     }
   };
 
+  const calculateAverageRating = (reviews) => {
+    if (!reviews || reviews.length === 0) return 0;
+  
+    const totalRating = reviews.reduce((acc, review) => acc + parseInt(review.rating), 0);
+    return (totalRating / reviews.length).toFixed(1);
+  };
+
+
+
   const handleEdit = () =>{
     console.log('you clicked edit button');
     navigate(`/update-recipe/${id}`);
@@ -159,9 +170,8 @@ const RecipeDetails = () => {
           </p>
 
           <div className="flex item-center ">
-            <IoIosTime />
+            <IoIosTime className="inline"/>
             <span className="ml-2">{recipe.cookingTime}</span>
-            {/* <p><IoIosTime /><span className="font-bold"></span> {recipe.cookingTime}</p> */}
           </div>
 
           <p>
@@ -170,15 +180,23 @@ const RecipeDetails = () => {
           </p>
         </div>
         <div>
+          <div className="flex gap-4">
+          <ReactStars
+                  count={5}
+                  value={parseInt(calculateAverageRating(recipe.reviews))}
+                  a11y={false}
+                  isHalf={true}
+                  edit={false}
+                  size={15}
+                  color={`rgb(156 163 175)`}
+                  activeColor={`#ffd700`}
+                />
+            <span className="font-bold">{calculateAverageRating(recipe.reviews)}   
+           </span>
+          </div>
           <p>
             <span className="font-bold">
-              <FaHeart />
-            </span>{" "}
-            {recipe.likesCount}
-          </p>
-          <p>
-            <span className="font-bold">
-              <FaUser />
+              <FaUser className="inline" />
             </span>{" "}
             {recipe.authorName}
           </p>
