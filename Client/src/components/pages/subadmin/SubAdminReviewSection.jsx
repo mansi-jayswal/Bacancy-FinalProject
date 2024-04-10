@@ -4,11 +4,14 @@ import { deleteReview, getRecipes, updateRecipe } from "../../../utils/axios";
 import { FaStar } from "react-icons/fa";
 import Button from "../../common/Button";
 import { toast } from "react-toastify";
+import DeleteModal from "../../common/DeleteModal";
 
 function SubAdminReviewSection() {
   const [reviews, setReviews] = useState([]);
   const subAdmin = useSelector((state) => state.role.sub_admin);
   const [filteredRecipes, setFilteredRecipes] = useState([]);
+  const [showConfirmationModal, setShowConfirmationModal] = useState(false);
+  const [dataIdToBeDeleted, setDataIdToBeDeleted] = useState(null);
 
   useEffect(() => {
     if (subAdmin && subAdmin.assignedCategory) {
@@ -69,44 +72,70 @@ function SubAdminReviewSection() {
     }
   };
 
+  const handleDelete = (reviewId) => {
+    setShowConfirmationModal(true);
+    setDataIdToBeDeleted(reviewId);
+  };
+
+  const cancelDelete = () => {
+    setShowConfirmationModal(false);
+    setDataIdToBeDeleted(null);
+  };
+
+  const confirmDelete = () => {
+    handleDeleteReview(dataIdToBeDeleted);
+    setShowConfirmationModal(false);
+    setDataIdToBeDeleted(null);
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="text-center text-customRed">
         <h2 className="text-2xl font-bold mb-4">Sub-Admin Review Section</h2>
       </div>
-      {
-        reviews.length==0 ?
-         <div className="text-center">
-          <h1 className="text-xl font-semibold text-customRed">No reviews found!</h1>
-         </div>
-         :
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {reviews.map((review, index) => (
-          <div key={index} className="bg-white p-4 rounded-md shadow-md">
-            <p className="text-customDarkRed font-semibold">
-              Recipe Title: {review.recipeTitle}
-            </p>
-            <div className="flex p-1 gap-1 text-orange-400">
-              {Array.from({ length: review.review.rating }, (_, index) => (
-                <FaStar key={index} />
-              ))}
-              {review.review.rating % 1 !== 0 && <FaStarHalfAlt />}
+      {reviews.length == 0 ? (
+        <div className="text-center">
+          <h1 className="text-xl font-semibold text-customRed">
+            No reviews found!
+          </h1>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {reviews.map((review, index) => (
+            <div key={index} className="bg-white p-4 rounded-md shadow-md">
+              <p className="text-customDarkRed font-semibold">
+                Recipe Title: {review.recipeTitle}
+              </p>
+              <div className="flex p-1 gap-1 text-orange-400">
+                {Array.from({ length: review.review.rating }, (_, index) => (
+                  <FaStar key={index} />
+                ))}
+                {review.review.rating % 1 !== 0 && <FaStarHalfAlt />}
+              </div>
+              <p className="text-customRed mb-2">
+                Comment: {review.review.comment}
+              </p>
+              <p className="text-gray-500">User ID: {review.review.userId}</p>
+              <p className="text-gray-500">Post ID: {review.review.postId}</p>
+              <Button
+                children="Delete Review"
+                buttonStyle="ml-0 [!important]"
+                handleClick={() => handleDelete(review.review.id)}
+              />
             </div>
-            <p className="text-customRed mb-2">
-              Comment: {review.review.comment}
-            </p>
-            <p className="text-gray-500">User ID: {review.review.userId}</p>
-            <p className="text-gray-500">Post ID: {review.review.postId}</p>
-            {/* <button className='bg-customRed text-white mt-2 p-2 rounded-md'>Delete Review</button> */}
-            <Button
-              children="Delete Review"
-              buttonStyle="ml-0 [!important]"
-              handleClick={() => handleDeleteReview(review.review.id)}
-            />
-          </div>
-        ))}
-      </div>
-      }
+          ))}
+        </div>
+      )}
+
+      {showConfirmationModal && (
+        <DeleteModal
+          Id={dataIdToBeDeleted}
+          handleDelete={confirmDelete}
+          setShowConfirmationModal={setShowConfirmationModal}
+          setDataIdToBeDeleted={setDataIdToBeDeleted}
+          itemType="review"
+        />
+      )}
     </div>
   );
 }

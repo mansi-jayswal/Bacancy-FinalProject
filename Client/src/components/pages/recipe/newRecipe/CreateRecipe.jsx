@@ -176,7 +176,6 @@ const CreateRecipe = () => {
               <option value="veg">Veg</option>
               <option value="non-veg">Non-veg</option>
             </select>
-            {/* <input type="text" id="type" name="type" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" value={recipe.type} onChange={handleChange} /> */}
           </div>
           {/* Cuisine */}
           <div className="mb-4">
@@ -186,14 +185,6 @@ const CreateRecipe = () => {
             >
               Cuisine
             </label>
-            {/* <input
-              type="text"
-              id="cuisine"
-              name="cuisine"
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
-              value={recipe.cuisine}
-              onChange={handleChange}
-            /> */}
              {user && (
              <select
              id="cuisine"

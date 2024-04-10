@@ -5,21 +5,21 @@ import Button from "../../common/Button";
 import { Link, useNavigate } from "react-router-dom";
 import DeleteModal from "../../common/DeleteModal";
 import { toast } from "react-toastify";
-import SearchBar from "../../common/SearchBar"; 
+import SearchBar from "../../common/SearchBar";
 
 function AdminDashboard() {
   const [users, setUsers] = useState([]);
-  const [searchQuery, setSearchQuery] = useState(""); 
+  const [searchQuery, setSearchQuery] = useState("");
   const [showConfirmationModal, setShowConfirmationModal] = useState(false);
   const [dataIdToBeDeleted, setDataIdToBeDeleted] = useState(null);
+  const [sortOrder, setSortOrder] = useState("");
+  const [sortedField, setSortedField] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
     getUsers()
       .then((res) => setUsers(res.data))
-      .catch((err) =>
-        console.log("error in fetching users at admin", err)
-      );
+      .catch((err) => console.log("error in fetching users at admin", err));
   }, []);
 
   const usersArray = [
@@ -57,9 +57,7 @@ function AdminDashboard() {
         toast.success("User Deleted successfully!");
         getUsers()
           .then((res) => setUsers(res.data))
-          .catch((err) =>
-            console.log("error in fetching users at admin", err)
-          );
+          .catch((err) => console.log("error in fetching users at admin", err));
         setShowConfirmationModal(false);
         setDataIdToBeDeleted(null);
       })
@@ -74,13 +72,30 @@ function AdminDashboard() {
     user.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  const handleSort = (field) => {
+    if (sortedField === field) {
+      setSortOrder(sortOrder === "asc" ? "desc" : "asc");
+    } else {
+      setSortedField(field);
+      setSortOrder("asc");
+    }
+  };
+
+  const sortedUsers = filteredUsers.sort((a, b) => {
+    const fieldA = (a[sortedField] || "").toString().toLowerCase();
+    const fieldB = (b[sortedField] || "").toString().toLowerCase();
+    if (sortOrder === "asc") {
+      return fieldA.localeCompare(fieldB);
+    } else {
+      return fieldB.localeCompare(fieldA);
+    }
+  });
+
   return (
     <div className="container mx-auto p-4 px-6 md:p-10">
       <div className="text-center">
         <span className="text-xl font-semibold mt-2">Application users</span>
-        <Button
-          buttonStyle="ml-8 bg-green-500 border-green-500 hover:text-green-500 text-base mt-0 mb-2 cursor-default"
-        >
+        <Button buttonStyle="ml-8 bg-green-500 border-green-500 hover:text-green-500 text-base mt-0 mb-2 cursor-default">
           <Link to="/admin-createUser">+ADD</Link>
         </Button>{" "}
       </div>
@@ -94,16 +109,19 @@ function AdminDashboard() {
       </div>
       {filteredUsers.length === 0 ? (
         <div className="text-center">
-          <h1 className="text-xl font-semibold text-customRed">No users found!</h1>
+          <h1 className="text-xl font-semibold text-customRed">
+            No users found!
+          </h1>
         </div>
       ) : (
         <div className="overflow-x-auto">
           <Table
-            data={filteredUsers} 
+            data={filteredUsers}
             headers={usersArray}
             className="w-full whitespace-nowrap"
             handleDelete={handleDelete}
             handleUpdate={handleUpdate}
+            handleSort={handleSort}
           />
         </div>
       )}
@@ -122,4 +140,3 @@ function AdminDashboard() {
 }
 
 export default AdminDashboard;
-
