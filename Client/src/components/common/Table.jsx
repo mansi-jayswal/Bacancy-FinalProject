@@ -1,16 +1,19 @@
-import Button from './Button';
+import Button from "./Button";
 import { CiEdit } from "react-icons/ci";
 import { MdDeleteOutline } from "react-icons/md";
 
-
-const Table = ({ data, headers, handleUpdate, handleDelete }) => {
+const Table = ({ data, headers, handleUpdate, handleDelete, handleSort }) => {
   return (
     <div className="overflow x-auto m-2">
       <table className="w-full border-collapse">
         <thead>
           <tr>
             {headers.map((header) => (
-              <th key={header.key} className="border px-4 py-2">
+              <th
+                key={header.key}
+                className="border px-4 py-2 cursor-pointer"
+                onClick={() => handleSort(header.key)}
+              >
                 {header.label}
               </th>
             ))}
@@ -19,21 +22,28 @@ const Table = ({ data, headers, handleUpdate, handleDelete }) => {
         </thead>
 
         <tbody>
-          {data.map((item,index) => (
-            <tr key={item.id}  className={`${index % 2 === 0 ? 'bg-gray-100' : ''}`}>
+          {data.map((item, index) => (
+            <tr
+              key={item.id}
+              className={`${index % 2 === 0 ? "bg-gray-100" : ""}`}
+            >
               {headers.map((header) => (
                 <td key={header.key} className="border px-4 py-2">
                   {item[header.key]}
                 </td>
               ))}
               <td className="border px-4 py-2 flex justify-center items-center gap-2">
-                <Button onClick={() => handleUpdate(item.id)} 
-                buttonStyle="px-[8px] py-[4px] text-sm mt-[0px!important]">
-                <CiEdit />
+                <Button
+                  onClick={() => handleUpdate(item.id)}
+                  buttonStyle="px-[8px] py-[4px] text-sm mt-[0px!important]"
+                >
+                  <CiEdit />
                 </Button>
-                <Button onClick={() => handleDelete(item.id)} 
-                buttonStyle="px-[8px] py-[4px] text-sm mt-[0px!important] bg-[#c53030] border-[#c53030] hover:text-[#c53030]">
-                <MdDeleteOutline />
+                <Button
+                  onClick={() => handleDelete(item.id)}
+                  buttonStyle="px-[8px] py-[4px] text-sm mt-[0px!important] bg-[#c53030] border-[#c53030] hover:text-[#c53030]"
+                >
+                  <MdDeleteOutline />
                 </Button>
               </td>
             </tr>

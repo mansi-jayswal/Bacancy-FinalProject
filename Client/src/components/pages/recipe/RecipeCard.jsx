@@ -14,7 +14,7 @@ const RecipeCard = ({ recipe , children , onClick}) => {
 
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg " >
-      <img className="w-full h-48 rounded-lg rounded-b-none object-cover cursor-pointer" src={recipe.img} alt={recipe.title} onClick={handleClick}/>
+      <img className="w-full h-48 rounded-lg rounded-b-none object-cover cursor-pointer  transition-transform transform hover:scale-105" src={recipe.img} alt={recipe.title} onClick={handleClick}/>
       <div className="px-6 py-4">
         <div className="flex justify-between">
           <div className='w-full'>

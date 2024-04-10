@@ -381,36 +381,35 @@
           "id": "24"
         },
         {
-          "title": "Chilly garlic Noodles",
+          "id": "26",
+          "title": "Thepla",
           "ingredients": [
-            "noodles",
-            "onion",
-            "capcicum",
-            "ginger",
-            "garlic",
-            "sauces",
-            "green chillies",
-            "spring onions"
+            "2 cups whole wheat flour (atta)",
+            "1 cup finely chopped fenugreek leaves (methi)",
+            "1/4 cup yogurt",
+            "1 tablespoon oil",
+            "1/2 teaspoon turmeric powder",
+            "1/2 teaspoon red chili powder",
+            "Salt to taste",
+            "Water",
+            "as needed"
           ],
-          "method": "Cook noodles according to package instructions, then drain and set aside.\nIn a pan, heat oil, add chopped garlic, ginger, and sliced green chilies.\nStir in cooked noodles, soy sauce, chili sauce, and any desired vegetables or protein, tossing until well combined. Serve hot.",
+          "method": "Heat a griddle or tawa over medium heat.\nPlace a rolled thepla onto the hot griddle.\nCook for about a minute or until you see bubbles forming on the surface.\nFlip the thepla and cook the other side, applying some oil or ghee on the surface.\nPress gently with a spatula to ensure even cooking and to get golden brown spots on both sides.\nOnce cooked, remove the thepla from the griddle and place it on a plate.\nRepeat the same process with the remaining rolled theplas.\nServe hot with yogurt, pickle, or any chutney of your choice.\n",
           "type": "veg",
-          "cuisine": "Chinese",
+          "cuisine": "Indian",
           "tags": [
-            "breakfast",
-            "quick and easy",
+            "Gujarati",
             "snacks",
-            "spicy",
-            "streetfood"
+            "breakfast"
           ],
           "difficulty": "Easy",
-          "cookingTime": " 20mins",
+          "cookingTime": "30mins",
           "servingSize": "2",
-          "img": "https://images.unsplash.com/photo-1585032226651-759b368d7246?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bm9vZGxlc3xlbnwwfHwwfHx8MA%3D%3D",
+          "img": "https://www.rajbhog.com/wp-content/uploads/2021/05/Methi-Thepla.jpg",
           "reviews": [],
           "likesCount": 51,
           "authorId": "12",
-          "authorName": "harsh",
-          "id": "25"
+          "authorName": "harsh"
         }
       ],
       "reviews": [
@@ -524,7 +523,43 @@
       "name": "rushi",
       "email": "rushi@gmail.com",
       "password": "Rushi@123",
-      "saved_recipes": [],
+      "saved_recipes": [
+        {
+          "id": "3",
+          "title": "Margherita Pizza",
+          "ingredients": [
+            "Pizza Dough",
+            "Tomatoes",
+            "Fresh Mozzarella Cheese",
+            "Fresh Basil",
+            "Olive Oil"
+          ],
+          "method": "Preheat oven to highest temperature. Roll out pizza dough and top with sliced tomatoes, fresh mozzarella cheese, and torn basil leaves. Drizzle with olive oil. Bake until crust is golden and cheese is bubbly, about 10-12 minutes.",
+          "type": "veg",
+          "cuisine": "Italian",
+          "tags": [
+            "Pizza",
+            "Italian",
+            "Vegetarian"
+          ],
+          "difficulty": "Easy",
+          "cookingTime": "15 minutes",
+          "authorId": 1111,
+          "authorName": "flavourRealm",
+          "likesCount": 175,
+          "reviews": [
+            {
+              "id": "32",
+              "userId": "14",
+              "postId": "3",
+              "rating": "5",
+              "comment": "Looks yum!!!"
+            }
+          ],
+          "servingSize": "2",
+          "img": "https://img.freepik.com/free-photo/pizza-tasty-cheese-top-view-grey-surface_140725-14194.jpg?t=st=1712125070~exp=1712128670~hmac=47cc308b886809c73f667db6d55fe7600f70653b11219f763a2d5f1135fb6efe&w=740"
+        }
+      ],
       "created_recipes": [],
       "reviews": [],
       "preference": "Indian"
@@ -585,7 +620,8 @@
       "likesCount": 212,
       "reviews": [],
       "servingSize": "4",
-      "img": "https://img.freepik.com/free-photo/front-view-meat-sauce-soup-with-greens-potatoes-dark-desk-soup-meal-sauce-meat_140725-79069.jpg?t=st=1712125038~exp=1712128638~hmac=4c7803cbbc1c9e6e95b98df32475808cd2bfba7daa6c3cade8c7663621e80676&w=740"
+      "img": "https://img.freepik.com/free-photo/front-view-meat-sauce-soup-with-greens-potatoes-dark-desk-soup-meal-sauce-meat_140725-79069.jpg?t=st=1712125038~exp=1712128638~hmac=4c7803cbbc1c9e6e95b98df32475808cd2bfba7daa6c3cade8c7663621e80676&w=740",
+      "isTrending": false
     },
     {
       "id": "3",
@@ -676,7 +712,8 @@
       "likesCount": 198,
       "reviews": [],
       "servingSize": "4",
-      "img": "https://t4.ftcdn.net/jpg/05/82/28/65/360_F_582286506_Kji3X5NrZBHMTFSqwG9gADXWMsjrtEjL.jpg"
+      "img": "https://t4.ftcdn.net/jpg/05/82/28/65/360_F_582286506_Kji3X5NrZBHMTFSqwG9gADXWMsjrtEjL.jpg",
+      "isTrending": true
     },
     {
       "id": "6",
@@ -703,12 +740,78 @@
       "authorId": 1111,
       "authorName": "flavourRealm",
       "likesCount": 167,
-      "reviews": [],
+      "reviews": [
+        {
+          "id": "27",
+          "userId": "7",
+          "postId": "6",
+          "rating": "5",
+          "comment": "Greattttttttttt Recipe!!"
+        }
+      ],
       "servingSize": "2",
-      "img": "https://i.pinimg.com/originals/e2/ef/8c/e2ef8c7a796494d0342820589752b646.jpg"
+      "img": "https://i.pinimg.com/originals/e2/ef/8c/e2ef8c7a796494d0342820589752b646.jpg",
+      "isTrending": true
     },
     {
       "id": "7",
+      "title": "Chicken Tikka Masala",
+      "ingredients": [
+        "Chicken",
+        "Yogurt",
+        "Tomato Sauce",
+        "Onion",
+        "Ginger",
+        "Garlic",
+        "Spices"
+      ],
+      "method": "Marinate chicken pieces in yogurt and spices. Grill or bake until cooked through. In a separate pan, sauté onions, ginger, and garlic until soft. Add tomato sauce and cooked chicken pieces. Simmer until flavors meld. Serve with rice or naan bread.",
+      "type": "nonveg",
+      "cuisine": "Indian",
+      "tags": [
+        "Curry",
+        "Indian",
+        "Grilled"
+      ],
+      "difficulty": "Intermediate",
+      "cookingTime": "40 minutes",
+      "authorId": 1111,
+      "authorName": "flavourRealm",
+      "likesCount": 212,
+      "reviews": [],
+      "servingSize": "4",
+      "img": "https://img.freepik.com/free-photo/front-view-meat-sauce-soup-with-greens-potatoes-dark-desk-soup-meal-sauce-meat_140725-79069.jpg?t=st=1712125038~exp=1712128638~hmac=4c7803cbbc1c9e6e95b98df32475808cd2bfba7daa6c3cade8c7663621e80676&w=740",
+      "isTrending": true
+    },
+    {
+      "id": "8",
+      "title": "Sushi Rolls",
+      "ingredients": [
+        "Sushi Rice",
+        "Nori Seaweed",
+        "Fish (Salmon, Tuna, etc.)",
+        "Avocado",
+        "Cucumber"
+      ],
+      "method": "Prepare sushi rice according to package instructions. Lay out nori seaweed, spread rice, and add fish, avocado, and cucumber. Roll tightly and slice. Serve with soy sauce and pickled ginger.",
+      "type": "nonveg",
+      "cuisine": "Japanese",
+      "tags": [
+        "Sushi",
+        "Japanese",
+        "Raw"
+      ],
+      "difficulty": "Advanced",
+      "cookingTime": "40 minutes",
+      "authorId": 1111,
+      "authorName": "flavourRealm",
+      "likesCount": 143,
+      "reviews": [],
+      "servingSize": "2",
+      "img": "https://www.yummyhealthyeasy.com/wp-content/uploads/2018/04/california-sushi-rolls-square.jpg"
+    },
+    {
+      "id": "9",
       "title": "Biryani",
       "ingredients": [
         "Basmati Rice",
@@ -741,76 +844,8 @@
         }
       ],
       "servingSize": "4",
-      "img": "https://img.freepik.com/free-photo/gourmet-chicken-biryani-with-steamed-basmati-rice-generated-by-ai_188544-13480.jpg"
-    },
-    {
-      "id": "8",
-      "title": "Sushi Rolls",
-      "ingredients": [
-        "Sushi Rice",
-        "Nori Seaweed",
-        "Fish (Salmon, Tuna, etc.)",
-        "Avocado",
-        "Cucumber"
-      ],
-      "method": "Prepare sushi rice according to package instructions. Lay out nori seaweed, spread rice, and add fish, avocado, and cucumber. Roll tightly and slice. Serve with soy sauce and pickled ginger.",
-      "type": "nonveg",
-      "cuisine": "Japanese",
-      "tags": [
-        "Sushi",
-        "Japanese",
-        "Raw"
-      ],
-      "difficulty": "Advanced",
-      "cookingTime": "40 minutes",
-      "authorId": 1111,
-      "authorName": "flavourRealm",
-      "likesCount": 143,
-      "reviews": [],
-      "servingSize": "2",
-      "img": "https://www.yummyhealthyeasy.com/wp-content/uploads/2018/04/california-sushi-rolls-square.jpg"
-    },
-    {
-      "id": "9",
-      "title": "Gulab Jamun",
-      "ingredients": [
-        "Milk Powder",
-        "Flour",
-        "Sugar",
-        "Ghee",
-        "Cardamom"
-      ],
-      "method": "Mix milk powder and flour with a little water to make a soft dough. Roll into balls and deep fry until golden brown. Make a sugar syrup with water, sugar, and cardamom. Soak fried balls in syrup. Serve warm.",
-      "type": "veg",
-      "cuisine": "Indian",
-      "tags": [
-        "Dessert",
-        "Indian",
-        "Fried"
-      ],
-      "difficulty": "Intermediate",
-      "cookingTime": "40 minutes",
-      "authorId": 1111,
-      "authorName": "flavourRealm",
-      "likesCount": 207,
-      "reviews": [
-        {
-          "id": "23",
-          "userId": "14",
-          "postId": "9",
-          "rating": "3",
-          "comment": "Looks amazinggg!!"
-        },
-        {
-          "id": "25",
-          "userId": "14",
-          "postId": "9",
-          "rating": "4",
-          "comment": "quiet happy with the recipe :)"
-        }
-      ],
-      "servingSize": "6",
-      "img": "https://t4.ftcdn.net/jpg/06/21/54/41/360_F_621544128_inBjLYomzXLGFiNVri9ebirH1MMJ7ige.jpg"
+      "img": "https://img.freepik.com/free-photo/gourmet-chicken-biryani-with-steamed-basmati-rice-generated-by-ai_188544-13480.jpg",
+      "isTrending": true
     },
     {
       "id": "10",
@@ -922,7 +957,8 @@
       "likesCount": 210,
       "reviews": [],
       "servingSize": "8",
-      "img": "https://us.123rf.com/450wm/olindana/olindana2303/olindana230300018/201276129-scrumptious-delicious-tiramisu-on-a-plate-dusted-with-cocoa-powder-decorated-with-fresh-mint-italian.jpg"
+      "img": "https://us.123rf.com/450wm/olindana/olindana2303/olindana230300018/201276129-scrumptious-delicious-tiramisu-on-a-plate-dusted-with-cocoa-powder-decorated-with-fresh-mint-italian.jpg",
+      "isTrending": true
     },
     {
       "id": "14",
@@ -948,9 +984,18 @@
       "authorId": 1111,
       "authorName": "flavourRealm",
       "likesCount": 158,
-      "reviews": [],
+      "reviews": [
+        {
+          "id": "26",
+          "userId": "12",
+          "postId": "14",
+          "rating": "3",
+          "comment": "nice"
+        }
+      ],
       "servingSize": "3",
-      "img": "https://recipe30.com/wp-content/uploads/2021/08/Asian-stirfried-vegetables.jpg"
+      "img": "https://recipe30.com/wp-content/uploads/2021/08/Asian-stirfried-vegetables.jpg",
+      "isTrending": true
     },
     {
       "id": "15",
@@ -977,7 +1022,22 @@
       "authorId": 1111,
       "authorName": "flavourRealm",
       "likesCount": 175,
-      "reviews": [],
+      "reviews": [
+        {
+          "id": "28",
+          "userId": "7",
+          "postId": "15",
+          "rating": "1",
+          "comment": "Looks Ewwww ! :("
+        },
+        {
+          "id": "31",
+          "userId": "12",
+          "postId": "15",
+          "rating": "1",
+          "comment": "hi"
+        }
+      ],
       "servingSize": "2",
       "img": "https://i2.wp.com/seonkyounglongest.com/wp-content/uploads/2021/03/Tom-Yum-07-mini.jpg?fit=1000%2C667&ssl=1"
     },
@@ -1088,7 +1148,8 @@
       "likesCount": 169,
       "reviews": [],
       "servingSize": "4",
-      "img": "https://media.istockphoto.com/id/1267610826/photo/famous-internationally-renowned-thai-green-coconut-curry-gaeng-keow-wan-gai-with-chicken-in-a.jpg?s=612x612&w=0&k=20&c=jXhnFi2TPqQKpvuLAPinL5HeuwnINKyS0hIqom46aV4="
+      "img": "https://media.istockphoto.com/id/1267610826/photo/famous-internationally-renowned-thai-green-coconut-curry-gaeng-keow-wan-gai-with-chicken-in-a.jpg?s=612x612&w=0&k=20&c=jXhnFi2TPqQKpvuLAPinL5HeuwnINKyS0hIqom46aV4=",
+      "isTrending": true
     },
     {
       "id": "20",
@@ -1148,7 +1209,16 @@
     {
       "id": "22",
       "title": "Gajar ka Halwa",
-      "ingredients": "carrots , Ghee , cashews , cardamom powder ,  milk , sugar , raisans , almonds",
+      "ingredients": [
+        "carrots",
+        "Ghee",
+        "cashews",
+        "cardamom powder ",
+        "milk",
+        "sugar",
+        "raisans",
+        "almonds"
+      ],
       "method": "Step 1: Grate the Carrots\n\nPeel and grate fresh carrots using a grater.\nHeat a pan and add a tablespoon of ghee (clarified butter).\nAdd the grated carrots to the pan and sauté them until they turn soft and release their juices. This might take around 10-15 minutes on medium heat.\nStep 2: Cook the Carrots\n\nOnce the carrots are soft, add milk to the pan. The quantity of milk depends on the amount of carrots you have, but a good rule of thumb is to add enough milk to just cover the carrots.\nLet the mixture simmer on low heat, stirring occasionally. Allow the carrots to cook in the milk until the milk reduces and thickens. This process could take around 30-40 minutes.\nStep 3: Sweeten and Flavor\n\nOnce the milk has reduced significantly and the carrots are cooked through, add sugar according to your taste preference. You can start with half a cup of sugar and adjust according to your sweetness preference.\nAdd cardamom powder and chopped nuts like almonds and pistachios for flavor and texture.\nStir well and continue cooking for another 10-15 minutes until the mixture thickens further and attains a halwa-like consistency.\nYour Gajar ka Halwa is now ready to be served hot or cold, garnished with more chopped nuts if desired.\nEnjoy your delicious homemade Gajar ka Halwa!",
       "type": "veg",
       "cuisine": "Indian",
@@ -1201,39 +1271,40 @@
       "reviews": [],
       "likesCount": 51,
       "authorId": "12",
-      "authorName": "harsh"
+      "authorName": "harsh",
+      "isTrending": true
     },
     {
-      "id": "25",
-      "title": "Chilly garlic Noodles",
+      "id": "26",
+      "title": "Thepla",
       "ingredients": [
-        "noodles",
-        "onion",
-        "capcicum",
-        "ginger",
-        "garlic",
-        "sauces",
-        "green chillies",
-        "spring onions"
+        "2 cups whole wheat flour (atta)",
+        "1 cup finely chopped fenugreek leaves (methi)",
+        "1/4 cup yogurt",
+        "1 tablespoon oil",
+        "1/2 teaspoon turmeric powder",
+        "1/2 teaspoon red chili powder",
+        "Salt to taste",
+        "Water",
+        "as needed"
       ],
-      "method": "Cook noodles according to package instructions, then drain and set aside.\nIn a pan, heat oil, add chopped garlic, ginger, and sliced green chilies.\nStir in cooked noodles, soy sauce, chili sauce, and any desired vegetables or protein, tossing until well combined. Serve hot.",
+      "method": "Heat a griddle or tawa over medium heat.\nPlace a rolled thepla onto the hot griddle.\nCook for about a minute or until you see bubbles forming on the surface.\nFlip the thepla and cook the other side, applying some oil or ghee on the surface.\nPress gently with a spatula to ensure even cooking and to get golden brown spots on both sides.\nOnce cooked, remove the thepla from the griddle and place it on a plate.\nRepeat the same process with the remaining rolled theplas.\nServe hot with yogurt, pickle, or any chutney of your choice.\n",
       "type": "veg",
-      "cuisine": "Chinese",
+      "cuisine": "Indian",
       "tags": [
-        "breakfast",
-        "quick and easy",
+        "Gujarati",
         "snacks",
-        "spicy",
-        "streetfood"
+        "breakfast"
       ],
       "difficulty": "Easy",
-      "cookingTime": " 20mins",
+      "cookingTime": "30mins",
       "servingSize": "2",
-      "img": "https://images.unsplash.com/photo-1585032226651-759b368d7246?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bm9vZGxlc3xlbnwwfHwwfHx8MA%3D%3D",
+      "img": "https://www.rajbhog.com/wp-content/uploads/2021/05/Methi-Thepla.jpg",
       "reviews": [],
       "likesCount": 51,
       "authorId": "12",
-      "authorName": "harsh"
+      "authorName": "harsh",
+      "isTrending": true
     }
   ],
   "reviews": [
@@ -1411,6 +1482,34 @@
       "postId": "9",
       "rating": "4",
       "comment": "quiet happy with the recipe :)"
+    },
+    {
+      "id": "26",
+      "userId": "12",
+      "postId": "14",
+      "rating": "3",
+      "comment": "nice"
+    },
+    {
+      "id": "27",
+      "userId": "7",
+      "postId": "6",
+      "rating": "5",
+      "comment": "Greattttttttttt Recipe!!"
+    },
+    {
+      "id": "28",
+      "userId": "7",
+      "postId": "15",
+      "rating": "1",
+      "comment": "Looks Ewwww ! :("
+    },
+    {
+      "id": "31",
+      "userId": "12",
+      "postId": "15",
+      "rating": "1",
+      "comment": "hi"
     }
   ],
   "sub-admins": [
@@ -1431,7 +1530,7 @@
       "name": "subAdmin2",
       "email": "subadmin2@gmail.com",
       "password": "SubAdmin@123",
-      "assignedCategory": "Gujarati",
+      "assignedCategory": "Mexican",
       "tags": []
     },
     {
@@ -1439,7 +1538,23 @@
       "name": "dummysubadmin",
       "email": "dummy@gmail.com",
       "password": "Dummy@123",
-      "assignedCategory": "Dummycategory",
+      "assignedCategory": "Italian",
+      "tags": []
+    },
+    {
+      "id": "4",
+      "name": "subadmin3",
+      "email": "subadmin3@gmail.com",
+      "password": "dummy",
+      "assignedCategory": "Chinese",
+      "tags": []
+    },
+    {
+      "id": "5",
+      "name": "subAdmin4",
+      "email": "subadmin4@gmail.com",
+      "password": "subadmin4",
+      "assignedCategory": "Thai",
       "tags": []
     }
   ],
