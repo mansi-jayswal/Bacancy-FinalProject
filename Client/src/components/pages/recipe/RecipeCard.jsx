@@ -1,7 +1,9 @@
 import React from 'react';
-import { FaHeart, FaUser } from 'react-icons/fa';
+import {  FaStar, FaUser } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import ReactStars from "react-rating-stars-component";
+
 
 
 const RecipeCard = ({ recipe , children , onClick}) => {
@@ -11,6 +13,13 @@ const RecipeCard = ({ recipe , children , onClick}) => {
         navigate(`/recipes/${recipe.id}`)
     }
 
+    const calculateAverageRating = (reviews) => {
+      if (!reviews || reviews.length === 0) return 0;
+    
+      const totalRating = reviews.reduce((acc, review) => acc + parseInt(review.rating), 0);
+      return (totalRating / reviews.length).toFixed(1);
+    };
+
 
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg " >
@@ -18,10 +27,20 @@ const RecipeCard = ({ recipe , children , onClick}) => {
       <div className="px-6 py-4">
         <div className="flex justify-between">
           <div className='w-full'>
-            <div className='flex justify-between w-full'>
-            <div className="font-bold text-xl mb-2">{recipe.title}</div>
-            <div className="mr-2">
-              <FaHeart className="inline" /> {recipe.likesCount}
+            <div className='flex justify-between w-full items-center'>
+            <div className="font-bold text-xl mb-2"><h1>{recipe.title}</h1></div>
+            <div className="mr-2 mb-2">
+            <ReactStars
+                  count={5}
+                  value={parseInt(calculateAverageRating(recipe.reviews))}
+                  a11y={false}
+                  isHalf={true}
+                  edit={false}
+                  size={15}
+                  color={`rgb(156 163 175)`}
+                  activeColor={`#ffd700`}
+                />
+              {/* <FaStar className="inline text-yellow-400"  /> {calculateAverageRating(recipe.reviews)} */}
             </div>
             </div>
             <div className="text-gray-700 text-sm">

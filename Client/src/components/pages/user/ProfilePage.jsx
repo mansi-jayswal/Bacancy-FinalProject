@@ -6,7 +6,7 @@ function ProfilePage() {
     const user = useSelector(state=>state.role.user)
     const navigate=useNavigate();
   return (
-    <div>
+    <div className='mt-16'>
        <div className="h-auto mt-6  dark:bg-gray-800 flex flex-wrap items-center justify-center ml-4 mr-4 lg:m-0 lg:mb-auto">
       <div className="container lg:w-2/6 xl:w-2/7 sm:w-full md:w-2/3 bg-customLightBeige shadow-lg transform duration-200 easy-in-out">
         <div className="h-32 overflow-hidden">

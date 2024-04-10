@@ -5,6 +5,7 @@ import { FaStar } from "react-icons/fa";
 import Button from "../../common/Button";
 import { toast } from "react-toastify";
 import DeleteModal from "../../common/DeleteModal";
+import Pagination from "../../common/Pagination";
 
 function SubAdminReviewSection() {
   const [reviews, setReviews] = useState([]);
@@ -12,6 +13,8 @@ function SubAdminReviewSection() {
   const [filteredRecipes, setFilteredRecipes] = useState([]);
   const [showConfirmationModal, setShowConfirmationModal] = useState(false);
   const [dataIdToBeDeleted, setDataIdToBeDeleted] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;
 
   useEffect(() => {
     if (subAdmin && subAdmin.assignedCategory) {
@@ -88,6 +91,14 @@ function SubAdminReviewSection() {
     setDataIdToBeDeleted(null);
   };
 
+  const indexOfLastReview = currentPage * itemsPerPage;
+  const indexOfFirstReview = indexOfLastReview - itemsPerPage;
+  const currentReviews = reviews.slice(indexOfFirstReview, indexOfLastReview);
+
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="text-center text-customRed">
@@ -101,7 +112,7 @@ function SubAdminReviewSection() {
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {reviews.map((review, index) => (
+          {currentReviews.map((review, index) => (
             <div key={index} className="bg-white p-4 rounded-md shadow-md">
               <p className="text-customDarkRed font-semibold">
                 Recipe Title: {review.recipeTitle}
@@ -124,8 +135,16 @@ function SubAdminReviewSection() {
               />
             </div>
           ))}
+
         </div>
       )}
+       <Pagination
+        currentPage={currentPage}
+        totalPages={Math.ceil(reviews.length / itemsPerPage)}
+        onPageChange={paginate}
+        itemsPerPage={itemsPerPage}
+      />
+
 
       {showConfirmationModal && (
         <DeleteModal

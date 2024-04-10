@@ -5,6 +5,7 @@ import RecipeCard from "./RecipeCard";
 import SearchBar from "../../common/SearchBar";
 import Loader from "../../common/Loader";
 import Button from "../../common/Button";
+import Pagination from "../../common/Pagination";
 
 function RecipeListing() {
   const [recipes, setRecipes] = useState([]);
@@ -15,7 +16,8 @@ function RecipeListing() {
   const [sortingOption, setSortingOption] = useState("default");
   const [loading, setLoading] = useState(true);
   const location = useLocation();
-  // const navigate = useNavigate();
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6; 
 
   useEffect(() => {
     getRecipes()
@@ -111,6 +113,39 @@ function RecipeListing() {
 
   const sortedRecipes = sortRecipes(filteredRecipes, sortingOption);
 
+  const indexOfLastRecipe = currentPage * itemsPerPage;
+  const indexOfFirstRecipe = indexOfLastRecipe - itemsPerPage;
+  const currentRecipes = sortedRecipes.slice(indexOfFirstRecipe, indexOfLastRecipe);
+
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+  
+  // const nextPage = () => {
+  //   if (currentPage < Math.ceil(recipes.length / itemsPerPage)) {
+  //     setCurrentPage((prevPage) => prevPage + 1);
+  //     window.scrollTo({
+  //       top: 0,
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // };
+  
+  // const prevPage = () => {
+  //   if (currentPage > 1) {
+  //     setCurrentPage((prevPage) => prevPage - 1);
+  //     window.scrollTo({
+  //       top: 0,
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // };
+  
+
   return (
     <div className="container mx-auto px-4 py-8">
       {/* Search bar and filters */}
@@ -190,11 +225,22 @@ function RecipeListing() {
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 m-2 w-[90%] mx-auto">
-          {sortedRecipes.map((recipe) => (
+          {currentRecipes.map((recipe) => (
             <RecipeCard key={recipe.id} recipe={recipe} />
           ))}
+
         </div>
       )}
+          <div className="m-4">
+           <Pagination
+            currentPage={currentPage}
+            totalPages={Math.ceil(sortedRecipes.length / itemsPerPage)}
+            onPageChange={paginate}
+            itemsPerPage={itemsPerPage}
+            // prevPage={prevPage}
+            // nextPage={nextPage}
+            />
+            </div>
     </div>
   );
 }

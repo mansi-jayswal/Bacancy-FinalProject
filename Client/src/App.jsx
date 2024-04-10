@@ -10,11 +10,11 @@ function App() {
   const [loading, setLoading] = useState(true);
   const router = IndexRoute();
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000); // Simulating 2 seconds loading time
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //   }, 1000); // Simulating 2 seconds loading time
+  // }, []);
 
   return (
     <>
