@@ -476,7 +476,7 @@
             " indian "
           ],
           "difficulty": "Easy",
-          "cookingTime": "1hr 30 mins",
+          "cookingTime": "90 mins",
           "servingSize": "5",
           "img": "https://t3.ftcdn.net/jpg/03/27/17/30/360_F_327173095_araZyvlYmOO17gNxsK6jsXxbVuEAQJ9q.jpg",
           "reviews": [],
@@ -506,7 +506,7 @@
             " indian "
           ],
           "difficulty": "Easy",
-          "cookingTime": "1hr 30 mins",
+          "cookingTime": "90 mins",
           "servingSize": "5",
           "img": "https://t3.ftcdn.net/jpg/03/27/17/30/360_F_327173095_araZyvlYmOO17gNxsK6jsXxbVuEAQJ9q.jpg",
           "reviews": [],
@@ -563,6 +563,70 @@
       "created_recipes": [],
       "reviews": [],
       "preference": "Indian"
+    },
+    {
+      "id": "15",
+      "name": "Akshaliii",
+      "email": "akshali@gmail.com",
+      "password": "Akshali@123",
+      "saved_recipes": [
+        {
+          "id": "1",
+          "title": "Spaghetti Carbonara",
+          "ingredients": [
+            "Spaghetti",
+            "Eggs",
+            "Pancetta",
+            "Parmesan Cheese",
+            "Black Pepper"
+          ],
+          "method": "Cook spaghetti according to package instructions. In a separate pan, cook pancetta until crispy. In a bowl, whisk eggs and Parmesan cheese. Once spaghetti is cooked, drain and toss with pancetta. Add egg mixture and stir quickly to combine. Serve immediately with freshly cracked black pepper.",
+          "type": "nonveg",
+          "cuisine": "Italian",
+          "tags": [
+            "Pasta",
+            "Italian",
+            "Quick and Easy"
+          ],
+          "difficulty": "Intermediate",
+          "cookingTime": "20 minutes",
+          "authorId": 1111,
+          "authorName": "flavourRealm",
+          "likesCount": 125,
+          "reviews": [
+            {
+              "id": "32",
+              "userId": "14",
+              "postId": "1",
+              "rating": "5",
+              "comment": "Amazinggggg recipe!"
+            },
+            {
+              "id": "33",
+              "userId": "14",
+              "postId": "1",
+              "rating": "3",
+              "comment": "good :)"
+            }
+          ],
+          "servingSize": "4",
+          "img": "https://img.freepik.com/free-photo/front-view-cooked-italian-pasta-with-cutlery-white-background_140725-94889.jpg?t=st=1712124967~exp=1712128567~hmac=db8a00f6c7d5a15de2b1b83d59ec3b5e7d96d492981443bb4f0e8fd9ac3d68af&w=740"
+        }
+      ],
+      "created_recipes": [],
+      "reviews": [],
+      "preference": "Mexican",
+      "confirm_password": "Akshali@123"
+    },
+    {
+      "id": "16",
+      "name": "Saurav",
+      "email": "saurav@gmail.com",
+      "password": "Saurav@123",
+      "saved_recipes": [],
+      "created_recipes": [],
+      "reviews": [],
+      "preference": "Indian"
     }
   ],
   "recipes": [
@@ -589,7 +653,22 @@
       "authorId": 1111,
       "authorName": "flavourRealm",
       "likesCount": 125,
-      "reviews": [],
+      "reviews": [
+        {
+          "id": "32",
+          "userId": "14",
+          "postId": "1",
+          "rating": "5",
+          "comment": "Amazinggggg recipe!"
+        },
+        {
+          "id": "33",
+          "userId": "14",
+          "postId": "1",
+          "rating": "3",
+          "comment": "good :)"
+        }
+      ],
       "servingSize": "4",
       "img": "https://img.freepik.com/free-photo/front-view-cooked-italian-pasta-with-cutlery-white-background_140725-94889.jpg?t=st=1712124967~exp=1712128567~hmac=db8a00f6c7d5a15de2b1b83d59ec3b5e7d96d492981443bb4f0e8fd9ac3d68af&w=740"
     },
@@ -618,7 +697,15 @@
       "authorId": 1111,
       "authorName": "flavourRealm",
       "likesCount": 212,
-      "reviews": [],
+      "reviews": [
+        {
+          "id": "36",
+          "userId": "14",
+          "postId": "2",
+          "rating": "3",
+          "comment": "Niceee"
+        }
+      ],
       "servingSize": "4",
       "img": "https://img.freepik.com/free-photo/front-view-meat-sauce-soup-with-greens-potatoes-dark-desk-soup-meal-sauce-meat_140725-79069.jpg?t=st=1712125038~exp=1712128638~hmac=4c7803cbbc1c9e6e95b98df32475808cd2bfba7daa6c3cade8c7663621e80676&w=740",
       "isTrending": false
@@ -646,7 +733,29 @@
       "authorId": 1111,
       "authorName": "flavourRealm",
       "likesCount": 175,
-      "reviews": [],
+      "reviews": [
+        {
+          "id": "34",
+          "userId": "14",
+          "postId": "3",
+          "rating": "3",
+          "comment": "nice"
+        },
+        {
+          "id": "35",
+          "userId": "14",
+          "postId": "3",
+          "rating": "1",
+          "comment": "ok ok!"
+        },
+        {
+          "id": "40",
+          "userId": "16",
+          "postId": "3",
+          "rating": "4",
+          "comment": "Great Recipe!"
+        }
+      ],
       "servingSize": "2",
       "img": "https://img.freepik.com/free-photo/pizza-tasty-cheese-top-view-grey-surface_140725-14194.jpg?t=st=1712125070~exp=1712128670~hmac=47cc308b886809c73f667db6d55fe7600f70653b11219f763a2d5f1135fb6efe&w=740"
     },
@@ -710,7 +819,22 @@
       "authorId": 1111,
       "authorName": "flavourRealm",
       "likesCount": 198,
-      "reviews": [],
+      "reviews": [
+        {
+          "id": "38",
+          "userId": "15",
+          "postId": "5",
+          "rating": "3",
+          "comment": "Great recipe , easy to make !"
+        },
+        {
+          "id": "39",
+          "userId": "15",
+          "postId": "5",
+          "rating": "4",
+          "comment": "Looks deliciousssssss!!!"
+        }
+      ],
       "servingSize": "4",
       "img": "https://t4.ftcdn.net/jpg/05/82/28/65/360_F_582286506_Kji3X5NrZBHMTFSqwG9gADXWMsjrtEjL.jpg",
       "isTrending": true
@@ -1060,7 +1184,7 @@
         "Specialty"
       ],
       "difficulty": "Advanced",
-      "cookingTime": "3 hours",
+      "cookingTime": "180 mins",
       "authorId": 1111,
       "authorName": "flavourRealm",
       "likesCount": 132,
@@ -1228,7 +1352,7 @@
         " indian "
       ],
       "difficulty": "Easy",
-      "cookingTime": "1hr 30 mins",
+      "cookingTime": "90 mins",
       "servingSize": "4",
       "img": "https://t3.ftcdn.net/jpg/03/27/17/30/360_F_327173095_araZyvlYmOO17gNxsK6jsXxbVuEAQJ9q.jpg",
       "reviews": [],
@@ -1510,6 +1634,62 @@
       "postId": "15",
       "rating": "1",
       "comment": "hi"
+    },
+    {
+      "id": "32",
+      "userId": "14",
+      "postId": "1",
+      "rating": "5",
+      "comment": "Amazinggggg recipe!"
+    },
+    {
+      "id": "33",
+      "userId": "14",
+      "postId": "1",
+      "rating": "3",
+      "comment": "good :)"
+    },
+    {
+      "id": "34",
+      "userId": "14",
+      "postId": "3",
+      "rating": "3",
+      "comment": "nice"
+    },
+    {
+      "id": "35",
+      "userId": "14",
+      "postId": "3",
+      "rating": "1",
+      "comment": "ok ok!"
+    },
+    {
+      "id": "36",
+      "userId": "14",
+      "postId": "2",
+      "rating": "3",
+      "comment": "Niceee"
+    },
+    {
+      "id": "38",
+      "userId": "15",
+      "postId": "5",
+      "rating": "3",
+      "comment": "Great recipe , easy to make !"
+    },
+    {
+      "id": "39",
+      "userId": "15",
+      "postId": "5",
+      "rating": "4",
+      "comment": "Looks deliciousssssss!!!"
+    },
+    {
+      "id": "40",
+      "userId": "16",
+      "postId": "3",
+      "rating": "4",
+      "comment": "Great Recipe!"
     }
   ],
   "sub-admins": [

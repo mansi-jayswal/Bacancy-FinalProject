@@ -34,7 +34,7 @@ const RecipeCard = ({ recipe , children , onClick}) => {
                   count={5}
                   value={parseInt(calculateAverageRating(recipe.reviews))}
                   a11y={false}
-                  isHalf={true}
+                  // isHalf={true}
                   edit={false}
                   size={15}
                   color={`rgb(156 163 175)`}

@@ -13,9 +13,6 @@ const SubAdminDashboard = React.lazy(() => import('../components/pages/subadmin/
 const AdminAddSubadmin = React.lazy(() => import('../components/pages/admin/adminSubadmin/AdminAddSubadmin'));
 const AdminUpdateSubadmin = React.lazy(() => import('../components/pages/admin/adminSubadmin/AdminUpdateSubadmin'));
 const SubAdminReviewSection = React.lazy(() => import('../components/pages/subadmin/SubAdminReviewSection'));
-
-
-// Lazy-loaded components
 const Layout = React.lazy(() => import('../components/layout/Layout'));
 const PrivateRoutesUser = React.lazy(() => import('./privateRoutes/privateRoutesUser/PrivateRoutesUser'));
 const PrivateRoutesAdmin = React.lazy(() => import('./privateRoutes/privateRoutesAdmin/PrivateRoutesAdmin'));
