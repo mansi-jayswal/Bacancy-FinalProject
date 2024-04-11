@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 function Pagination({ currentPage, totalPages, onPageChange , itemsPerPage }) {
   const renderPages = () => {
@@ -7,9 +8,9 @@ function Pagination({ currentPage, totalPages, onPageChange , itemsPerPage }) {
 
     for (let i = 1; i <= totalPages; i++) {
       pages.push(
-        <a
+        <Link
           key={i}
-          href="#"
+          to=""
           onClick={() => onPageChange(i)}
           className={`${
             currentPage === i
@@ -18,7 +19,7 @@ function Pagination({ currentPage, totalPages, onPageChange , itemsPerPage }) {
           } relative inline-flex items-center px-4 py-2 text-sm font-semibold ring-1 ring-inset ring-gray-300 focus:z-20 focus:outline-offset-0`}
         >
           {i}
-        </a>
+        </Link>
       );
     }
 
@@ -29,11 +30,11 @@ function Pagination({ currentPage, totalPages, onPageChange , itemsPerPage }) {
     <div className="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6 sm:my-6">
       <div className=" sm:flex sm:flex-1 sm:items-center sm:justify-between">
         <div className='mr-4'>
-          <p className="text-sm text-gray-700">
+          {/* <p className="text-sm text-gray-700">
             Showing <span className="font-medium">{currentPage===1 ? "1" : (currentPage-1)*(itemsPerPage)+1}</span> to{' '}
             <span className="font-medium">{Math.min((currentPage) * itemsPerPage, totalPages * itemsPerPage)}</span> of{' '}
             <span className="font-medium">{totalPages * (itemsPerPage)}</span> results
-          </p>
+          </p> */}
         </div>
         <div>
           <nav

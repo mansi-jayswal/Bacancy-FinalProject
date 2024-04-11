@@ -125,53 +125,33 @@ function RecipeListing() {
     });
   };
   
-  // const nextPage = () => {
-  //   if (currentPage < Math.ceil(recipes.length / itemsPerPage)) {
-  //     setCurrentPage((prevPage) => prevPage + 1);
-  //     window.scrollTo({
-  //       top: 0,
-  //       behavior: "smooth",
-  //     });
-  //   }
-  // };
-  
-  // const prevPage = () => {
-  //   if (currentPage > 1) {
-  //     setCurrentPage((prevPage) => prevPage - 1);
-  //     window.scrollTo({
-  //       top: 0,
-  //       behavior: "smooth",
-  //     });
-  //   }
-  // };
-  
 
   return (
     <div className="container mx-auto px-4 py-8">
       {/* Search bar and filters */}
-      <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-4 space-y-4 md:space-y-0">
-        <div className="md:w-1/2">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-[90%] mx-auto mb-4 space-y-4 md:space-y-0">
+        <div className="">
           <SearchBar
             placeholder="Search any Recipe or tags..."
             onSearch={handleSearch}
             value={searchQuery}
           />
         </div>
-        <div className="flex space-x-4 md:w-1/2">
+        <div className="flex gap-2  flex-col md:flex-row justify-center items-start  md:justify-end flex-wrap md:w-1/2">
           {/* Difficulty dropdown */}
           <select
-            className="appearance-none px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-yellow-400"
+            className="appearance-none px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-yellow-400 cursor-pointer w-[120px]"
             value={filterDifficulty}
             onChange={(e) => setFilterDifficulty(e.target.value)}
           >
-            <option value="All">All Difficulty</option>
+            <option value="All">Difficulty</option>
             <option value="Easy">Easy</option>
             <option value="Intermediate">Intermediate</option>
             <option value="Advanced">Advanced</option>
           </select>
           {/* Type dropdown */}
           <select
-            className="appearance-none px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-yellow-400"
+            className="appearance-none px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-yellow-400 cursor-pointer w-[120px]"
             value={filterType}
             onChange={(e) => setFilterType(e.target.value)}
           >
@@ -179,11 +159,10 @@ function RecipeListing() {
             <option value="veg">Veg</option>
             <option value="nonveg">Non-Veg</option>
           </select>
-
           {/* Cuisine dropdown */}
           {!cuisine ? (
             <select
-              className="appearance-none px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-yellow-400"
+              className="appearance-none px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-yellow-400 cursor-pointer w-[120px]"
               value={filterCuisine}
               onChange={(e) => setFilterCuisine(e.target.value)}
             >
@@ -197,18 +176,17 @@ function RecipeListing() {
               )}
             </select>
           ) : null}
-
           {/* Sorting dropdown */}
           <select
-            className="appearance-none px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-yellow-400"
+            className="appearance-none px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-yellow-400 cursor-pointer w-[120px]"
             value={sortingOption}
             onChange={handleSortChange}
           >
             <option value="default">Sort by</option>
-            <option value="ascending">Title (A-Z)</option>
-            <option value="descending">Title (Z-A)</option>
-            <option value="lowToHigh">Cooking Time(Lowest)</option>
-            <option value="highToLow">Cooking Time(Highest)</option>
+            <option value="ascending">Title(A-Z)</option>
+            <option value="descending">Title(Z-A)</option>
+            <option value="lowToHigh">Time(Lowest)</option>
+            <option value="highToLow">Time(Highest)</option>
           </select>
         </div>
       </div>
@@ -224,7 +202,7 @@ function RecipeListing() {
           <Button children="Show All" handleClick={clearFilters} />
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 m-2 w-[90%] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 m-2 w-[90%] mx-auto">  
           {currentRecipes.map((recipe) => (
             <RecipeCard key={recipe.id} recipe={recipe} />
           ))}
@@ -237,8 +215,6 @@ function RecipeListing() {
             totalPages={Math.ceil(sortedRecipes.length / itemsPerPage)}
             onPageChange={paginate}
             itemsPerPage={itemsPerPage}
-            // prevPage={prevPage}
-            // nextPage={nextPage}
             />
             </div>
     </div>

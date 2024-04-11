@@ -51,7 +51,7 @@ function CreatedRecipes() {
         </div>
   
         {/* search bar */}
-        <div className="mb-4">
+        <div className="mb-4 flex justify-center">
           <SearchBar
             placeholder="Search your Recipes..."
             onSearch={handleSearch}
@@ -70,17 +70,15 @@ function CreatedRecipes() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {filteredRecipes.map((recipe) => (
               <div key={recipe.id}>
-                <RecipeCard recipe={recipe} />
-                <div className="flex justify-end mt-2">
-                  <Button
-                    children={<MdDelete />}
-                    title="delete recipe"
-                    handleClick={() => {
-                      setRecipeToDelete(recipe.id);
-                      setShowDeleteModal(true);
-                    }}
-                  />
-                </div>
+                <RecipeCard recipe={recipe} 
+                title='Delete the recipe' 
+                showButton={true}
+                onClick={() => {
+                  setRecipeToDelete(recipe.id);
+                  setShowDeleteModal(true);
+                }}>
+                 <MdDelete size={15}/>
+                  </RecipeCard>
               </div>
             ))}
           </div>

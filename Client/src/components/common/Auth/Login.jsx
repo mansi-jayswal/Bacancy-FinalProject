@@ -1,19 +1,32 @@
-import { useEffect, useState } from "react";
+import { useEffect , useState } from "react";
 import { useDispatch } from "react-redux";
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup";
 import Input from "./Input";
-import FormExtra from "./FromExtra";
 import FormAction from "./formActions";
 import { loginFields } from "../constants/formFields";
 import { useNavigate } from "react-router-dom";
 import { getSubAdmins, getUsers } from "../../../utils/axios";
 import { setRole } from "../../../redux/actions/actions";
+import { toast } from 'react-toastify';
 
-const fields = loginFields;
-let fieldsState = {};
-fields.forEach((field) => (fieldsState[field.id] = ""));
+const schema = yup.object().shape({
+  email: yup.string().email("Invalid email").required("Email is required"),
+  password: yup
+  .string()
+  .required('Password is required!')
+  .matches(
+    /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{4,}$/,
+    'Password must contain at least one capital letter, one small letter, one special character, and one number!'
+  ),
+});
 
 export default function Login() {
-  const [loginState, setLoginState] = useState(fieldsState);
+  const { register, handleSubmit, formState: { errors } } = useForm({
+    resolver: yupResolver(schema),
+  });
+
   const [users, setUsers] = useState([]);
   const [subAdmins, setSubAdmins] = useState([]);
   const dispatch = useDispatch();
@@ -29,23 +42,15 @@ export default function Login() {
     .catch(err=> console.log('errror in fetching sub admins', err));
   }, []);
 
-  const handleChange = (e) => {
-    setLoginState({ ...loginState, [e.target.id]: e.target.value });
+  const onSubmit = (data) => {
+    authenticateUser(data);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    authenticateUser(loginState);
-    console.log(loginState);
-  };
-
-  const authenticateUser = (loginState) => {
-
-    const { email, password } = loginState;
+  const authenticateUser = ({ email, password }) => {
     if (email === "admin@gmail.com" && password === "Admin@123") {
-        const admin=loginState ; 
-        dispatch(setRole("admin",admin));
-        navigate('/admin');
+      const admin = { email, password }; 
+      dispatch(setRole("admin", admin));
+      navigate('/admin');
     } 
     else {
       const subAdmin = subAdmins.find((subAdmin) => subAdmin.email === email);
@@ -58,18 +63,20 @@ export default function Login() {
               dispatch(setRole("user", user));
               navigate("/");
           }
+          else{
+            toast.warn('Invalid Email or password!');
+          }
       }
-  }
+    }
   };
 
   return (
-    <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+    <form className="mt-8 space-y-6" onSubmit={handleSubmit(onSubmit)}>
       <div className="-space-y-px">
-        {fields.map((field) => (
+        {loginFields.map((field) => (
           <Input
             key={field.id}
-            handleChange={handleChange}
-            value={loginState[field.id]}
+            register={register}
             labelText={field.labelText}
             labelFor={field.labelFor}
             id={field.id}
@@ -77,11 +84,13 @@ export default function Login() {
             type={field.type}
             isRequired={field.isRequired}
             placeholder={field.placeholder}
+            error={errors[field.name]}
           />
         ))}
+        
       </div>
-      <FormExtra />
       <FormAction handleSubmit={handleSubmit} text="Login" />
     </form>
   );
 }
+

@@ -63,7 +63,7 @@ function Review({ reviews , recipeId }) {
         </div>
 
         {reviews.length === 0 ? (
-          <p>No reviews yet.</p>
+          <p className="mb-4">No reviews yet.</p>
         ) : (
           <div className="flex flex-col gap-3 mt-4 mb-4 text-white">
             {reviews.map((review) => (
@@ -74,8 +74,8 @@ function Review({ reviews , recipeId }) {
                 {/* Profile and Rating */}
                 <div className="flex justify-between">
                   <div className="flex gap-2">
-                    <div className="w-7 h-7 text-center rounded-full bg-red-500">
-                    {users[review.userId]?.substring(0, 1)} 
+                    <div className="w-7 h-7 text-center items-center rounded-full bg-red-400">
+                    {users[review.userId]?.substring(0, 1).toUpperCase()} 
                     </div>
                     {/* <span>{review.userId}</span> */}
                     <span>{users[review.userId]}</span>

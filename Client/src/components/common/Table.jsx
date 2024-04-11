@@ -35,15 +35,17 @@ const Table = ({ data, headers, handleUpdate, handleDelete, handleSort }) => {
               <td className="border px-4 py-2 flex justify-center items-center gap-2">
                 <Button
                   onClick={() => handleUpdate(item.id)}
-                  buttonStyle="px-[8px] py-[4px] text-sm mt-[0px!important]"
+                  buttonStyle="px-[8px] py-[4px] text-sm bg-green-600 border-green-600 hover:text-green-600 mt-[0px!important] "
                 >
-                  <CiEdit />
+                  {/* <CiEdit /> */}Edit
                 </Button>
                 <Button
                   onClick={() => handleDelete(item.id)}
-                  buttonStyle="px-[8px] py-[4px] text-sm mt-[0px!important] bg-[#c53030] border-[#c53030] hover:text-[#c53030]"
+                  buttonStyle="px-[8px] py-[4px] text-sm bg-red-600 border-red-600 hover:text-red-600 mt-[0px!important] "
+
+                  // buttonStyle="px-[8px] py-[4px] text-sm bg-[#c53030] border-[#c53030] mt-[0px!important] hover:text-[#c53030]"
                 >
-                  <MdDeleteOutline />
+                  {/* <MdDeleteOutline /> */}Delete
                 </Button>
               </td>
             </tr>

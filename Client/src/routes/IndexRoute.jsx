@@ -1,21 +1,16 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import AboutUs from '../components/pages/about/AboutUs';
+const AboutUs = React.lazy(()=>import( '../components/pages/about/AboutUs'))
 const ProfilePage = React.lazy(() => import('../components/pages/user/ProfilePage'));
 const AdminDashboard = React.lazy(() => import('../components/pages/admin/AdminDashboard'));
-const AdminUsersListing = React.lazy(() => import('../components/pages/admin/AdminUsersListing'));
 const AdminSubadminsListing = React.lazy(() => import('../components/pages/admin/AdminSubadminsListing'));
 const AdminAddUser = React.lazy(() => import('../components/pages/admin/adminUsers/AdminAddUser'));
 const AdminUpdateUser = React.lazy(() => import('../components/pages/admin/adminUsers/AdminUpdateUser'));
-const SignupComp = React.lazy(() => import('../components/common/Auth/SignupComp'));
 const SubAdminDashboard = React.lazy(() => import('../components/pages/subadmin/SubAdminDashboard'));
 const AdminAddSubadmin = React.lazy(() => import('../components/pages/admin/adminSubadmin/AdminAddSubadmin'));
 const AdminUpdateSubadmin = React.lazy(() => import('../components/pages/admin/adminSubadmin/AdminUpdateSubadmin'));
 const SubAdminReviewSection = React.lazy(() => import('../components/pages/subadmin/SubAdminReviewSection'));
-
-
-// Lazy-loaded components
 const Layout = React.lazy(() => import('../components/layout/Layout'));
 const PrivateRoutesUser = React.lazy(() => import('./privateRoutes/privateRoutesUser/PrivateRoutesUser'));
 const PrivateRoutesAdmin = React.lazy(() => import('./privateRoutes/privateRoutesAdmin/PrivateRoutesAdmin'));

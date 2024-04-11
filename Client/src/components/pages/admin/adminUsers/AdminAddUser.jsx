@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 import { signupFields } from "../../../common/constants/formFields";
 import FormAction from "../../../common/Auth/formActions";
 import Input from "../../../common/Auth/Input";
@@ -8,14 +11,32 @@ import { API, RegisterUser } from "../../../../utils/axios";
 import { toast } from "react-toastify";
 
 const fields = signupFields;
-let fieldsState = {};
 
-fields.forEach((field) => (fieldsState[field.id] = ""));
+const schema = yup.object().shape({
+  name: yup.string().required("Username is required"),
+  email: yup.string().email("Invalid email").required("Email is required"),
+  password: yup
+  .string()
+  .required('Password is required!')
+  .matches(
+    /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{4,}$/,
+    'Password must contain at least one capital letter, one small letter, one special character, and one number!'
+  ),  
+  confirm_password: yup
+    .string()
+    .oneOf([yup.ref("password"), null], "Passwords must match")
+    .required("Confirm Password is required"),
+  preference: yup.string().required("Preferred Cuisine is required"),
+});
 
 export default function AdminAddUser() {
   const navigate = useNavigate();
-  const [signupState, setSignupState] = useState(fieldsState);
+  const dispatch = useDispatch();
   const [users, setUsers] = useState();
+
+  const { register, handleSubmit, formState: { errors } } = useForm({
+    resolver: yupResolver(schema),
+  });
 
   useEffect(() => {
     API.get("/users")
@@ -23,41 +44,37 @@ export default function AdminAddUser() {
       .catch((err) => console.log(err));
   });
 
-  const handleChange = (e) =>
-    setSignupState({ ...signupState, [e.target.id]: e.target.value });
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log(signupState);
+  const onSubmit = async (data) => {
     try {
-        await createAccount();
-        toast.success('User created Successfully!');
-        navigate("/admin-users");
-      } catch (error) {
-        console.error("Error creating user:", error);
-        toast.error('Failed to create user');
-      }
+      
+      await createAccount(data);
+      toast.success("User created Successfully!");
+      navigate("/admin-users");
+    } catch (error) {
+      console.error("Error creating user:", error);
+      toast.error("Failed to create user");
+    }
   };
 
-  const createAccount = () => {
+  const createAccount = (userData) => {
     const newUser = {
       id:
-        users.length !== 0
-          ? (parseInt(users[users.length - 1].id) + 1).toString()
-          : "1",
-      name: signupState.name,
-      email: signupState.email,
-      password: signupState.password,
+      users.length !== 0
+      ? (parseInt(users[users.length - 1].id) + 1).toString()
+      : "1",
+      name: userData.name,
+      email: userData.email,
+      password: userData.password,
       saved_recipes: [],
       created_recipes: [],
       reviews: [],
-      preference: signupState.preference,
+      preference: userData.preference,
     };
 
-    RegisterUser(newUser)
-      .then((res) => console.log("user created successfully by admin! " + res.data))
+    return RegisterUser(newUser)
+      .then((res) =>{
+        console.log("user created successfully by admin! " + res.data)})
       .catch((err) => console.log(err));
-    console.log(newUser);
   };
 
   return (
@@ -67,7 +84,7 @@ export default function AdminAddUser() {
           <div className="text-center">
             <h1 className="text-xl text-customRed">Create new User</h1>
           </div>
-          <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+          <form className="mt-8 space-y-6" onSubmit={handleSubmit(onSubmit)}>
             <div className="">
               {fields.map((field) =>
                 field.type === "dropdown" ? (
@@ -80,9 +97,7 @@ export default function AdminAddUser() {
                     </label>
                     <select
                       id={field.id}
-                      name={field.name}
-                      value={signupState[field.id]}
-                      onChange={handleChange}
+                      {...register(field.id)}
                       required={field.isRequired}
                       className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-customRed focus:border-customRed sm:text-sm rounded-md"
                     >
@@ -95,12 +110,14 @@ export default function AdminAddUser() {
                         </option>
                       ))}
                     </select>
+                    {errors[field.id] && (
+                      <span className="text-red-500">{errors[field.id].message}</span>
+                    )}
                   </div>
                 ) : (
                   <Input
                     key={field.id}
-                    handleChange={handleChange}
-                    value={signupState[field.id]}
+                    register={register}
                     labelText={field.labelText}
                     labelFor={field.labelFor}
                     id={field.id}
@@ -108,10 +125,11 @@ export default function AdminAddUser() {
                     type={field.type}
                     isRequired={field.isRequired}
                     placeholder={field.placeholder}
+                    error={errors[field.id]}
                   />
                 )
               )}
-              <FormAction handleSubmit={handleSubmit} text="Register user" />
+              <FormAction text="Register user" />
             </div>
           </form>
         </div>
@@ -119,3 +137,4 @@ export default function AdminAddUser() {
     </>
   );
 }
+

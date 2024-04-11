@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import { getRecipeById, getRecipes, updateRecipe } from "../../../utils/axios";
 import RecipeCard from "../recipe/RecipeCard";
 import Loader from "../../common/Loader";
-import { HiTrendingUp } from "react-icons/hi";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import Pagination from "../../common/Pagination";
@@ -28,7 +27,7 @@ function SubAdminDashboard() {
         console.log("err in fetching recipes at subadmin", err);
         setLoading(false);
       });
-  }, []);
+  }, [recipes]);
 
   const filterRecipes = (recipes) => {
     if (sub_admin && sub_admin.assignedCategory) {
@@ -48,15 +47,16 @@ function SubAdminDashboard() {
       const trendingRecipeData = res.data;
 
       if (trendingRecipeData.isTrending) {
-        toast.warn("Recipe already in trend!");
+        const updatedRecipe = { ...trendingRecipeData, isTrending: false };
+        await updateRecipe(id, updatedRecipe);
+        toast.info("Recipe Removed from top picks!");
       } else {
         const updatedRecipe = { ...trendingRecipeData, isTrending: true };
         await updateRecipe(id, updatedRecipe);
-        toast.success("Recipe added to trend!");
+        toast.success("Recipe added to top picks!");
       }
     } catch (error) {
       console.log("Error handling trending:", error);
-      toast.error("Error handling trending!");
     }
   };
 
@@ -77,11 +77,11 @@ function SubAdminDashboard() {
 
   return (
     <>
-      <div className="text-center">
+      {/* <div className="text-center">
         <h1 className="text-customRed font-semibold">Sub-Admin Dashboard</h1>
-      </div>
-      <div className="text-center mt-4 flex justify-between">
-        <h4 className="text-customRed font-semibold ml-auto mr-96">
+      </div> */}
+      <div className="text-center mt-4 flex gap-2 flex-col md:flex-row justify-between">
+        <h4 className="text-customRed font-semibold md:ml-auto md:mr-96">
           My Category : {sub_admin.assignedCategory} Cuisine
         </h4>
         <button
@@ -103,8 +103,14 @@ function SubAdminDashboard() {
                   key={recipe.id}
                   recipe={recipe}
                   onClick={() => handleTrending(recipe.id)}
+                  showButton={true}
+                  title= {
+                    recipe.isTrending ? 'Remove from top picks' : 'Add to top picks'
+                  }
                 >
-                  <HiTrendingUp size={20} />
+                 {
+                   recipe.isTrending ? 'Remove from top picks' : 'Add to top picks'
+                 }
                 </RecipeCard>
               ))
             ) : (

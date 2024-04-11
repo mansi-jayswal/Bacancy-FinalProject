@@ -18,6 +18,7 @@ const RecipeDetails = () => {
   const [recipe, setRecipe] = useState(null);
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [isSaved, setIsSaved] = useState(false); 
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -65,6 +66,14 @@ const RecipeDetails = () => {
     fetchReviews();
   }, [id]);
 
+  useEffect(() => {
+    // Check if the recipe is saved by the user
+    if (user && user.saved_recipes) {
+      const isRecipeSaved = user.saved_recipes.some(savedRecipe => savedRecipe.id === id);
+      setIsSaved(isRecipeSaved);
+    }
+  }, [user, id]);
+
   console.log(recipe)
 
   let isEditAllowed = false;
@@ -72,31 +81,27 @@ const RecipeDetails = () => {
     isEditAllowed = true;
   }
 
-  console.log("is edit allowed : ---> " +isEditAllowed)
+  console.log("is edit allowed: -> " + isEditAllowed)
 
+  
 
   const handleSave = async () => {
     if (!isAuth) {
       toast.warn("please first login");
       navigate("/login");
     } else {
-      const alreaydLiked = user.saved_recipes.filter(
-        (recipes) => recipes.id === recipe.id
-      );
-
-      if (alreaydLiked.length === 0) {
+      if (!isSaved) { // Only add to saved recipes if not already saved
         user.saved_recipes.push(recipe);
         try {
-          const res = await updateUser(user.id , user)
-          if(res.success){
+          const res = await updateUser(user.id , user);
+          if (res.success) {
             setLoading(false);
             dispatch(setRole("user", user));
-          }
-          else{
+            setIsSaved(true); // Update local state to indicate recipe is saved
+          } else {
             console.log('error in updating the user from saveRecipe')
           }
-        }
-         catch (error) {
+        } catch (error) {
           console.log(error);
         }
         toast.success("Added to SavedRecipe!", {
@@ -141,11 +146,13 @@ const RecipeDetails = () => {
           </h2>
         </div>
         <div className="mb-4 flex">
-          <div className="m-2">
+        <div className="m-2">
             {
-              (!sub_admin && !admin) ?  <button onClick={handleSave} title="Save this recipe">
-              <MdBookmarks size={25} />
-            </button> : null
+              (!sub_admin && !admin) ?  
+              <button onClick={handleSave} title="Save this recipe">
+                {isSaved ? <MdBookmarks size={25} color="Pink" /> : <MdBookmarks size={25} />}
+              </button> 
+              : null
             }
           </div>
           <div className="m-2">
@@ -169,9 +176,10 @@ const RecipeDetails = () => {
             <span className="font-bold">Difficulty:</span> {recipe.difficulty}
           </p>
 
-          <div className="flex item-center ">
-            <IoIosTime className="inline"/>
-            <span className="ml-2">{recipe.cookingTime}</span>
+          <div className="flex item-center gap-1 ">
+            {/* <IoIosTime className="inline"/> */}
+            <span className="font-bold">Cooking Time: </span>{" "}
+            {recipe.cookingTime}
           </div>
 
           <p>
@@ -207,21 +215,21 @@ const RecipeDetails = () => {
         alt={recipe.title}
         className="w-full rounded-lg mb-4"
       />
-      <h3 className="text-xl font-bold mb-2">Ingredients</h3>
+      <h3 className="text-xl font-bold mb-2">Ingredients:</h3>
       <ul className="list-disc pl-6 mb-4">
         {recipe.ingredients.map((ingredient, index) => (
           <li key={index}>{ingredient}</li>
         ))}
       </ul>
-      <h3 className="text-xl font-bold mb-2">Method</h3>
-      <p className="mb-4">{recipe.method}</p>
-      <h3 className="text-xl font-bold mb-2">Tags</h3>
+      <h3 className="text-xl font-bold mb-2">Method:</h3>
+      <p className="mb-4 whitespace-pre-line text-justify">{recipe.method}</p>
+      <h3 className="text-xl font-bold mb-2">Tags:</h3>
       <div className="flex flex-wrap">
         {recipe.tags.map((tag, index) => (
           <span
             key={index}
             className="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-          >
+            >
             {tag}
           </span>
         ))}
