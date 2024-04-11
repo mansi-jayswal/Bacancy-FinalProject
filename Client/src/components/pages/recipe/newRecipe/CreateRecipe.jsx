@@ -9,6 +9,8 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setRole } from "../../../../redux/actions/actions";
 import { toast } from "react-toastify";
+import {TagsInput} from "react-tag-input-component";
+
 
 const CreateRecipe = () => {
   const [recipe, setRecipe] = useState({
@@ -26,10 +28,10 @@ const CreateRecipe = () => {
 
   const user = useSelector((state) => state.role.user);
   const sub_admin = useSelector((state) => state.role.sub_admin);
-
   const [recipes, setRecipes] = useState([]);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   useEffect(() => {
     getRecipes()
       .then((res) => setRecipes(res.data))
@@ -44,6 +46,14 @@ const CreateRecipe = () => {
     });
   };
 
+  const handleTagsChange = (newTags, name) => {
+    setRecipe({
+      ...recipe,
+      [name]: newTags,
+    });
+  };
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(recipe);
@@ -52,7 +62,8 @@ const CreateRecipe = () => {
     if(user) navigate('/recipes');
     else if(sub_admin) navigate('/subadmin');
 
-    // navigate("/");
+
+    
     createNewRecipe();
   };
 
@@ -63,13 +74,15 @@ const CreateRecipe = () => {
           ? (parseInt(recipes[recipes.length - 1].id) + 1).toString()
           : "1",
       title: recipe.title,
-      ingredients: recipe.ingredients
-        .split(",")
-        .map((ingredient) => ingredient.trim()),
+      // ingredients: recipe.ingredients.toString()
+      //   .split(",")
+      //   .map((ingredient) => ingredient.trim()),
+      ingredients:recipe.ingredients,
       method: recipe.method,
       type: recipe.type,
-      cuisine: recipe.cuisine,
-      tags: recipe.tags.split(",").map((tag) => tag.trim()),
+      cuisine: user ? recipe.cuisine : sub_admin.assignedCategory, 
+      // tags: recipe.tags.toString().split(",").map((tag) => tag.trim()),
+      tags: recipe.tags,
       difficulty: recipe.difficulty,
       cookingTime: recipe.cookingTime,
       servingSize: recipe.servingSize,
@@ -80,16 +93,20 @@ const CreateRecipe = () => {
       authorName: user ? user.name : 'FlavourRealm',
     };
     console.log(newRecipe);
-    user.created_recipes.push(newRecipe);
+
+    if(user){user.created_recipes.push(newRecipe)};
+
     try 
     {
+      if(user){
       const res = await updateUser(user.id, user);
       if (res.success) {
         setLoading(false);
         dispatch(setRole("user", user));
       } else {
-        console.log("error in updating the user from saveRecipe");
+        console.log("error in updating the user from createRecipe");
       }
+    }
     } 
     catch (error) {
       console.log(error);
@@ -122,6 +139,7 @@ const CreateRecipe = () => {
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
               value={recipe.title}
               onChange={handleChange}
+              required
             />
           </div>
           {/* Ingredients */}
@@ -130,15 +148,14 @@ const CreateRecipe = () => {
               htmlFor="ingredients"
               className="block text-gray-700 font-bold mb-2"
             >
-              Ingredients
+              Ingredients (Press Enter to add ingredients)
             </label>
-            <textarea
+            <TagsInput
               id="ingredients"
               name="ingredients"
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
               value={recipe.ingredients}
-              onChange={handleChange}
-            ></textarea>
+              onChange={(newTags) => handleTagsChange(newTags, "ingredients")}
+            />
           </div>
           {/* Method */}
           <div className="mb-4">
@@ -155,6 +172,7 @@ const CreateRecipe = () => {
               value={recipe.method}
               onChange={handleChange}
               rows={5}
+              required
             ></textarea>
           </div>
           {/* Type */}
@@ -171,6 +189,7 @@ const CreateRecipe = () => {
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
               value={recipe.type}
               onChange={handleChange}
+              required
             >
               <option value="">Select type</option>
               <option value="veg">Veg</option>
@@ -192,6 +211,7 @@ const CreateRecipe = () => {
              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
              value={recipe.cuisine}
              onChange={handleChange}
+             required
            >
              <option value="">Select cuisine</option>
              {Array.from(new Set(recipes.map(recipe => recipe.cuisine))).map((cuisine) => (
@@ -217,15 +237,13 @@ const CreateRecipe = () => {
               htmlFor="tags"
               className="block text-gray-700 font-bold mb-2"
             >
-              Tags
+              Tags (Enter to add new Tags)
             </label>
-            <input
-              type="text"
+            <TagsInput
               id="tags"
               name="tags"
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
               value={recipe.tags}
-              onChange={handleChange}
+              onChange={(newTags) => handleTagsChange(newTags, "tags")}
             />
           </div>
           {/* Difficulty */}
@@ -242,6 +260,7 @@ const CreateRecipe = () => {
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
               value={recipe.difficulty}
               onChange={handleChange}
+              required
             >
               <option value="">Select difficulty</option>
               <option value="Easy">Easy</option>
@@ -256,7 +275,7 @@ const CreateRecipe = () => {
               htmlFor="cookingTime"
               className="block text-gray-700 font-bold mb-2"
             >
-              Cooking Time (in mins / hour, eg - 10 mins, 1 hour 15 mins)
+              Cooking Time (in minutes )
             </label>
             <input
               type="text"
@@ -265,6 +284,7 @@ const CreateRecipe = () => {
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
               value={recipe.cookingTime}
               onChange={handleChange}
+              required
             />
           </div>
           {/* Serving Size */}
@@ -282,6 +302,7 @@ const CreateRecipe = () => {
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
               value={recipe.servingSize}
               onChange={handleChange}
+              required
             />
           </div>
           {/* Image */}
@@ -299,6 +320,7 @@ const CreateRecipe = () => {
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
               value={recipe.image}
               onChange={handleChange}
+              required
             />
           </div>
           {/* Submit Button */}

@@ -5,12 +5,14 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setRole } from "../../../../redux/actions/actions";
 import { toast } from "react-toastify";
+import {TagsInput} from "react-tag-input-component";
+
 
 const UpdateRecipe = () => {
   const { id } = useParams();
   const [recipe, setRecipe] = useState({
     title: "",
-    ingredients: "",
+    ingredients: [],
     method: "",
     type: "",
     cuisine: "",
@@ -20,7 +22,7 @@ const UpdateRecipe = () => {
     servingSize: "",
     image: "",
   });
-
+  const [loading ,setLoading]= useState(false);
   const user = useSelector((state) => state.role.user);
 
   const [recipes, setRecipes] = useState([]);
@@ -44,11 +46,17 @@ const UpdateRecipe = () => {
   }, [id]);
 
   const handleChange = (e) => {
-    setRecipe((prevValue) => {
-      return {
-        ...prevValue,
-        [e.target.name]: e.target.value,
-      };
+    const { name, value } = e.target;
+    setRecipe({
+      ...recipe,
+      [name]: value,
+    });
+  };
+
+  const handleTagsChange = (newTags, name) => {
+    setRecipe({
+      ...recipe,
+      [name]: newTags,
     });
   };
 
@@ -59,19 +67,21 @@ const UpdateRecipe = () => {
     const newRecipe={
       // id:recipe.id, 
       title: recipe.title ,
-      ingredients: recipe.ingredients.split(',').map(ingredient => ingredient.trim()).filter(Boolean),
+      // ingredients: recipe.ingredients.toString().split(',').map(ingredient => ingredient.trim()).filter(Boolean),
+      ingredients: recipe.ingredients,
       method : recipe.method ,
       type: recipe.type,
       cuisine : recipe.cuisine ,
-      tags: recipe.tags.split(',').map(tag => tag.trim()).filter(Boolean),
+      // tags: recipe.tags.toString().split(',').map(tag => tag.trim()).filter(Boolean),
+      tags: recipe.tags,
       difficulty : recipe.difficulty ,
       cookingTime: recipe.cookingTime , 
       servingSize : recipe.servingSize ,
       img: recipe.image ,
       reviews:[] ,
       likesCount: 51 ,
-      authorId: user.id ,
-      authorName: user.name
+      authorId: recipe.authorId ,
+      authorName: recipe.authorName
   }
     console.log('newRecipe',newRecipe)
     try {
@@ -102,7 +112,6 @@ const UpdateRecipe = () => {
       }
       }
     else{
-      toast.success('Recipe updated sucessfully!')
       navigate('/subadmin');
     }
     } catch (error) 
@@ -142,15 +151,14 @@ const UpdateRecipe = () => {
               htmlFor="ingredients"
               className="block text-gray-700 font-bold mb-2"
             >
-              Ingredients
+              Ingredients (Press Enter to add Ingredients)
             </label>
-            <textarea
+             <TagsInput
               id="ingredients"
               name="ingredients"
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
               value={recipe.ingredients}
-              onChange={handleChange}
-            ></textarea>
+              onChange={(newTags) => handleTagsChange(newTags, "ingredients")}
+            />
           </div>
           {/* Method */}
           <div className="mb-4">
@@ -188,7 +196,6 @@ const UpdateRecipe = () => {
               <option value="veg">Veg</option>
               <option value="non-veg">Non-veg</option>
             </select>
-            {/* <input type="text" id="type" name="type" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" value={recipe.type} onChange={handleChange} /> */}
           </div>
           {/* Cuisine */}
           <div className="mb-4">
@@ -213,15 +220,13 @@ const UpdateRecipe = () => {
               htmlFor="tags"
               className="block text-gray-700 font-bold mb-2"
             >
-              Tags
+              Tags (Press Enter to add Tags)
             </label>
-            <input
-              type="text"
+             <TagsInput
               id="tags"
               name="tags"
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
               value={recipe.tags}
-              onChange={handleChange}
+              onChange={(newTags) => handleTagsChange(newTags, "tags")}
             />
           </div>
           {/* Difficulty */}

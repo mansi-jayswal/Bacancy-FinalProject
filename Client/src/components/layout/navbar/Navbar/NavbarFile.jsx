@@ -52,7 +52,7 @@ const NavbarFile = () => {
       <Link
         key={index}
         to={link.path}
-        className="block text-center text-black hover:text-white hover:bg-customRed hover:underline-offset-2 md:p-2 rounded-xl"
+        className="block text-center text-black hover:text-white hover:bg-customRed hover:underline-offset-2  md:p-2 rounded-xl"
         onClick={handleLinkClick}
       >
         {link.name}
@@ -129,7 +129,7 @@ const NavbarFile = () => {
             setShowLinks(!showLinks);
             navigate("/login")
           }}
-              className=" hidden md:block text-black hover:text-white hover:bg-customRed p-1 ml-2 rounded-xl font-lora"
+              className=" hidden md:block text-black hover:text-white hover:bg-customRed p-1 px-2 ml-2 rounded-xl font-lora"
             >
               Login
             </button>

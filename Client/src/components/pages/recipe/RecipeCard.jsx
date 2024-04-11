@@ -6,7 +6,7 @@ import ReactStars from "react-rating-stars-component";
 
 
 
-const RecipeCard = ({ recipe , children , onClick}) => {
+const RecipeCard = ({ recipe , children , onClick , showButton=false, title}) => {
     const navigate=useNavigate();
     const {isAuth}=useSelector(state=>state.role.isAuth)
     const handleClick =()=>{
@@ -28,13 +28,13 @@ const RecipeCard = ({ recipe , children , onClick}) => {
         <div className="flex justify-between">
           <div className='w-full'>
             <div className='flex justify-between w-full items-center'>
-            <div className="font-bold text-xl mb-2"><h1>{recipe.title}</h1></div>
+            <div className="font-bold text-xl mb-2" onClick={handleClick}><h1 className='cursor-pointer'>{recipe.title}</h1></div>
             <div className="mr-2 mb-2">
             <ReactStars
                   count={5}
                   value={parseInt(calculateAverageRating(recipe.reviews))}
                   a11y={false}
-                  // isHalf={true}
+                  isHalf={true}
                   edit={false}
                   size={15}
                   color={`rgb(156 163 175)`}
@@ -66,18 +66,11 @@ const RecipeCard = ({ recipe , children , onClick}) => {
           <span>
             <FaUser className="inline" /> By {recipe.authorName}
           </span>
-          {/* {
-            isAuth ? (
+          {showButton  && (
               <div>
-              <button className='p-2 bg-customLightBeige rounded-lg' title='add to top picks' onClick={onClick}>{children}</button>
-            </div>
-            ) : null
-          } */}
-          {/* {children} */}
-          <div>
-            <button className='p-2 bg-customLightBeige rounded-lg' title='add to top picks' onClick={onClick}>{children}</button>
-          </div>
-          
+                <button className='p-2 bg-customLightBeige rounded-lg text-black' title={title} onClick={onClick}>{children}</button>
+              </div>
+            )}
         </div>
 
 

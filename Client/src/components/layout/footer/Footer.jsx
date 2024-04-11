@@ -11,16 +11,16 @@ const Footer = () => {
               <h4 className="text-lg font-bold mb-2">Quick Links</h4>
               <ul>
                 <li className="mb-2">
-                  <Link to="/" className="hover:text-gray-400">Home</Link>
+                  <Link to="/" className="hover:text-customRed">Home</Link>
                 </li>
                 <li className="mb-2">
-                  <Link to="/recipes" className="hover:text-gray-400">Recipes</Link>
+                  <Link to="/recipes" className="hover:text-customRed">Recipes</Link>
                 </li>
                 <li className="mb-2">
-                  <Link to="/login" className="hover:text-gray-400">Login</Link>
+                  <Link to="/login" className="hover:text-customRed">Login</Link>
                 </li>
                 <li className="mb-2">
-                  <Link to="/contact" className="hover:text-gray-400">Contact Us</Link>
+                  <Link to="/about" className="hover:text-customRed">About Us</Link>
                 </li>
               </ul>
             </div>
@@ -28,20 +28,20 @@ const Footer = () => {
               <h4 className="text-lg font-bold mb-2">Follow Us</h4>
               <ul>
                 <li className="mb-2">
-                  <a href="#" className="hover:text-gray-400">Facebook</a>
+                  <a href="#" className="hover:text-customRed">Facebook</a>
                 </li>
                 <li className="mb-2">
-                  <a href="#" className="hover:text-gray-400">Twitter</a>
+                  <a href="#" className="hover:text-customRed">Twitter</a>
                 </li>
                 <li className="mb-2">
-                  <a href="#" className="hover:text-gray-400">Instagram</a>
+                  <a href="#" className="hover:text-customRed">Instagram</a>
                 </li>
               </ul>
             </div>
             <div className="w-full md:w-1/3">
               <h4 className="text-lg font-bold mb-2">Contact Info</h4>
-              <p>Email: mansi.jayswal@bacancy.com</p>
-              <p>Phone: 7096205446</p>
+              <p>Email: flavourrealm@info.com</p>
+              <p>Phone: 079-12345678</p>
             </div>
           </div>
         </div>

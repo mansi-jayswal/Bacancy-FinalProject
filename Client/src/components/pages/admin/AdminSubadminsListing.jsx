@@ -113,21 +113,20 @@ function AdminSubadminListing() {
   };
 
   return (
-    <div className="container mx-auto p-4 px-6 md:p-10 my-2">
+    <div className="container mx-auto p-4 px-6 md:p-10">
       <div className="text-center">
-        <span className="text-xl font-semibold mt-2">
-          List of all Sub admins{" "}
+        <span className="text-xl font-semibold mt-2">Sub admins{" "}
         </span>
-        <Button buttonStyle="ml-8 bg-green-500 border-green-500 hover:text-green-500 text-base mt-0 mb-2 cursor-default">
-          <Link to="/admin-createSubAdmin">+ADD</Link>
-        </Button>{" "}
       </div>
-      <div className="mb-4">
+      <div className="flex mb-0 mx-auto md:flex-row justify-between">
         <SearchBar
           placeholder="Search sub-admins..."
           onSearch={handleSearch}
           value={searchQuery}
         />
+         <Button buttonStyle="ml-8  sm:text-xs lg:text-[15px] bg-green-600 border-green-600 hover:text-green-600 text-base mt-0 mb-2 cursor-default">
+          <Link to="/admin-createSubAdmin">+Add</Link>
+        </Button>{" "}
       </div>
       {filteredSubAdmins.length === 0 ? (
         <div className="text-center">

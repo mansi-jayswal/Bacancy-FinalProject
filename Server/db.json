@@ -291,58 +291,33 @@
           "id": "24"
         },
         {
-          "id": "9",
-          "title": "Gulab Jamun",
+          "id": "30",
+          "title": "Paneer Tikka",
           "ingredients": [
-            "Milk Powder",
-            "Flour",
-            "Sugar",
-            "Ghee",
-            "Cardamom"
+            "Paneer",
+            "Curd",
+            "Gram flour",
+            "Spices",
+            "Oil",
+            "Coriander "
           ],
-          "method": "Mix milk powder and flour with a little water to make a soft dough. Roll into balls and deep fry until golden brown. Make a sugar syrup with water, sugar, and cardamom. Soak fried balls in syrup. Serve warm.",
+          "method": "Cut paneer (Indian cottage cheese) into cubes and prepare the marinade.\nThe marinade typically consists of yogurt, spices like red chili powder, turmeric, garam masala, and lemon juice.\nThread the marinated paneer cubes onto skewers, along with chunks of vegetables like bell peppers, onions, and tomatoes.\nCook the skewered paneer tikka either on a grill, in a grill pan, or bake them in the oven.\nIf grilling, cook until the paneer and vegetables are charred and cooked through, flipping occasionally.\nIf baking, preheat the oven and bake the skewers until the paneer is golden brown and the vegetables are tender.",
           "type": "veg",
           "cuisine": "Indian",
           "tags": [
-            "Dessert",
-            "Indian",
-            "Fried"
+            "Spicy",
+            "StreetFood",
+            "Snacks",
+            "Punjabi"
           ],
           "difficulty": "Intermediate",
-          "cookingTime": "40 minutes",
-          "authorId": 1111,
-          "authorName": "flavourRealm",
-          "likesCount": 207,
+          "cookingTime": "30mins",
+          "servingSize": "4",
+          "img": "https://t4.ftcdn.net/jpg/04/75/65/21/360_F_475652107_Sx73qgHWljGylX5KRyDFeE46ftX0A4EE.jpg",
           "reviews": [],
-          "servingSize": "6",
-          "img": "https://t4.ftcdn.net/jpg/06/21/54/41/360_F_621544128_inBjLYomzXLGFiNVri9ebirH1MMJ7ige.jpg"
-        },
-        {
-          "id": "3",
-          "title": "Margherita Pizza",
-          "ingredients": [
-            "Pizza Dough",
-            "Tomatoes",
-            "Fresh Mozzarella Cheese",
-            "Fresh Basil",
-            "Olive Oil"
-          ],
-          "method": "Preheat oven to highest temperature. Roll out pizza dough and top with sliced tomatoes, fresh mozzarella cheese, and torn basil leaves. Drizzle with olive oil. Bake until crust is golden and cheese is bubbly, about 10-12 minutes.",
-          "type": "veg",
-          "cuisine": "Italian",
-          "tags": [
-            "Pizza",
-            "Italian",
-            "Vegetarian"
-          ],
-          "difficulty": "Easy",
-          "cookingTime": "15 minutes",
-          "authorId": 1111,
-          "authorName": "flavourRealm",
-          "likesCount": 175,
-          "reviews": [],
-          "servingSize": "2",
-          "img": "https://img.freepik.com/free-photo/pizza-tasty-cheese-top-view-grey-surface_140725-14194.jpg?t=st=1712125070~exp=1712128670~hmac=47cc308b886809c73f667db6d55fe7600f70653b11219f763a2d5f1135fb6efe&w=740"
+          "likesCount": 51,
+          "authorId": "12",
+          "authorName": "harsh"
         }
       ],
       "created_recipes": [
@@ -383,8 +358,7 @@
           "id": "24"
         },
         {
-          "id": "26",
-          "title": "Thepla",
+          "title": "Gujarati Thepla",
           "ingredients": [
             "2 cups whole wheat flour (atta)",
             "1 cup finely chopped fenugreek leaves (methi)",
@@ -407,11 +381,37 @@
           "difficulty": "Easy",
           "cookingTime": "30mins",
           "servingSize": "2",
-          "img": "https://www.rajbhog.com/wp-content/uploads/2021/05/Methi-Thepla.jpg",
+          "img": "https://thumbs.dreamstime.com/b/indian-parantha-stuffed-indian-bread-methi-thepla-stack-indian-flatbread-methi-paratha-fenugreek-gujarati-thepla-potato-125773599.jpg",
           "reviews": [],
           "likesCount": 51,
           "authorId": "12",
-          "authorName": "harsh"
+          "authorName": "harsh",
+          "id": "26"
+        },
+        {
+          "title": "Masala bhindi",
+          "ingredients": [
+            "ladyfingers",
+            "spices",
+            "oil",
+            "onion"
+          ],
+          "method": "hi \nhi\nhih\nhih\nhih\nhhih\nhuh\n",
+          "type": "veg",
+          "cuisine": "Indian",
+          "tags": [
+            "lunch ",
+            "easy"
+          ],
+          "difficulty": "Easy",
+          "cookingTime": "30mins",
+          "servingSize": "2",
+          "img": "https://www.archanaskitchen.com/images/archanaskitchen/0-Archanas-Kitchen-Recipes/2020/Bhindi__Masala_Recipe_Bhindi_Tamatar_Sabzi_North_Indian_Recipe_1_1600.jpg",
+          "reviews": [],
+          "likesCount": 51,
+          "authorId": "12",
+          "authorName": "harsh",
+          "id": "29"
         }
       ],
       "reviews": [
@@ -616,7 +616,34 @@
           "img": "https://img.freepik.com/free-photo/front-view-cooked-italian-pasta-with-cutlery-white-background_140725-94889.jpg?t=st=1712124967~exp=1712128567~hmac=db8a00f6c7d5a15de2b1b83d59ec3b5e7d96d492981443bb4f0e8fd9ac3d68af&w=740"
         }
       ],
-      "created_recipes": [],
+      "created_recipes": [
+        {
+          "id": "31",
+          "title": "Cake",
+          "ingredients": [
+            "2 cups all-purpose flour",
+            "1 cup sugar",
+            "1 cup milk",
+            "1/2 cup vegetable oil"
+          ],
+          "method": "Preheat oven to 350°F (175°C) and grease a cake pan.\nIn a bowl, mix flour, sugar, and baking powder.\nAdd milk and vegetable oil to the dry ingredients and mix until smooth.\nPour batter into the greased pan and bake for 30-35 minutes.\nOnce baked, let the cake cool before serving. Enjoy!",
+          "type": "veg",
+          "cuisine": "Italian",
+          "tags": [
+            "sweet",
+            "baking",
+            "dessert"
+          ],
+          "difficulty": "Advanced",
+          "cookingTime": "50 minutes",
+          "servingSize": "4",
+          "img": "https://st4.depositphotos.com/10614052/25239/i/450/depositphotos_252391082-stock-photo-sweet-chocolate-cake-on-wooden.jpg",
+          "reviews": [],
+          "likesCount": 51,
+          "authorId": "15",
+          "authorName": "Akshaliii"
+        }
+      ],
       "reviews": [],
       "preference": "Mexican",
       "confirm_password": "Akshali@123"
@@ -816,7 +843,7 @@
       ],
       "servingSize": "4",
       "img": "https://img.freepik.com/free-photo/front-view-meat-sauce-soup-with-greens-potatoes-dark-desk-soup-meal-sauce-meat_140725-79069.jpg?t=st=1712125038~exp=1712128638~hmac=4c7803cbbc1c9e6e95b98df32475808cd2bfba7daa6c3cade8c7663621e80676&w=740",
-      "isTrending": false
+      "isTrending": true
     },
     {
       "id": "3",
@@ -901,7 +928,8 @@
         }
       ],
       "servingSize": "4",
-      "img": "https://www.thespruceeats.com/thmb/wQd2RvxH1Lh9536W5LY1T_VSyT8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/tacos-al-pastor-recipe-4172074-hero-01-7fb1a4455397486b8485ac8ec2ca3c5a.jpg"
+      "img": "https://www.thespruceeats.com/thmb/wQd2RvxH1Lh9536W5LY1T_VSyT8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/tacos-al-pastor-recipe-4172074-hero-01-7fb1a4455397486b8485ac8ec2ca3c5a.jpg",
+      "isTrending": true
     },
     {
       "id": "5",
@@ -945,7 +973,7 @@
       ],
       "servingSize": "4",
       "img": "https://t4.ftcdn.net/jpg/05/82/28/65/360_F_582286506_Kji3X5NrZBHMTFSqwG9gADXWMsjrtEjL.jpg",
-      "isTrending": true
+      "isTrending": false
     },
     {
       "id": "6",
@@ -1013,7 +1041,7 @@
       "reviews": [],
       "servingSize": "4",
       "img": "https://img.freepik.com/free-photo/front-view-meat-sauce-soup-with-greens-potatoes-dark-desk-soup-meal-sauce-meat_140725-79069.jpg?t=st=1712125038~exp=1712128638~hmac=4c7803cbbc1c9e6e95b98df32475808cd2bfba7daa6c3cade8c7663621e80676&w=740",
-      "isTrending": true
+      "isTrending": false
     },
     {
       "id": "8",
@@ -1044,7 +1072,7 @@
     },
     {
       "id": "9",
-      "title": "Biryani",
+      "title": "Veg Biryani",
       "ingredients": [
         "Basmati Rice",
         "Chicken",
@@ -1065,16 +1093,8 @@
       "cookingTime": "50 minutes",
       "authorId": 1111,
       "authorName": "flavourRealm",
-      "likesCount": 189,
-      "reviews": [
-        {
-          "id": "24",
-          "userId": "14",
-          "postId": "7",
-          "rating": "3",
-          "comment": "biryani is not biryaning the way it should biryaning XD"
-        }
-      ],
+      "likesCount": 51,
+      "reviews": [],
       "servingSize": "4",
       "img": "https://img.freepik.com/free-photo/gourmet-chicken-biryani-with-steamed-basmati-rice-generated-by-ai_188544-13480.jpg",
       "isTrending": true
@@ -1161,7 +1181,8 @@
       "likesCount": 185,
       "reviews": [],
       "servingSize": "4",
-      "img": "https://t4.ftcdn.net/jpg/06/46/09/17/360_F_646091793_ZGkTH6nwTLeGA9jPp20vnFpnKLrZwCYy.jpg"
+      "img": "https://t4.ftcdn.net/jpg/06/46/09/17/360_F_646091793_ZGkTH6nwTLeGA9jPp20vnFpnKLrZwCYy.jpg",
+      "isTrending": false
     },
     {
       "id": "13",
@@ -1412,33 +1433,6 @@
       "img": "https://t4.ftcdn.net/jpg/01/23/94/39/360_F_123943990_KMymS2hOxbpPognbDrKo38cSTx5ZxfI7.jpg"
     },
     {
-      "id": "21",
-      "title": "paneer tikka",
-      "ingredients": [
-        "paneer",
-        " onion ",
-        " capsicum ",
-        " gram flour  ",
-        " curd"
-      ],
-      "method": "marinate the paneer w required spices , curd and gram flour . roast the paneer in tandoor .",
-      "type": "veg",
-      "cuisine": "Indian",
-      "tags": [
-        "Paneer ",
-        " breakfast ",
-        " Snacks "
-      ],
-      "difficulty": "Intermediate",
-      "cookingTime": "30mins",
-      "servingSize": "4",
-      "img": "https://www.indianveggiedelight.com/wp-content/uploads/2021/08/air-fryer-paneer-tikka-featured.jpg",
-      "reviews": [],
-      "likesCount": 1,
-      "authorId": 9999,
-      "authorName": "End user"
-    },
-    {
       "id": "22",
       "title": "Gajar ka Halwa",
       "ingredients": [
@@ -1508,7 +1502,7 @@
     },
     {
       "id": "26",
-      "title": "Thepla",
+      "title": "Gujarati Thepla",
       "ingredients": [
         "2 cups whole wheat flour (atta)",
         "1 cup finely chopped fenugreek leaves (methi)",
@@ -1531,12 +1525,144 @@
       "difficulty": "Easy",
       "cookingTime": "30mins",
       "servingSize": "2",
-      "img": "https://www.rajbhog.com/wp-content/uploads/2021/05/Methi-Thepla.jpg",
+      "img": "https://thumbs.dreamstime.com/b/indian-parantha-stuffed-indian-bread-methi-thepla-stack-indian-flatbread-methi-paratha-fenugreek-gujarati-thepla-potato-125773599.jpg",
       "reviews": [],
       "likesCount": 51,
       "authorId": "12",
       "authorName": "harsh",
       "isTrending": true
+    },
+    {
+      "id": "27",
+      "title": "Chole puri",
+      "ingredients": [
+        "Chole",
+        "all purpose flour"
+      ],
+      "method": "Mix flour, sugar, and Marsala wine to form a dough. Roll out and cut into circles. Wrap dough around metal cannoli forms and fry until golden brown. Fill with sweetened ricotta cheese and sprinkle with chocolate chips and chopped pistachios.",
+      "type": "veg",
+      "cuisine": "Indian",
+      "tags": [
+        "Punjabi",
+        "Indian",
+        "Spicy"
+      ],
+      "difficulty": "Intermediate",
+      "cookingTime": "50 minutes",
+      "servingSize": "3",
+      "img": "https://static.vecteezy.com/system/resources/thumbnails/015/933/115/small_2x/chole-bhature-is-a-north-indian-food-dish-a-combination-of-chana-masala-and-bhatura-or-puri-free-photo.jpg",
+      "reviews": [],
+      "likesCount": 51,
+      "authorId": "1111",
+      "authorName": "FlavourRealm"
+    },
+    {
+      "id": "28",
+      "title": "South indian Dosa",
+      "ingredients": [
+        "batter",
+        "spices",
+        "potato"
+      ],
+      "method": "Prepare dosa batter by soaking rice and urad dal overnight, then grind into a smooth paste.\nFerment the batter overnight to achieve the characteristic tangy flavor and bubbly texture.\nHeat a non-stick or cast iron skillet over medium-high heat and pour a ladleful of batter onto the center.\nSpread the batter in a circular motion to form a thin, even layer and drizzle oil around the edges.\nCook until the edges start to brown and crisp, then flip the dosa and cook for a few more seconds before serving hot with chutney or sambar.",
+      "type": "veg",
+      "cuisine": "Indian",
+      "tags": [
+        "south indian",
+        "breakfast"
+      ],
+      "difficulty": "Intermediate",
+      "cookingTime": " 20mins",
+      "servingSize": "2",
+      "img": "https://png.pngtree.com/thumb_back/fh260/background/20230612/pngtree-plate-of-dosa-with-sauce-on-top-image_2892701.jpg",
+      "reviews": [],
+      "likesCount": 51,
+      "authorId": "1111",
+      "authorName": "FlavourRealm"
+    },
+    {
+      "id": "29",
+      "title": "Masala bhindi",
+      "ingredients": [
+        "ladyfingers",
+        "spices",
+        "oil",
+        "onion",
+        "curd ",
+        "garam masala",
+        "ginger-garlic paste"
+      ],
+      "method": "Wash the okra thoroughly and pat dry using a kitchen towel. Trim the ends and slit each okra vertically without cutting them into two pieces.\nHeat oil in a pan or skillet over medium heat. Add cumin seeds and let them splutter.\nAdd finely chopped onions and slit green chilies. Saute until the onions turn translucent.\nAdd ginger-garlic paste and sauté until the raw smell disappears.\nNow add the slit okra to the pan. Stir well and cook for 2-3 minutes.\nAdd turmeric powder, coriander powder, red chili powder, and salt. Mix well, ensuring the spices coat the okra evenly.\nCover the pan with a lid and cook for another 8-10 minutes, stirring occasionally, until the okra is cooked through and becomes tender.",
+      "type": "veg",
+      "cuisine": "Indian",
+      "tags": [
+        "lunch ",
+        "easy",
+        "quick and easy"
+      ],
+      "difficulty": "Easy",
+      "cookingTime": "30mins",
+      "servingSize": "2",
+      "img": "https://www.archanaskitchen.com/images/archanaskitchen/0-Archanas-Kitchen-Recipes/2020/Bhindi__Masala_Recipe_Bhindi_Tamatar_Sabzi_North_Indian_Recipe_1_1600.jpg",
+      "reviews": [],
+      "likesCount": 51,
+      "authorId": "12",
+      "authorName": "harsh"
+    },
+    {
+      "id": "30",
+      "title": "Paneer Tikka masala",
+      "ingredients": [
+        "Paneer",
+        "Curd",
+        "Gram flour",
+        "Spices",
+        "Oil",
+        "Coriander "
+      ],
+      "method": "Cut paneer (Indian cottage cheese) into cubes and prepare the marinade.\nThe marinade typically consists of yogurt, spices like red chili powder, turmeric, garam masala, and lemon juice.\nThread the marinated paneer cubes onto skewers, along with chunks of vegetables like bell peppers, onions, and tomatoes.\nCook the skewered paneer tikka either on a grill, in a grill pan, or bake them in the oven.\nIf grilling, cook until the paneer and vegetables are charred and cooked through, flipping occasionally.\nIf baking, preheat the oven and bake the skewers until the paneer is golden brown and the vegetables are tender.",
+      "type": "veg",
+      "cuisine": "Indian",
+      "tags": [
+        "Spicy",
+        "StreetFood",
+        "Snacks",
+        "Punjabi"
+      ],
+      "difficulty": "Intermediate",
+      "cookingTime": "30mins",
+      "servingSize": "4",
+      "img": "https://t4.ftcdn.net/jpg/04/75/65/21/360_F_475652107_Sx73qgHWljGylX5KRyDFeE46ftX0A4EE.jpg",
+      "reviews": [],
+      "likesCount": 51,
+      "authorId": "12",
+      "authorName": "harsh"
+    },
+    {
+      "id": "31",
+      "title": "Cake",
+      "ingredients": [
+        "2 cups all-purpose flour",
+        "1 cup sugar",
+        "1 cup milk",
+        "1/2 cup vegetable oil"
+      ],
+      "method": "Preheat oven to 350°F (175°C) and grease a cake pan.\nIn a bowl, mix flour, sugar, and baking powder.\nAdd milk and vegetable oil to the dry ingredients and mix until smooth.\nPour batter into the greased pan and bake for 30-35 minutes.\nOnce baked, let the cake cool before serving. Enjoy!",
+      "type": "veg",
+      "cuisine": "Italian",
+      "tags": [
+        "sweet",
+        "baking",
+        "dessert"
+      ],
+      "difficulty": "Advanced",
+      "cookingTime": "50 minutes",
+      "servingSize": "4",
+      "img": "https://st4.depositphotos.com/10614052/25239/i/450/depositphotos_252391082-stock-photo-sweet-chocolate-cake-on-wooden.jpg",
+      "reviews": [],
+      "likesCount": 51,
+      "authorId": "15",
+      "authorName": "Akshaliii"
     }
   ],
   "reviews": [
