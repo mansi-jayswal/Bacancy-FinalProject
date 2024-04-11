@@ -1,7 +1,7 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import AboutUs from '../components/pages/about/AboutUs';
+const AboutUs = React.lazy(()=>import( '../components/pages/about/AboutUs'))
 const ProfilePage = React.lazy(() => import('../components/pages/user/ProfilePage'));
 const AdminDashboard = React.lazy(() => import('../components/pages/admin/AdminDashboard'));
 const AdminUsersListing = React.lazy(() => import('../components/pages/admin/AdminUsersListing'));

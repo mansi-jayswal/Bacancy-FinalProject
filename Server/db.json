@@ -67,23 +67,25 @@
     },
     {
       "id": "2",
-      "name": "Jane+ Smith",
+      "name": "Jane Smith",
       "email": "jane@example.com",
       "password": "securepass",
       "saved_recipes": [],
       "created_recipes": [],
       "reviews": [],
-      "preference": "Mexican"
+      "preference": "Mexican",
+      "confirm_password": "securepass"
     },
     {
       "id": "3",
-      "name": "Alice Johnson",
+      "name": "Alice Johnsonn",
       "email": "alice@example.com",
       "password": "ilovecooking",
       "saved_recipes": [],
       "created_recipes": [],
       "reviews": [],
-      "preference": "Indian"
+      "preference": "Indian",
+      "confirm_password": "ilovecooking"
     },
     {
       "id": "4",
@@ -252,7 +254,7 @@
       "id": "12",
       "name": "harsh",
       "email": "harsh@gmail.com",
-      "password": "harsh",
+      "password": "Harsh@123",
       "saved_recipes": [
         {
           "title": "Manchurian",
@@ -421,7 +423,8 @@
           "comment": "nice recipe"
         }
       ],
-      "preference": "Chinese"
+      "preference": "Chinese",
+      "confirm_password": "Harsh@123"
     },
     {
       "id": "13",
@@ -627,6 +630,111 @@
       "created_recipes": [],
       "reviews": [],
       "preference": "Indian"
+    },
+    {
+      "id": "17",
+      "name": "Ashka",
+      "email": "ashka@gmail.com",
+      "password": "Ashka@123",
+      "saved_recipes": [],
+      "created_recipes": [],
+      "reviews": [],
+      "preference": "Mexican"
+    },
+    {
+      "id": "18",
+      "name": "mansiJayswal",
+      "email": "jayswalmansi20@gmail.com",
+      "password": "Mansi@123",
+      "saved_recipes": [],
+      "created_recipes": [],
+      "reviews": [],
+      "preference": "Italian",
+      "confirm_password": "Mansi@123"
+    },
+    {
+      "id": "19",
+      "name": "mayank jayswal",
+      "email": "mayank@gmail.com",
+      "password": "Mayank@123",
+      "saved_recipes": [],
+      "created_recipes": [],
+      "reviews": [],
+      "preference": "Mexican",
+      "confirm_password": "Mayank@123"
+    },
+    {
+      "id": "20",
+      "name": "krutika",
+      "email": "krutika@gmail.com",
+      "password": "Krutika@123",
+      "saved_recipes": [],
+      "created_recipes": [],
+      "reviews": [],
+      "preference": "Chinese",
+      "confirm_password": "Krutika@123"
+    },
+    {
+      "id": "21",
+      "name": "harmiiii",
+      "email": "harmi@gmail.com",
+      "password": "harmi@123A",
+      "saved_recipes": [],
+      "created_recipes": [],
+      "reviews": [],
+      "preference": "Indian",
+      "confirm_password": "harmi@123A"
+    },
+    {
+      "id": "22",
+      "name": "aisha",
+      "email": "aisha@gmail.com",
+      "password": "aisha",
+      "saved_recipes": [],
+      "created_recipes": [],
+      "reviews": [],
+      "preference": "Italian"
+    },
+    {
+      "id": "23",
+      "name": "hello",
+      "email": "harshaa@gmail.com",
+      "password": "Hello@123",
+      "saved_recipes": [],
+      "created_recipes": [],
+      "reviews": [],
+      "preference": "Italian"
+    },
+    {
+      "id": "24",
+      "name": "Bacancy",
+      "email": "bacancy@gmail.com",
+      "password": "Bacancy@123",
+      "saved_recipes": [],
+      "created_recipes": [],
+      "reviews": [],
+      "preference": "Mexican"
+    },
+    {
+      "id": "25",
+      "name": "Guest",
+      "email": "bacancysystems@gmail.com",
+      "password": "Bacancy@123",
+      "saved_recipes": [],
+      "created_recipes": [],
+      "reviews": [],
+      "preference": "Mexican",
+      "confirm_password": "Bacancy@123"
+    },
+    {
+      "id": "26",
+      "name": "Helly panchal",
+      "email": "helly@gmail.com",
+      "password": "Helly@123",
+      "saved_recipes": [],
+      "created_recipes": [],
+      "reviews": [],
+      "preference": "Thai"
     }
   ],
   "recipes": [
@@ -1736,6 +1844,40 @@
       "password": "subadmin4",
       "assignedCategory": "Thai",
       "tags": []
+    },
+    {
+      "id": "6",
+      "name": "subadmin5",
+      "email": "subadmin5@gmail.com",
+      "password": "Subadmin@123",
+      "assignedCategory": "Dumy",
+      "tags": []
+    },
+    {
+      "id": "7",
+      "name": "Nilay",
+      "email": "nilaydoshi@gmail.com",
+      "password": "Nilay",
+      "assignedCategory": "Punjabi",
+      "tags": []
+    },
+    {
+      "id": "8",
+      "name": "meghna",
+      "email": "meghna@gmail.com",
+      "password": "Meghna@123",
+      "assignedCategory": "Marathi",
+      "tags": [],
+      "category": "Marathi"
+    },
+    {
+      "id": "9",
+      "name": "shyam sundarr",
+      "email": "shyamsundar@gmail.com",
+      "password": "ShyamSundar@123",
+      "assignedCategory": "Sweets",
+      "tags": [],
+      "category": "Sweets"
     }
   ],
   "category": []

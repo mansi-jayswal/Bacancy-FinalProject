@@ -125,26 +125,6 @@ function RecipeListing() {
     });
   };
   
-  // const nextPage = () => {
-  //   if (currentPage < Math.ceil(recipes.length / itemsPerPage)) {
-  //     setCurrentPage((prevPage) => prevPage + 1);
-  //     window.scrollTo({
-  //       top: 0,
-  //       behavior: "smooth",
-  //     });
-  //   }
-  // };
-  
-  // const prevPage = () => {
-  //   if (currentPage > 1) {
-  //     setCurrentPage((prevPage) => prevPage - 1);
-  //     window.scrollTo({
-  //       top: 0,
-  //       behavior: "smooth",
-  //     });
-  //   }
-  // };
-  
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -157,7 +137,7 @@ function RecipeListing() {
             value={searchQuery}
           />
         </div>
-        <div className="flex space-x-4 md:w-1/2">
+        <div className="sm:flex flex space-x-4 md:w-1/2">
           {/* Difficulty dropdown */}
           <select
             className="appearance-none px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-yellow-400"
@@ -205,8 +185,8 @@ function RecipeListing() {
             onChange={handleSortChange}
           >
             <option value="default">Sort by</option>
-            <option value="ascending">Title (A-Z)</option>
-            <option value="descending">Title (Z-A)</option>
+            <option value="ascending">Title(A-Z)</option>
+            <option value="descending">Title(Z-A)</option>
             <option value="lowToHigh">Cooking Time(Lowest)</option>
             <option value="highToLow">Cooking Time(Highest)</option>
           </select>
@@ -237,8 +217,6 @@ function RecipeListing() {
             totalPages={Math.ceil(sortedRecipes.length / itemsPerPage)}
             onPageChange={paginate}
             itemsPerPage={itemsPerPage}
-            // prevPage={prevPage}
-            // nextPage={nextPage}
             />
             </div>
     </div>
