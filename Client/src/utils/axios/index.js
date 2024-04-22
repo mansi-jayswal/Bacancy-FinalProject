@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export const API = axios.create({
-    baseURL: "http://localhost:3000",
+    baseURL: "https://db.ridhampatel.tech/",
     timeout: 5000,
   });
 // *******************************API calls on user Schema***********************************
