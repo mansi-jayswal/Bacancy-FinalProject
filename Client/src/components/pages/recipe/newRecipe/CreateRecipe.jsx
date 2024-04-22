@@ -101,7 +101,7 @@ const CreateRecipe = () => {
       if(user){
       const res = await updateUser(user.id, user);
       if (res.success) {
-        setLoading(false);
+        // setLoading(false);
         dispatch(setRole("user", user));
       } else {
         console.log("error in updating the user from createRecipe");

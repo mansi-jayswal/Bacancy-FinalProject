@@ -1,6 +1,7 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import RecipeByTag from '../components/pages/recipe/RecipeByTag';
 const AboutUs = React.lazy(()=>import( '../components/pages/about/AboutUs'))
 const ProfilePage = React.lazy(() => import('../components/pages/user/ProfilePage'));
 const AdminDashboard = React.lazy(() => import('../components/pages/admin/AdminDashboard'));
@@ -63,6 +64,10 @@ function IndexRoute() {
             path:'recipes/:id',
             element: <RecipeDetails />
         },
+        {
+          path:'recipes/tags/:tag',
+          element: <RecipeByTag />
+      },
         {
           element: <PrivateRoutesUser isUserAuth={isUserAuth} />,
           children: [

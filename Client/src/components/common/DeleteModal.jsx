@@ -1,5 +1,7 @@
 import React from "react"
 import Button from "./Button"
+import { MdCancel } from "react-icons/md";
+
 
 const DeleteModal = ({ Id, handleDelete, setShowConfirmationModal, setDataIdToBeDeleted ,itemType }) => {
 	const cancelDelete = () => {
@@ -11,11 +13,11 @@ const DeleteModal = ({ Id, handleDelete, setShowConfirmationModal, setDataIdToBe
 		<div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 grid place-items-center w-screen h-screen z-50 bg-[rgba(0,0,0,0.2)]">
 			<div className="z-50 bg-slate-50 px-5 py-5 w-[min(90%,450px)] rounded-md relative">
 				<button className="absolute top-3 right-3 text-xs" onClick={cancelDelete}>
-					❌
+				<MdCancel className="inline text-customRed" size={25} />
 				</button>
 				<h2 className="text-2xl font-medium">Delete Confirmation</h2>
 				<hr className="h-2 mt-3" />
-				<p className="mt-4 text-base bg-red-200 text-red-900 font-medium p-5  rounded-md">
+				<p className="mt-4 text-base bg-customLightBeige text-red-900 font-medium p-5  rounded-md">
 					Are you sure you want to delete this {itemType}!
 				</p>
 				<div className="flex w-full mx-auto justify-end gap-5">

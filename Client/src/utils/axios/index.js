@@ -40,6 +40,22 @@ export const API = axios.create({
     }
   };
 
+  export const getRecipesByUserId = async (userId) => {
+    try {
+      const res = await API.get(`recipes?authorId=${userId}`);
+      return {
+        success: true,
+        data: res.data,
+        error: null,
+      };
+    } catch (error) {
+      return {
+        success: false,
+        data: [],
+        error: error.message,
+      };
+    }
+  };
 
   export const RegisterUser = async (userData) => {
     try {

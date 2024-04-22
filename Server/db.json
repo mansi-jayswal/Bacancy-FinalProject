@@ -78,14 +78,14 @@
     },
     {
       "id": "3",
-      "name": "Alice Johnsonn",
+      "name": "Alice John",
       "email": "alice@example.com",
-      "password": "ilovecooking",
+      "password": "Alice@123",
       "saved_recipes": [],
       "created_recipes": [],
       "reviews": [],
       "preference": "Indian",
-      "confirm_password": "ilovecooking"
+      "confirm_password": "Alice@123"
     },
     {
       "id": "4",
@@ -252,7 +252,7 @@
     },
     {
       "id": "12",
-      "name": "harsh",
+      "name": "harsh jayswal",
       "email": "harsh@gmail.com",
       "password": "Harsh@123",
       "saved_recipes": [
@@ -315,6 +315,50 @@
           "servingSize": "4",
           "img": "https://t4.ftcdn.net/jpg/04/75/65/21/360_F_475652107_Sx73qgHWljGylX5KRyDFeE46ftX0A4EE.jpg",
           "reviews": [],
+          "likesCount": 51,
+          "authorId": "12",
+          "authorName": "harsh"
+        },
+        {
+          "id": "33",
+          "title": "Rajasthani Ghevar",
+          "ingredients": [
+            "1 1/2 cup all purpose flour",
+            "1/2 cup ghee",
+            "2 pieces ice cubes",
+            "water",
+            "sugar",
+            "ghee",
+            "milk"
+          ],
+          "method": "Step 1 Prepare the sugar syrup for Ghevar\nGhevar is an easy-to-make recipe and can be prepared with some easily available ingredients. To begin with, you need to prepare the sugar syrup of one string consistency. Then, take a large wide bowl and add solidified ghee in it. Take one ice cube at a time and rub the ghee vigorously. Take more ice cubes as required till the ghee becomes very white in colour.\nStep 2 Prepare the Ghevar batter\nThen add milk, flour and one cup water. Mix these ingredients to make a smooth batter. Dissolve food colour in water and add to the batter. Add more water as required. The consistency of the batter should be fairly thin.\nStep 3 Cook the Ghevar\nThen take an aluminium or steel cylindrical container. Make sure that its height is at least 12″ and diameter is of 5-6″. Fill half of the container with ghee. Heat it and once the ghee is hot enough, then take a 50 ml, a glassful of the batter. Pour in centre of ghee, slowly in one continuous thread-like stream. Allow the foam to settle.\nStep 4 Cool the Ghevar and garnish with dry fruits\nAlternatively, pour some syrup evenly all over, keeping Ghevar in a mesh placed over a container. Let it cool and settle down, then top it with edible silver foil. Splash a few drops of saffron milk, sprinkle some chopped dry fruits and 1 tsp of cardamom powder. Serve it with savouries like Pakoras, Kachoris and Samosas.",
+          "type": "veg",
+          "cuisine": "Rajasthani",
+          "tags": [
+            "Rajasthani",
+            "Sweet",
+            "Dessert"
+          ],
+          "difficulty": "Advanced",
+          "cookingTime": "50mins",
+          "servingSize": "4",
+          "img": "https://t3.ftcdn.net/jpg/04/60/79/30/360_F_460793066_kFmSdrFRNraNsLeARfcxuEjiuO3GLo22.jpg",
+          "reviews": [
+            {
+              "id": "43",
+              "userId": "12",
+              "postId": "33",
+              "rating": "5",
+              "comment": "Too yummy!"
+            },
+            {
+              "id": "44",
+              "userId": "12",
+              "postId": "33",
+              "rating": "3",
+              "comment": "Looks tough to Prepare ;("
+            }
+          ],
           "likesCount": 51,
           "authorId": "12",
           "authorName": "harsh"
@@ -692,7 +736,7 @@
     },
     {
       "id": "20",
-      "name": "krutika",
+      "name": "Krutikaaa",
       "email": "krutika@gmail.com",
       "password": "Krutika@123",
       "saved_recipes": [],
@@ -752,16 +796,6 @@
       "reviews": [],
       "preference": "Mexican",
       "confirm_password": "Bacancy@123"
-    },
-    {
-      "id": "26",
-      "name": "Helly panchal",
-      "email": "helly@gmail.com",
-      "password": "Helly@123",
-      "saved_recipes": [],
-      "created_recipes": [],
-      "reviews": [],
-      "preference": "Thai"
     }
   ],
   "recipes": [
@@ -843,7 +877,7 @@
       ],
       "servingSize": "4",
       "img": "https://img.freepik.com/free-photo/front-view-meat-sauce-soup-with-greens-potatoes-dark-desk-soup-meal-sauce-meat_140725-79069.jpg?t=st=1712125038~exp=1712128638~hmac=4c7803cbbc1c9e6e95b98df32475808cd2bfba7daa6c3cade8c7663621e80676&w=740",
-      "isTrending": true
+      "isTrending": false
     },
     {
       "id": "3",
@@ -925,6 +959,13 @@
           "postId": "4",
           "rating": "5",
           "comment": "Looks delicious"
+        },
+        {
+          "id": "41",
+          "userId": "12",
+          "postId": "4",
+          "rating": "3",
+          "comment": "nice"
         }
       ],
       "servingSize": "4",
@@ -969,6 +1010,13 @@
           "postId": "5",
           "rating": "4",
           "comment": "Looks deliciousssssss!!!"
+        },
+        {
+          "id": "47",
+          "userId": "29",
+          "postId": "5",
+          "rating": "4",
+          "comment": "nice!"
         }
       ],
       "servingSize": "4",
@@ -1011,7 +1059,7 @@
       ],
       "servingSize": "2",
       "img": "https://i.pinimg.com/originals/e2/ef/8c/e2ef8c7a796494d0342820589752b646.jpg",
-      "isTrending": true
+      "isTrending": false
     },
     {
       "id": "7",
@@ -1094,7 +1142,15 @@
       "authorId": 1111,
       "authorName": "flavourRealm",
       "likesCount": 51,
-      "reviews": [],
+      "reviews": [
+        {
+          "id": "49",
+          "userId": "29",
+          "postId": "9",
+          "rating": "4",
+          "comment": "nice"
+        }
+      ],
       "servingSize": "4",
       "img": "https://img.freepik.com/free-photo/gourmet-chicken-biryani-with-steamed-basmati-rice-generated-by-ai_188544-13480.jpg",
       "isTrending": true
@@ -1313,7 +1369,7 @@
         "Specialty"
       ],
       "difficulty": "Advanced",
-      "cookingTime": "180 mins",
+      "cookingTime": "180 minutes",
       "authorId": 1111,
       "authorName": "flavourRealm",
       "likesCount": 132,
@@ -1402,7 +1458,7 @@
       "reviews": [],
       "servingSize": "4",
       "img": "https://media.istockphoto.com/id/1267610826/photo/famous-internationally-renowned-thai-green-coconut-curry-gaeng-keow-wan-gai-with-chicken-in-a.jpg?s=612x612&w=0&k=20&c=jXhnFi2TPqQKpvuLAPinL5HeuwnINKyS0hIqom46aV4=",
-      "isTrending": true
+      "isTrending": false
     },
     {
       "id": "20",
@@ -1454,7 +1510,7 @@
         " indian "
       ],
       "difficulty": "Easy",
-      "cookingTime": "90 mins",
+      "cookingTime": "90 minutes",
       "servingSize": "4",
       "img": "https://t3.ftcdn.net/jpg/03/27/17/30/360_F_327173095_araZyvlYmOO17gNxsK6jsXxbVuEAQJ9q.jpg",
       "reviews": [],
@@ -1491,14 +1547,14 @@
         "yummy"
       ],
       "difficulty": "Intermediate",
-      "cookingTime": "45 mins",
+      "cookingTime": "45 minutes",
       "servingSize": "4",
       "img": "https://media.istockphoto.com/id/1284771657/photo/veg-manchurian-gravy-balls-in-black-bowl-in-dark-slate-table-top-vegetarian-manchurian-is.jpg?s=612x612&w=0&k=20&c=M0w1rsKN_wkXJpX1Gr14giH8mEvCalM6gSZD2qgfnCU=",
       "reviews": [],
       "likesCount": 51,
       "authorId": "12",
       "authorName": "harsh",
-      "isTrending": true
+      "isTrending": false
     },
     {
       "id": "26",
@@ -1523,7 +1579,7 @@
         "breakfast"
       ],
       "difficulty": "Easy",
-      "cookingTime": "30mins",
+      "cookingTime": "30 minutes",
       "servingSize": "2",
       "img": "https://thumbs.dreamstime.com/b/indian-parantha-stuffed-indian-bread-methi-thepla-stack-indian-flatbread-methi-paratha-fenugreek-gujarati-thepla-potato-125773599.jpg",
       "reviews": [],
@@ -1572,13 +1628,22 @@
         "breakfast"
       ],
       "difficulty": "Intermediate",
-      "cookingTime": " 20mins",
+      "cookingTime": " 20 minutes",
       "servingSize": "2",
       "img": "https://png.pngtree.com/thumb_back/fh260/background/20230612/pngtree-plate-of-dosa-with-sauce-on-top-image_2892701.jpg",
-      "reviews": [],
+      "reviews": [
+        {
+          "id": "48",
+          "userId": "29",
+          "postId": "28",
+          "rating": "2",
+          "comment": "nice"
+        }
+      ],
       "likesCount": 51,
       "authorId": "1111",
-      "authorName": "FlavourRealm"
+      "authorName": "FlavourRealm",
+      "isTrending": true
     },
     {
       "id": "29",
@@ -1601,7 +1666,7 @@
         "quick and easy"
       ],
       "difficulty": "Easy",
-      "cookingTime": "30mins",
+      "cookingTime": "30 minutes",
       "servingSize": "2",
       "img": "https://www.archanaskitchen.com/images/archanaskitchen/0-Archanas-Kitchen-Recipes/2020/Bhindi__Masala_Recipe_Bhindi_Tamatar_Sabzi_North_Indian_Recipe_1_1600.jpg",
       "reviews": [],
@@ -1630,7 +1695,7 @@
         "Punjabi"
       ],
       "difficulty": "Intermediate",
-      "cookingTime": "30mins",
+      "cookingTime": "30 minutes",
       "servingSize": "4",
       "img": "https://t4.ftcdn.net/jpg/04/75/65/21/360_F_475652107_Sx73qgHWljGylX5KRyDFeE46ftX0A4EE.jpg",
       "reviews": [],
@@ -1663,6 +1728,169 @@
       "likesCount": 51,
       "authorId": "15",
       "authorName": "Akshaliii"
+    },
+    {
+      "id": "32",
+      "title": "Dal bati",
+      "ingredients": [
+        "1 cup wheat flour",
+        "1/4 cup green moong dal",
+        "1/4 cup chana dal",
+        "1/4 cup toor daal"
+      ],
+      "method": "\nDaal Baati Recipe\nby TNNUpdated : Jul 14, 2022, 14:27 IST\nAvg. Rating\nRate\n Comments (26)\nFacebook\nTwitter\nPinit\nDaal Baati\nTotal Time1h 20mPrep Time20 mCalories354\nBookmark\nAdd To Collection\nMaking Rajasthani Dal Baati Churma at home? Follow this easy Dal Baati Recipe step by step today!\n\n\n\nDid you know that you can enjoy authentic Rajasthani dal baati at home? Here is an easy dal baati recipe that will help you get a plate full of this yummy delicacy in no time. This restaurant style dal baati churma recipe is conveniently made with ingredients that are easily available in any kitchen. Just follow this step by step dal baati recipe and prepare to give a pleasant surprise to your loved ones! Rajasthani recipes are unique as all their dishes are such that you can store them for a couple of days, and they will have a fresh taste. If you love spicy food, you must give this traditional Rajasthani dish a try as it is super flavourful. Your taste buds will get to experience the culinary delights that you may not have till now. One such dish is Daal Bati, which is ideally served with churma (made of crumbled chapatis dipped in ghee and jaggery). This dish is a speciality of Rajasthani cuisine. This is one of the easy recipes to make Daal Baati, which consists of crispy baatis made of wheat flour, sooji or semolina, salt and ghee. These baatis are cooked in a tandoor which gives them a smoky flavour when dipped in the dal. This dal is also unique and is prepared using 3-4 types of lentils. The dal has a tadka of several authentic Rajasthani spices that gives it a distinct taste. While preparing this main dish recipe, it is suggested that you should use a generous amount of ghee. Remember this when making the baatis, as then the real flavour of this dish will come out. You can serve this dish on any occasion and it will only earn you praises. Try this easy recipe and enjoy with your loved ones!\n\n\n\n\n\nRead more\nIngredients of Daal Baati\n\n2 Servings\n1 cup wheat flour\n1/4 cup chana dal\n1/4 teaspoon garam masala powder\n1/8 teaspoon turmeric\n1/2 tablespoon lemon juice\n1/2 tablespoon coriander leaves\n1/4 teaspoon cumin seeds\n2 cup water\n1 tablespoon urad dal\n1/4 cup green moong dal\n1/2 tablespoon ghee\n1/2 teaspoon red chilli powder\n1/4 teaspoon coriander powder\n2 pinches salt\n1/4 inch ginger\n1/4 teaspoon mustard seeds\n1/4 cup toor daal\nFor Dough\n1/2 tablespoon semolina\n1 pinch salt\n1 tablespoon ghee\n\n\nHow to make Daal Baati\nStep 1 Knead the dough for the baatis\nTo prepare the baatis, take a glass bowl and add wheat flour with rawa, salt and ghee. Using your hands, knead a very stiff dough with warm water. Shape the dough in the size of a ping pong ball. Meanwhile, heat a gas tandoor and roast the dough balls on low heat for some time. Make sure they are brown and crusty.\n\nThen, break open from the top and pour some fresh ghee on the halves. Then to prepare the dal, wash all the dals together add 1 cup water and a quarter teaspoon of turmeric. Pressure cook the dals till 2 whistles. Allow the cooker to cool and remove the dal. \nGive the tadka to boiled dal and garnish with coriander leaves.",
+      "type": "veg",
+      "cuisine": "Rajasthani",
+      "tags": [
+        "Rajasthani",
+        "Lunch",
+        "Tradition "
+      ],
+      "difficulty": "Intermediate",
+      "cookingTime": "30 minutes",
+      "servingSize": "3",
+      "img": "https://t4.ftcdn.net/jpg/02/03/06/45/360_F_203064510_mkerPoGGefI6JwajMaMoshbMwU6PFbhr.jpg",
+      "reviews": [
+        {
+          "id": "42",
+          "userId": "12",
+          "postId": "32",
+          "rating": "4",
+          "comment": "Amazingggg Recipe!!!"
+        }
+      ],
+      "likesCount": 51,
+      "authorId": "1111",
+      "authorName": "FlavourRealm",
+      "isTrending": true
+    },
+    {
+      "id": "33",
+      "title": "Rajasthani Ghevar",
+      "ingredients": [
+        "1 1/2 cup all purpose flour",
+        "1/2 cup ghee",
+        "2 pieces ice cubes",
+        "water",
+        "sugar",
+        "ghee",
+        "milk"
+      ],
+      "method": "Step 1 Prepare the sugar syrup for Ghevar\nGhevar is an easy-to-make recipe and can be prepared with some easily available ingredients. To begin with, you need to prepare the sugar syrup of one string consistency. Then, take a large wide bowl and add solidified ghee in it. Take one ice cube at a time and rub the ghee vigorously. Take more ice cubes as required till the ghee becomes very white in colour.\nStep 2 Prepare the Ghevar batter\nThen add milk, flour and one cup water. Mix these ingredients to make a smooth batter. Dissolve food colour in water and add to the batter. Add more water as required. The consistency of the batter should be fairly thin.\nStep 3 Cook the Ghevar\nThen take an aluminium or steel cylindrical container. Make sure that its height is at least 12″ and diameter is of 5-6″. Fill half of the container with ghee. Heat it and once the ghee is hot enough, then take a 50 ml, a glassful of the batter. Pour in centre of ghee, slowly in one continuous thread-like stream. Allow the foam to settle.\nStep 4 Cool the Ghevar and garnish with dry fruits\nAlternatively, pour some syrup evenly all over, keeping Ghevar in a mesh placed over a container. Let it cool and settle down, then top it with edible silver foil. Splash a few drops of saffron milk, sprinkle some chopped dry fruits and 1 tsp of cardamom powder. Serve it with savouries like Pakoras, Kachoris and Samosas.",
+      "type": "veg",
+      "cuisine": "Rajasthani",
+      "tags": [
+        "Rajasthani",
+        "Sweet",
+        "Dessert"
+      ],
+      "difficulty": "Advanced",
+      "cookingTime": "50 minutes",
+      "servingSize": "4",
+      "img": "https://t3.ftcdn.net/jpg/04/60/79/30/360_F_460793066_kFmSdrFRNraNsLeARfcxuEjiuO3GLo22.jpg",
+      "reviews": [
+        {
+          "id": "44",
+          "userId": "12",
+          "postId": "33",
+          "rating": "3",
+          "comment": "Looks tough to Prepare ;("
+        }
+      ],
+      "likesCount": 51,
+      "authorId": "12",
+      "authorName": "harsh",
+      "isTrending": true
+    },
+    {
+      "id": "34",
+      "title": "Rajasthani Gatte ki Sabzi",
+      "ingredients": [
+        "2 cup gram flour (besan)",
+        "2 cup yoghurt (curd)",
+        "2 tablespoon refined oil",
+        "ghee",
+        "water",
+        "spices",
+        "green chilly",
+        "ginger-garlic paste"
+      ],
+      "method": "Step 1\nTo prepare this delicious Rajasthani specialty, take a large bowl and mix together gram flour, 1 teaspoon turmeric powder, 1 teaspoon red chilli powder, salt and a pinch of asafoetida. Next, add two and a half tablespoons of ghee.\n\nStep 2\nNow, apply some ghee on your palm and knead the mixture into a firm dough using required amount of water. When done, divide the dough into equal portions and roll each portion in the form of cylindrical rolls.\n\nStep 3\nMeanwhile, put a kadhai on high flame and heat water in it. Bring it to a boil and add the besan rolls in it. Cook the rolls until they are light and soft and they start floating in water. In a similar way, cook all the remaining rolls and then, switch off the burner. Transfer them to a plate to cool lightly.\n\nStep 4\nNow, heat oil in another kadhai on medium flame and add black mustard seeds in it. Saute them until they crackle. Then, add cumin seeds and cook them until they splutter. Afterwards, add asafoetida in the oil and cook for a few seconds.\n\nStep 5\nMeanwhile, add ginger and green chilies in a blender jar and blend them into a fine paste. Add the prepared paste to the kadhai and then, add the remaining red chilli powder along with the remaining turmeric powder in the kadhai. Saute the ginger-garlic paste till the raw smell goes away.\n\nStep 6\nNow, add garam masala, coriander powder and salt as per your taste to the kadhai and stir to avoid burning the masala. Add a cup of water in the kadhai and stir well to mix with the spices. Meanwhile, beat the curd until it is soft and ensure that no lumps are formed.\n\nStep 7\nAdd curd to the kadhai and stir to incorporate the masala to the curd. Make sure that the consistency of gravy is thin and cook for about 6-7 minutes. Meanwhile, cut the besan rolls roughly into small pieces.\n\nStep 8\nWhen, the speck of oil starts to appear on the surface of gravy, add all the cut rolls into it and cook for a while. Bring it to a boil and reduce the flame. Let the rolls simmer in the gravy for 5-10 minutes.\n\nStep 9\nGatte Ki Sabzi is ready now, transfer the cooked dish to a serving bowl and serve hot with chapatis or steamed rice.",
+      "type": "veg",
+      "cuisine": "Rajasthani",
+      "tags": [
+        "Lunch",
+        "Rajasthani ",
+        "Tradition",
+        "Easy"
+      ],
+      "difficulty": "Easy",
+      "cookingTime": "70  minutes",
+      "servingSize": "4",
+      "img": "https://www.vegrecipesofindia.com/wp-content/uploads/2018/05/gatte-ki-sabji-recipe-1.jpg",
+      "reviews": [],
+      "likesCount": 51,
+      "authorId": "27",
+      "authorName": "Nisha Madhulika"
+    },
+    {
+      "id": "35",
+      "title": "Motichoor Laddu",
+      "ingredients": [
+        "Gram flour ",
+        "Ghee",
+        "¼ tsp saffron food colour",
+        "Oil",
+        "Water",
+        "Semolina"
+      ],
+      "method": "Firstly, to the hot sugar syrup, add prepared boondi.\nMix well and make sure to coat all the boondi with sugar syrup.\nContinue to cook for 2 -3 minutes or until sugar syrup thickens.\nCover and keep aside for 10 minutes.\nAfter 10 minutes, sugar syrup is absorbed completely by boondi.\nAdd 2 tbsp cashew and 2 tbsp pistachios. mix well.\nYou can see the the mixture is dried and all the sugar syrup has absorbed.\nPrepare the ladoo taking a small amount of boondi. add milk if required, to make moist laddu.\nFinally, motichoor laddo is ready to be served or refrigerate for a week.",
+      "type": "veg",
+      "cuisine": "Rajasthani",
+      "tags": [
+        "Sweet ",
+        "Dessert",
+        "Easy"
+      ],
+      "difficulty": "Intermediate",
+      "cookingTime": "30 minutes",
+      "servingSize": "4",
+      "img": "https://t4.ftcdn.net/jpg/04/96/17/29/360_F_496172916_Y4dHSR4gZ6WqnIVm9PZ1KAAsf4Mjrt7R.jpg",
+      "reviews": [
+        {
+          "id": "46",
+          "userId": "15",
+          "postId": "35",
+          "rating": "5",
+          "comment": "WOooooooww! looks YUMmmmm :)😍"
+        }
+      ],
+      "likesCount": 51,
+      "authorId": "28",
+      "authorName": "Ram",
+      "isTrending": true
+    },
+    {
+      "id": "36",
+      "title": "hello",
+      "ingredients": [
+        "2 teaspoons baking powder"
+      ],
+      "method": "w\n11\n1\n2\n2\n21\n2e2cdv\nf",
+      "type": "veg",
+      "cuisine": "Mexican",
+      "tags": [
+        "mexican",
+        "spicy"
+      ],
+      "difficulty": "Easy",
+      "cookingTime": "10 minutes",
+      "servingSize": "2",
+      "img": "https://pinchofyum.com/cdn-cgi/image/width=680,height=99999,fit=scale-down/wp-content/uploads/Cauliflower-Black-Bean-Tostadas-4.jpg",
+      "reviews": [],
+      "likesCount": 51,
+      "authorId": "29",
+      "authorName": "Mansi Jayswal"
     }
   ],
   "reviews": [
@@ -1924,6 +2152,62 @@
       "postId": "3",
       "rating": "4",
       "comment": "Great Recipe!"
+    },
+    {
+      "id": "41",
+      "userId": "12",
+      "postId": "4",
+      "rating": "3",
+      "comment": "nice"
+    },
+    {
+      "id": "42",
+      "userId": "12",
+      "postId": "32",
+      "rating": "4",
+      "comment": "Amazingggg Recipe!!!"
+    },
+    {
+      "id": "44",
+      "userId": "12",
+      "postId": "33",
+      "rating": "3",
+      "comment": "Looks tough to Prepare ;("
+    },
+    {
+      "id": "45",
+      "userId": null,
+      "postId": "34",
+      "rating": "5",
+      "comment": "Rajasthani Food is amazing indeed!"
+    },
+    {
+      "id": "46",
+      "userId": "15",
+      "postId": "35",
+      "rating": "5",
+      "comment": "WOooooooww! looks YUMmmmm :)😍"
+    },
+    {
+      "id": "47",
+      "userId": null,
+      "postId": "5",
+      "rating": "4",
+      "comment": "nice!"
+    },
+    {
+      "id": "48",
+      "userId": null,
+      "postId": "28",
+      "rating": "2",
+      "comment": "nice"
+    },
+    {
+      "id": "49",
+      "userId": null,
+      "postId": "9",
+      "rating": "4",
+      "comment": "nice"
     }
   ],
   "sub-admins": [
@@ -1959,17 +2243,19 @@
       "id": "4",
       "name": "subadmin3",
       "email": "subadmin3@gmail.com",
-      "password": "dummy",
+      "password": "Subadmin3@123",
       "assignedCategory": "Chinese",
-      "tags": []
+      "tags": [],
+      "category": "Chinese"
     },
     {
       "id": "5",
       "name": "subAdmin4",
       "email": "subadmin4@gmail.com",
-      "password": "subadmin4",
+      "password": "Subadmin4@123",
       "assignedCategory": "Thai",
-      "tags": []
+      "tags": [],
+      "category": "Thai"
     },
     {
       "id": "6",
@@ -1983,9 +2269,10 @@
       "id": "7",
       "name": "Nilay",
       "email": "nilaydoshi@gmail.com",
-      "password": "Nilay",
+      "password": "Nilay@123",
       "assignedCategory": "Punjabi",
-      "tags": []
+      "tags": [],
+      "category": "Punjabi"
     },
     {
       "id": "8",
@@ -2004,6 +2291,14 @@
       "assignedCategory": "Sweets",
       "tags": [],
       "category": "Sweets"
+    },
+    {
+      "id": "10",
+      "name": "RajasthaniSubadmin",
+      "email": "rj@gmail.com",
+      "password": "Rj@123",
+      "assignedCategory": "Rajasthani",
+      "tags": []
     }
   ],
   "category": []

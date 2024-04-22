@@ -8,7 +8,7 @@ function Pagination({ currentPage, totalPages, onPageChange , itemsPerPage }) {
 
     for (let i = 1; i <= totalPages; i++) {
       pages.push(
-        <Link
+        <button
           key={i}
           to=""
           onClick={() => onPageChange(i)}
@@ -19,7 +19,7 @@ function Pagination({ currentPage, totalPages, onPageChange , itemsPerPage }) {
           } relative inline-flex items-center px-4 py-2 text-sm font-semibold ring-1 ring-inset ring-gray-300 focus:z-20 focus:outline-offset-0`}
         >
           {i}
-        </Link>
+        </button>
       );
     }
 
