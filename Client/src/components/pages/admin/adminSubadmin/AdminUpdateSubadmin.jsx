@@ -12,7 +12,7 @@ function AdminUpdateSubadmin() {
   const navigate = useNavigate();
 
   const schema = yup.object().shape({
-    name: yup.string().required('Name is required'),
+    name: yup.string().required('Name is required').min(3,'Min 3 characters required').max(10 ,'Maximum 10 characters allowed!'),
     email: yup.string().email('Invalid email').required('Email is required'),
     password: yup
     .string()

@@ -7,7 +7,6 @@ import { toast } from "react-toastify";
 import logo from "../../../../assets/logo.png";
 import { IoIosLogOut } from "react-icons/io";
 
-
 const NavbarFile = () => {
   const data = useSelector((state) => state.role);
   const dispatch = useDispatch();
@@ -27,7 +26,7 @@ const NavbarFile = () => {
   };
 
   const handleLinkClick = () => {
-    setShowLinks(false); 
+    setShowLinks(false);
   };
 
   const renderLinks = () => {
@@ -67,6 +66,16 @@ const NavbarFile = () => {
     navigate("/");
   };
 
+  const getName = () => {
+    if (role === "admin") {
+      // If the user is an admin, use a static name
+      return "Admin!";
+    } else {
+      // Otherwise, use the name from the Redux state
+      return data.admin?.name || data.sub_admin?.name || data.user?.name;
+    }
+  };
+
   return (
     <nav className="bg-white py-4 px-6">
       <div className="container mx-auto flex  md:flex-row justify-between items-center">
@@ -82,7 +91,17 @@ const NavbarFile = () => {
             className="h-full w-full"
             style={{ cursor: "pointer" }}
           />
+          {console.log(
+            data.admin?.name || data.sub_admin?.name || data.user?.name
+          )}
         </div>
+        {data.isAuth ? (
+          <div className="">
+            <p className="text-customRed  font-semibold hover:animate-bounce">
+              HELLO, {getName().toUpperCase()}
+            </p>
+          </div>
+        ) : null}
         <div className="flex justify-end items-center">
           <div className="md:hidden">
             {/* Hamburger button for small devices */}
@@ -121,14 +140,18 @@ const NavbarFile = () => {
               onClick={handleLogout}
               className="hidden ml-2 md:block text-black hover:text-gray-700"
             >
-              <IoIosLogOut className="inline font-semibold" size={25} title="Logout"/>
+              <IoIosLogOut
+                className="inline font-semibold"
+                size={25}
+                title="Logout"
+              />
             </button>
           ) : (
             <button
-              onClick={() =>{ 
-            setShowLinks(!showLinks);
-            navigate("/login")
-          }}
+              onClick={() => {
+                setShowLinks(!showLinks);
+                navigate("/login");
+              }}
               className=" hidden md:block text-black hover:text-white hover:bg-customRed p-1 px-2 ml-2 rounded-xl font-lora"
             >
               Login

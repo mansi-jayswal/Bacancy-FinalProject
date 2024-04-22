@@ -20,15 +20,14 @@ const RecipeCard = ({ recipe , children , onClick , showButton=false, title}) =>
       return (totalRating / reviews.length).toFixed(1);
     };
 
-
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg " >
+    <div className="max-w-sm rounded overflow-hidden shadow-lg" >
       <img className="w-full h-48 rounded-lg rounded-b-none object-cover cursor-pointer  transition-transform transform hover:scale-105" src={recipe.img} alt={recipe.title} onClick={handleClick}/>
       <div className="px-6 py-4">
         <div className="flex justify-between">
           <div className='w-full'>
             <div className='flex justify-between w-full items-center'>
-            <div className="font-bold text-xl mb-2" onClick={handleClick}><h1 className='cursor-pointer'>{recipe.title}</h1></div>
+            <div className="font-bold text-xl mb-2 hover:text-customRed " onClick={handleClick}><h1 className='cursor-pointer'>{recipe.title}</h1></div>
             <div className="mr-2 mb-2">
             <ReactStars
                   count={5}
@@ -40,7 +39,6 @@ const RecipeCard = ({ recipe , children , onClick , showButton=false, title}) =>
                   color={`rgb(156 163 175)`}
                   activeColor={`#ffd700`}
                 />
-              {/* <FaStar className="inline text-yellow-400"  /> {calculateAverageRating(recipe.reviews)} */}
             </div>
             </div>
             <div className="text-gray-700 text-sm">
@@ -56,9 +54,6 @@ const RecipeCard = ({ recipe , children , onClick , showButton=false, title}) =>
             </div>
           </div>
           <div className="flex items-center">
-            {/* <span className="mr-2">
-              <FaHeart className="inline" /> {recipe.likesCount}
-            </span> */}
           </div>
         </div>
         <div className='w-full'>

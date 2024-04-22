@@ -127,7 +127,7 @@ function AdminDashboard() {
               { key: "id", label: "User ID" },
               { key: "name", label: "Name" },
               { key: "email", label: "Email" },
-              { key: "password", label: "Password" },
+              // { key: "password", label: "Password" },
               { key: "preference", label: "Preference" },
             ]}
             className="w-full whitespace-nowrap"

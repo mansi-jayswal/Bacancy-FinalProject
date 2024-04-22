@@ -12,7 +12,7 @@ import { API, getUserById, updateUser } from "../../../../utils/axios";
 const fields = signupFields;
 
 const schema = yup.object().shape({
-  name: yup.string().required("Username is required"),
+  name: yup.string().required("Username is required").min(3,'Min 3 characters required').max(10 ,'Maximum 10 characters allowed!'),
   email: yup.string().email("Invalid email").required("Email is required"),
   password: yup
   .string()

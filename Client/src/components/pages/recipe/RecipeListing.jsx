@@ -22,7 +22,7 @@ function RecipeListing() {
   useEffect(() => {
     getRecipes()
       .then((res) => {
-        setRecipes(res.data);
+        setRecipes((res.data).reverse());
         setLoading(false);
       })
       .catch((err) => {
